@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 viewport-fit=cover"/>
+    <title>坦白局</title>
+</head>
+<style>
+    *{
+        margin: 0 ;
+        padding: 0;
+    }
+    html{
+        background: url("img/third/bg.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 100%;
+    }
+    img,span,a{
+        display: block;
+
+    }
+    .image {
+        width: 78%;
+        margin: 22% auto 20% auto;
+    }
+    .save{
+        width: 73%;
+        margin: 0 auto;
+    }
+    .save img{
+        width: 100%;
+    }
+
+
+
+    @media only screen and (width: 375px) and (height: 812px){
+        .image {
+            width: 80%;
+            margin: 41% auto 22% auto;
+        }
+
+    }
+
+    .layoutBox{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+</style>
+<body>
+<div style="position: relative">
+    <img class="image" src="img/third/img.png" alt="">
+    <div class="layoutBox"></div>
+</div>
+<a class="save" href="#">
+    <img src="img/third/save.png" alt="">
+</a>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+var self = this;
+var longClick =0;
+$(".layoutBox").on({
+    touchstart: function(e){
+        longClick=0;//设置初始为0
+        timeOutEvent = setTimeout(function(){
+            //此处为长按事件-----在此显示遮罩层及删除按钮
+            alert("长按生效")
+            longClick=1;//假如长按，则设置为1
+        },500);
+    },
+    touchmove: function(e){
+        clearTimeout(timeOutEvent);
+        timeOutEvent = 0;
+        e.preventDefault();
+    },
+    touchend: function(e){
+        clearTimeout(timeOutEvent);
+        if(timeOutEvent!=0 && longClick==0){//点击
+            //此处为点击事件----在此处添加跳转详情页
+        }
+        return false;
+    }
+});
+</script>
+</body>
+</html>
