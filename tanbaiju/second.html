@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 viewport-fit=cover"/>
+    <title>坦白局</title>
+</head>
+<style>
+    *{
+        margin: 0 ;
+        padding: 0;
+    }
+    .clearfix::before, .clearfix::after{
+        clear: both;
+        content: "";
+        height: 0;
+        display: block;
+        visibility: hidden;
+        overflow: hidden;
+
+    }
+    html{
+        background: url("img/second/bg.jpg");
+        background-color:#5a9df8 ;
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    img,span,a{
+        display: block;
+    }
+    .headimg{
+        width: 21%;
+        margin:4% auto 3% auto;
+        border-radius: 50%;
+    }
+    .title{
+        font-size: 1.9rem;
+        color: white;
+        text-align: center;
+        margin: 0 auto 0.5% auto;
+    }
+    .content{
+        width: 95%;
+        height:19rem;
+        overflow-x: hidden;
+        margin: 1% auto 0 auto;
+
+        /*overflow-y: hidden;*/
+    }
+    .content-content{
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        margin: 0 auto;
+
+    }
+
+    .a{
+        width: 95%;
+
+        position: fixed;
+        bottom: 5%;
+        left: 2%;
+    }
+    .line{
+        width: 100%;
+        margin: 0 auto;
+        margin: 0 auto -0.3rem auto;
+    }
+    .head{
+        vertical-align: middle;
+        border-radius: 50%;
+        width: 13.5%;
+        display: inline-block;
+        margin: 2%;
+    }
+    .text{
+        box-sizing: border-box;
+        background: white;
+        padding: 0.6rem;
+        font-size: 0.95rem;
+        color: black;
+        display: inline-block;
+        border-radius: 0.5rem;
+        vertical-align: middle;
+    }
+
+    .right{
+        text-align: right;
+    }
+    .me{
+        width: 45%;
+        float: left;
+
+    }
+    .me img{
+        width: 100%;
+    }
+    .he{
+        width: 45%;
+        float: right;
+
+    }
+    .he img{
+        width: 100%;
+
+    }
+
+    .box{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        display: none;
+    }
+    .box-content{
+        width: 92%;
+        background: white;
+        box-sizing: border-box;
+        padding: 5% 5% 5% 5%;
+        box-sizing: border-box;
+        margin: 8% auto 0 auto;
+        border-radius: 1rem;
+
+    }
+    .no{
+        float: right;
+        width: 7%;
+    }
+    .no img{
+        width: 100%;
+    }
+    .box-text{
+        width: 100%;
+        height: 6.5rem;
+        background: url(img/forth/area.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        line-height: 7rem;
+        border: 0;
+        margin: 5% auto;
+        text-align: center;
+        font-size: 1rem;
+
+
+    }
+    .box-ul{
+        height: 16rem;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    ul{
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+    }
+    li{
+        padding: 3% 0;
+        /* border-image: url("img/forth/line.png") repeat;*/
+        border-bottom: 0.08rem dashed #a4a4a4;
+        font-size:0.8rem;
+        color: #656565;
+        list-style: none;
+    }
+    li:last-child{
+        border-bottom: 0;
+    }
+    .yes{
+        margin: 5% auto;
+        width: 80%;
+    }
+    .yes img{
+        width: 100%;
+    }
+    /*MAX*/
+    @media only screen
+    and (device-width : 414px)
+    and (device-height : 896px)
+    and (-webkit-device-pixel-ratio : 3) {
+        .content{
+            width: 95%;
+            height:28rem;
+            overflow-x: hidden;
+            margin: 1% auto 0 auto;
+        }
+        .headimg {
+            margin: 13% auto 5% auto;
+        }
+        .a{
+            width: 95%;
+
+            position: fixed;
+            bottom: 4%;
+            left: 2%;
+        }
+    }
+
+
+
+    /*xr*/
+    @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+        .content{
+            width: 95%;
+            height:26rem;
+            overflow-x: hidden;
+            margin: 1% auto 0 auto;
+
+        }
+        .a{
+            width: 95%;
+
+            position: fixed;
+            bottom: 4%;
+            left: 2%;
+        }
+    }
+/*X*/
+    @media only screen
+    and (device-width : 375px)
+    and (device-height : 812px)
+    and (-webkit-device-pixel-ratio : 3) {
+        html{
+            background-color:#5a9df8 ;
+
+        }
+        .headimg {
+            margin: 12% auto 5% auto;
+        }
+        .line {
+            width: 100%;
+            margin: 5% auto;
+        }
+        .content{
+             width: 95%;
+             height:22rem;
+             overflow-x: hidden;
+             margin: 1% auto 0 auto;
+         }
+
+        .title {
+            margin: 0 auto 6% auto;
+        }
+       /* .me {
+            margin-top: 13%;
+        }
+        .he {
+            margin-top: 13%;
+        }*/
+        .box-ul{
+            height: 19rem;
+        }
+        .box-content {
+            padding: 8% 5% 9% 5%;
+            margin: 13% auto 0 auto;
+
+        }
+        .box-text {
+            height: 7.5rem;
+            line-height: 7.5rem;
+            margin: 6% auto;
+            width: 100%;
+
+        }
+        .yes {
+            margin: 7% auto;
+        }
+        .a{
+            width: 95%;
+            position: fixed;
+            bottom: 4%;
+            left: 2%;
+        }
+    }
+
+
+</style>
+<body>
+<img class="headimg" src="img/second/head.png" alt="">
+<span class="title">你可以问我任何问题</span>
+<div class="content">
+    <div class="content-content">
+        <div class="line ">
+            <img class="head " src="img/second/head.png" alt="">
+            <span class="text ">你喜欢过我吗？</span>
+        </div>
+        <div class="line ">
+            <img  class="head" src="img/second/head.png" alt="">
+            <span class="text">你知道我是谁吗？</span>
+        </div>
+        <div class="line  right">
+            <span class="text ">不知道啊？</span>
+            <img class="head " src="img/second/head.png" alt="">
+        </div>
+        <div class="line ">
+            <img class="head" src="img/second/head.png" alt="">
+            <span class="text">我喜欢你</span>
+        </div>
+        <div class="line right ">
+        <span class="text">那你很厉害</span>
+        <img class="head" src="img/second/head.png" alt="">
+
+    </div>
+        <div class="line right ">
+            <span class="text">那你很厉害</span>
+            <img class="head" src="img/second/head.png" alt="">
+
+        </div>
+        <div class="line ">
+            <img class="head" src="img/second/head.png" alt="">
+            <span class="text">那是怎么办？</span>
+        </div>
+        <div class="line right ">
+            <span class="text">那你很厉害</span>
+            <img class="head" src="img/second/head.png" alt="">
+
+        </div>
+        <div class="line ">
+            <img class="head" src="img/second/head.png" alt="">
+            <span class="text">那是怎么办？</span>
+        </div>
+        <div class="line right ">
+            <span class="text">那你很厉害</span>
+            <img class="head" src="img/second/head.png" alt="">
+
+        </div>
+        <div class="line ">
+            <img class="head" src="img/second/head.png" alt="">
+            <span class="text">那是怎么办？</span>
+        </div>
+
+
+    </div>
+</div>
+    <div class="a">
+        <a class="me clearfix" href="#" >
+            <img src="img/second/me.png" alt="">
+        </a>
+        <div class="he clearfix" " >
+            <img src="img/second/he.png" alt="">
+        </div>
+    </div>
+
+<!--跟他玩-->
+<div class="box">
+    <div class="box-content clearfix">
+        <a href="#" class="no clearfix">
+            <img src="img/forth/no.png" alt="">
+        </a>
+        <textarea type="text" class="box-text"placeholder="请选择或输入你的问题~要真诚走心喔~"></textarea>
+        <div class="box-ul">
+            <ul>
+                <li>你最割舍不下的是谁？</li>
+                <li>如果我喜欢你，你会接受吗？</li>
+                <li>你觉得我怎么做才能撩到你？</li>
+                <li>你最喜欢的是谁吗？</li>
+                <li>你喜欢过我吗？</li>
+                <li>你现在单身吗？</li>
+                <li>你现在单身吗？</li>
+                <li> 你谈过几次恋爱？</li>
+            </ul>
+        </div>
+        <a href="#"class="yes">
+            <img src="img/forth/yes.png" alt="">
+        </a>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+    $('.he').on('click',function () {
+        $('.box').show()
+    })
+    $('.no').on('click',function () {
+        $('.box').hide()
+    })
+</script>
+</html>

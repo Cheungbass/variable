@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 viewport-fit=cover"/>
+    <title>坦白局</title>
+</head>
+<style>
+    *{
+        margin: 0 ;
+        padding: 0;
+    }
+    html{
+        background-color: #2c4e7c;
+        background-image: url("img/sixth/bg.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+    }
+    img,span,a{
+        display: block;
+
+    }
+    .clearfix::before, .clearfix::after{
+        clear: both;
+        content: "";
+        height: 0;
+        display: block;
+        visibility: hidden;
+        overflow: hidden;
+
+    }
+    .content{
+        width: 85%;
+        background: white;
+        box-sizing: border-box;
+        padding: 5% 8% 10% 8%;
+        box-sizing: border-box;
+        margin: 33% auto 0 auto;
+        border-radius: 1rem;
+
+    }
+    .no{
+        float: right;
+        width: 7%;
+    }
+    .no img{
+        width: 100%;
+    }
+    .text{
+        width: 100%;
+        height: 8rem;
+        background: url(img/forth/area.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        font-size: 1.2rem;
+        border: 0;
+        margin: 5% auto;
+        padding:1rem;
+        box-sizing: border-box;
+    }
+
+    .yes{
+        margin: 5% auto;
+        width: 80%;
+    }
+    .yes img{
+        width: 100%;
+    }
+
+
+
+
+    @media only screen and (width: 375px) and (height: 812px){
+        html{
+            background-size: 100% 95%;
+            background-position: center;
+            background-color: #2c4e7c;
+        }
+        .content {
+            padding: 10% 8% 12% 8%;
+            margin: 35% auto 0 auto;
+
+        }
+        .text {
+            height: 9.5rem;
+
+            margin: 6% auto;
+
+        }
+        .yes {
+            margin: 7% auto;
+        }
+
+    }
+
+
+</style>
+<body>
+<div class="content clearfix">
+    <a href="" class="no clearfix">
+        <img src="img/sixth/no.png" alt="">
+    </a>
+    <textarea type="text" class="text"placeholder="请真诚回答朋友的问题"></textarea>
+
+    <a href="#"class="yes">
+        <img src="img/sixth/go.png" alt="">
+    </a>
+</div>
+</body>
+</html>

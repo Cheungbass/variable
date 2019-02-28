@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 viewport-fit=cover"/>
+    <title>坦白局</title>
+</head>
+<style>
+    *{
+        margin: 0 ;
+        padding: 0;
+    }
+    .clearfix::before, .clearfix::after{
+        clear: both;
+        content: "";
+        height: 0;
+        display: block;
+        visibility: hidden;
+        overflow: hidden;
+
+    }
+    html{
+        background: url("img/fifth/bg.jpg");
+
+        width: 100%;
+        height: 100%;
+    }
+    img,span,a{
+        display: block;
+    }
+    .headimg{
+        width: 23%;
+        margin: 10% auto 3% auto;
+        border-radius: 50%;
+    }
+    .title{
+        font-size: 1.9rem;
+        color: white;
+        text-align: center;
+        margin: 0 auto 4% auto;
+    }
+    .content{
+        width: 95%;
+        margin: 1% auto 0 auto;
+    }
+    .line{
+        width: 100%;
+        margin: 1% auto;
+    }
+    .head{
+        vertical-align: middle;
+        border-radius: 50%;
+        width: 13.5%;
+        display: inline-block;
+        margin: 2%;
+    }
+    .text{
+        box-sizing: border-box;
+        background: white;
+        padding: 0.6rem;
+        font-size: 0.95rem;
+        color: black;
+        display: inline-block;
+        border-radius: 0.5rem;
+        vertical-align: middle;
+    }
+
+    .right{
+        text-align: right;
+    }
+    .answer{
+        background: url("img/fifth/go.png") no-repeat;
+        background-size: 100% 100%;
+        vertical-align: middle;
+        box-sizing: border-box;
+        padding: 0.2rem 4%;
+        color: black;
+        margin-left: 1%;
+        display: inline-block;
+    }
+
+
+
+    @media only screen and (width: 375px) and (height: 812px){
+        .headimg {
+            margin: 10% auto 5% auto;
+        }
+        .line {
+            width: 100%;
+            margin: 4% auto;
+        }
+        .content {
+            width: 95%;
+
+        }
+        .title {
+            margin: 0 auto 6% auto;
+        }
+
+    }
+
+
+</style>
+<body>
+<img class="headimg" src="img/second/head.png" alt="">
+<span class="title">你可以问我任何问题</span>
+<div class="content">
+    <div class="line ">
+        <img class="head " src="img/second/head.png" alt="">
+        <span class="text ">你喜欢过我吗？</span>
+        <span class="answer">回复</span>
+    </div>
+    <div class="line ">
+        <img  class="head" src="img/second/head.png" alt="">
+        <span class="text">你是90几年的啊？</span>
+    </div>
+    <div class="line  right">
+        <span class="text ">92年的啊</span>
+        <img class="head " src="img/second/head.png" alt="">
+    </div>
+    <div class="line ">
+        <img class="head" src="img/second/head.png" alt="">
+        <span class="text">你喜欢过我吗？</span>
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>
