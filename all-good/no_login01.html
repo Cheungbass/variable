@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>你最像《都挺好》里的谁?</title>
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body>
+<div class="content">
+    <!-- <div class="_back" id="Download">
+        <img src="http://cdn.indus-robot.cn/leftright09.png" alt="">
+        <img src="http://cdn.indus-robot.cn/leftright10.png" alt="">
+    </div> -->
+    <img src="./img/allGood09.png" alt="" class="all-good-head">
+    <img src="./img/allGood08.png" alt="" class="_img01">
+    <div class="_btn01">开始测试</div>
+</div>
+<div class="content1">
+        <div class="star-box1">
+            <div class="leftright01-txt">1.别人邀请你参加聚会，却被你拒<br/> 绝，最大的原因可能是什么?</div>
+            <img src="./img/allGood01.png" alt="" class="leftright02-img">
+            <div class="leftright02-list list1">A 不想把时间浪费在无用的社交</div>
+            <div class="leftright02-list list1">B 最近工作/学习太忙，没时间去</div>
+            <div class="leftright02-list list1">C 单纯嫌麻烦，不想去</div>
+            <div class="leftright02-list list1">D 有点社恐，不习惯人多的场合</div>
+        </div>
+        <div class="star-box2">
+            <div class="leftright01-txt">2.如果上帝将赋予你一种才能，<br />你会想要什么?</div>
+            <img src="./img/allGood02.png" alt="" class="leftright02-img">
+            <div class="leftright02-list list2">A 独一无二的艺术才能，成为艺术家</div>
+            <div class="leftright02-list list2">B 超强的领导力和判断力，成为领导者</div>
+            <div class="leftright02-list list2">C 永不枯竭的创造力，享受创造的乐趣</div>
+            <div class="leftright02-list list2">D 对美好事物的感知力，参透幸福的真谛</div>
+        </div>
+        <div class="star-box3">
+            <div class="leftright01-txt">3.假如你们要举行一个派对，你在 <br />其中的表现可能是？</div>
+            <img src="./img/allGood03.png" alt="" class="leftright02-img">
+            <div class="leftright02-list list3">A 享受当下，和大家一起快乐地疯玩</div>
+            <div class="leftright02-list list3">B 活动组织者，亲力亲为设计活动流程</div>
+            <div class="leftright02-list list3">C 没太多感觉，随大流吃吃喝喝</div>
+            <div class="leftright02-list list3">D 社恐患者，想办法推了这个邀请</div>
+        </div>
+        <div class="star-box4">
+            <div class="leftright01-txt">4.如果派对冷场了，你...</div>
+            <img src="./img/allGood04.png" alt="" class="leftright02-img">
+            <div class="leftright02-list list4">A 讲点沙雕有趣的东西来调节气氛</div>
+            <div class="leftright02-list list4">B 喊大家去拍合照或者打牌做游戏</div>
+            <div class="leftright02-list list4">C 没什么感觉，自顾自玩手机</div>
+            <div class="leftright02-list list4">D 感觉气氛有点不舒服，打算离开</div>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/star.js"></script>
+</html>
+<script>
+    $(function() {
+        $('._back').click(function() {
+            var load_back1 = "{$load_back}";
+            if(load_back1.trim() != "") {
+                $(function() {
+                    if(load_back1.search('http://') == -1) load_back1 = 'http://' + load_back1;
+                    window.location.href = load_back1;
+
+                });
+            }
+            
+        })
+        //单独判断顶部横条显示隐藏
+        var load_back2 = "{$load_back}";
+            if(load_back2.trim() == "") {
+                $('._back').hide();
+            }
+    })
+</script>
+<script>
+    var load_back = "{$load_back}";
+    if(load_back.trim() != "") {
+        $(function() {
+            if(load_back.search('http://') == -1) load_back = 'http://' + load_back;
+            pushHistory();
+            window.addEventListener("popstate", function(e) {
+                window.location.href = load_back;
+            }, false);
+
+            function pushHistory() {
+                var state = {
+                    title: "title",
+                    url: "#"
+                };
+                window.history.pushState(state, "title", "#");
+            }
+
+        });
+    }
+</script>
+<script>
+    function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+    }
+
+    if(typeof WeixinJSBridge == "undefined") {
+        if(document.addEventListener) {
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        } else if(document.attachEvent) {
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    } else {
+        onBridgeReady();
+    }
+</script>

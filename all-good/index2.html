@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>我的左右脑</title>
+	<link rel="stylesheet" href="./css/main.css?s2">
+</head>
+<style>
+	canvas {
+		scale: 0.5
+	}
+
+	.o-img,.img-container img{
+		position: absolute;
+		top: 1.2rem;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 5.7rem;
+        height: 8.7rem;
+		opacity: 0;
+		z-index: 20;
+
+	}
+	.canvasBox{
+		margin: 0 auto;
+		width: 320px;
+		height: 475px;
+		/*background:url({$source}) no-repeat ;*/
+		/*background-size: 100% 100%;*/
+	}
+	.canvasBox img{
+		width: 320px;
+		height: 475px;
+    }
+    .five-fightImg01{
+        width: 7.5rem;
+        height: 0.86rem;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 0.5rem;
+    }
+    .five-fightImg02{
+        width: 3.65rem;
+        height: 0.44rem;
+        display: block;
+        margin: 0.3rem auto;
+    }
+    .imgalert{
+        width:3.63rem ;
+        height: 2.66rem;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 2.26rem;
+    }
+    .leftright-bigTxt{
+        color: #D64F24;
+        font-size: 0.56rem;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 0.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .leftright-bigTxt img{
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+</style>
+
+<body>
+<div class="wap-wrap">
+	<!-- <div class="five-back" id="Download">
+		<img src="http://cdn.indus-robot.cn/leftright11.png" alt="">
+        <img src="http://cdn.indus-robot.cn/leftright12.png" alt="">
+    </div> -->
+    <img src="./img/allGood05.png" class="five-fightImg01" alt="">
+    <div class="PicBox" id="content" style="position: relative; width: 6rem;height: 9rem;margin: 0 auto;overflow: hidden;">
+        <img src="./img/allGood06.png" alt="" style="left:0;top:0;position:absolute;width: 6rem;height: 9rem;">
+        <div style="font-size:0.29rem;color:#1E1B6C;text-align: center;width:6rem;top: 0.2rem;left: 0;right: 0;margin: auto;position: absolute;">ingLing</div>
+        <!-- <div style="width:60px;height:60px;position:absolute;left: 220px;top: 380px" id="code2"></div> -->
+        <img src="" alt="" style="width:1.12rem;height:1.12rem;position:absolute;left: 4.25rem;top: 7.4rem" id="code2">
+    </div>
+    <div style="opacity: 0;">
+        <div class="PicBox" id="content2" style="position: relative; width: 1000px;height: 1500px;margin: 0 auto;overflow: hidden;">
+                <img src="./img/allGood06.png" alt="" style="left:0;top:0;position:absolute;width: 1000px;height: 1500px">
+                <div style="font-size:48px;color:#1E1B6C;text-align: center;width: 1000px;top:33px;left: 0;right: 0;margin: auto;position: absolute;">ingLing</div>
+                <!-- <div style="width:120px;height:120px;position:absolute;left: 440px;top: 760px" id="code3"></div> -->
+                <img src="" alt="" style="width:187px;height:187px;position:absolute;left: 708px;top: 1233px" class="code3img">
+        </div>
+    </div>
+    <!-- <img src="http://cdn.indus-robot.cn/tenyear2_07.png" class="imgalert" alt=""> -->
+    <img src="./img/allGood07.png" class="five-fightImg02" alt="">
+    <div class="img-container touchBox" ></div>
+    <div id="code3" style="display:none"></div>
+</div>
+</body>
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/html2canvas.min.js"></script>
+<script src="./js/canvas2image.js"></script>
+<script src="./js/qrcode.min.js"></script>
+<script>
+    var str = toUtf8("www.baidu.com");
+    $("#code3").qrcode({
+
+    render: "canvas",
+
+    width: 300,
+
+    height:300,
+
+    text: str
+
+    });
+    
+    var codecanvas =  $('#code3 canvas')[0]
+    convertCanvasToImage(codecanvas);
+    function convertCanvasToImage(canvas) {
+        //var image = new Image();
+        var imgUrl= canvas.toDataURL("image/png");
+        $(".code3img").attr('src',imgUrl); 
+        $("#code2").attr('src',imgUrl);
+        console.log(imgUrl)
+
+        //return image;
+    }
+
+
+    var dom=$("#content2"); //你要转变的dom
+        var width = dom.width();
+        var height = dom.height();
+        var type = "png";
+        var scaleBy = 3;  //缩放比例
+        var canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height+35;  //35是我处理完后发现短了一点，具体为什么不清楚,如果你也少的话，根据自己的项目调吧
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        var context = canvas.getContext('2d');
+        // 【重要】关闭抗锯齿
+        context.mozImageSmoothingEnabled = false;
+        context.webkitImageSmoothingEnabled = false;
+        context.msImageSmoothingEnabled = false;
+        context.imageSmoothingEnabled = false;
+        context.scale(scaleBy, scaleBy);
+        html2canvas(dom[0], {
+            canvas:canvas,
+            scale: 3, 
+            onrendered: function (canvas) {
+                dom.css("display","none");//处理完后将dom隐藏,如果一开始就隐藏的话,canvas出不来,不知道大家是不是这样
+                //convertCanvasToImage(canvas);
+        
+                $(".img-container").append(Canvas2Image.convertToImage(canvas,width,height,type));//这是放大了很3倍的图片
+                //$(".img-container img").css("width","320px").css("height","475px");//在将放大的图片用css缩小,在手机上就非常清晰了
+                
+            }
+        });
+
+    function toUtf8(str) {
+
+        var out, i, len, c;
+
+        out = "";
+
+        len = str.length;
+
+        for (i = 0; i < len; i++) {
+
+            c = str.charCodeAt(i);
+
+            if ((c >= 0x0001) && (c <= 0x007F)) {
+
+                out += str.charAt(i);
+
+            } else if (c > 0x07FF) {
+
+                out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+
+                out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+
+            } else {
+
+                out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+
+            }
+
+        }
+
+        return out;
+
+    }
+</script>
+
+</html>
+
+<script>
+    var load_back ="{$load_back}";
+    if (load_back.trim() != "") {
+        $(function(){
+            if (load_back.search('http://') == -1) load_back='http://'+load_back;
+            pushHistory();
+            window.addEventListener("popstate", function(e) {
+                window.location.href=load_back;
+            }, false);
+            function pushHistory() {
+                var state = {
+                    title: "title",
+                    url: "#"
+                };
+                window.history.pushState(state, "title", "#");
+            }
+
+        });
+    }
+
+</script>
+<script>
+	$(function(){
+	    $('.five-back').click(function(){
+            var load_back1 ="{$load_back}";
+            if (load_back1.trim() != "") {
+                $(function(){
+                    if (load_back1.search('http://') == -1) load_back1='http://'+load_back1;
+                    window.location.href=load_back1;
+
+                });
+            }
+		})
+        //单独判断顶部横条显示隐藏
+        var load_back2 = "{$load_back}";
+        if(load_back2.trim() == "") {
+            $('.five-back').hide();
+        };
+        //3秒后消失
+        setTimeout(function(){
+            $('.imgalert').hide();
+        },3000)
+	})
+</script>
+<script>
+    function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+    }
+
+    if (typeof WeixinJSBridge == "undefined") {
+        if (document.addEventListener) {
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        } else if (document.attachEvent) {
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    } else {
+        onBridgeReady();
+    }
+</script>
