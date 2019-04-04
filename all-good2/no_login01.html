@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>你最像《都挺好》里的谁</title>
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body>
+<div class="content">
+    <div class="_back" id="Download">
+        <img src="http://cdn.indus-robot.cn/all-good02.png" alt="">
+        <img src="http://cdn.indus-robot.cn/all-good03.png" alt="">
+    </div>
+    <!-- <img src="./img/allGood09.png" alt="" class="all-good-head"> -->
+    <div class="all-good2-txt01">你的性格像《都挺好》里的谁和谁?</div>
+    <div class="all-good2-txt02">最近一部关于原生家庭的现实剧《都挺好》话题度十分高，反应的是现实生活，也折射出了各色人性的百态，那么你的性格会像里面的谁和谁呢？</div>
+    <img src="http://cdn.indus-robot.cn/all-good01.png" alt="" class="_img01">
+    <div class="_btn01">开始测试</div>
+</div>
+<div class="content1">
+        <div class="_back" id="Download">
+            <img src="http://cdn.indus-robot.cn/all-good02.png" alt="">
+            <img src="http://cdn.indus-robot.cn/all-good03.png" alt="">
+        </div>
+        <div class="star-box1">
+            <div class="star-topic">1/6</div>
+            <div class="leftright01-txt">小时候你妈妈责备你时，你爸爸会？</div>
+            <div class="leftright02-list list1">一边劝妈妈，一边假装数落我</div>
+            <div class="leftright02-list list1">和妈妈一起责备我</div>
+            <div class="leftright02-list list1">找个理由躲开</div>
+            <div class="leftright02-list list1">其他</div>
+        </div>
+        <div class="star-box2">
+                <div class="star-topic">2/6</div>
+                <div class="leftright01-txt">有一天父母岁数大了，养老这件事你打算？</div>
+                <div class="leftright02-list list2">接到自己家方便照顾</div>
+                <div class="leftright02-list list2">给父母请保姆照顾</div>
+                <div class="leftright02-list list2">将父母送进养老院比较好</div>
+                <div class="leftright02-list list2">暂时还没想过</div>
+        </div>
+        <div class="star-box3">
+                <div class="star-topic">3/6</div>
+                <div class="leftright01-txt">你是否愿意为了另一半放弃自己的工作?</div>
+                <div class="leftright02-list list3">愿意</div>
+                <div class="leftright02-list list3">不愿意</div>
+        </div>
+        <div class="star-box4">
+                <div class="star-topic">4/6</div>
+                <div class="leftright01-txt">你会通过下面哪种方式帮自己减压？</div>
+                <div class="leftright02-list list4">出去旅游度假</div>
+                <div class="leftright02-list list4">大吃一顿</div>
+                <div class="leftright02-list list4">找朋友长辈倾诉</div>
+                <div class="leftright02-list list4">运动出汗减压</div>
+                <div class="leftright02-list list4">其他</div>
+        </div>
+        <div class="star-box5">
+                <div class="star-topic">5/6</div>
+                <div class="leftright01-txt">假如你们要举行一个派对，你在其中的表现可能是：</div>
+                <div class="leftright02-list list5">享受当下，和大家一起快乐疯玩</div>
+                <div class="leftright02-list list5">给活动组织者，亲力亲为设计活动流程</div>
+                <div class="leftright02-list list5">一个人静静的呆着，做个安静的美女（男）子</div>
+                <div class="leftright02-list list5">社恐患者，想办法推了这个邀请</div>
+        </div>
+        <div class="star-box6">
+                <div class="star-topic">6/6</div>
+                <div class="leftright01-txt">下面哪个活动，你最感兴趣？</div>
+                <div class="leftright02-list list6">拍卖会</div>
+                <div class="leftright02-list list6">音乐会</div>
+                <div class="leftright02-list list6">画展</div>
+                <div class="leftright02-list list6">漫展</div>
+                <div class="leftright02-list list6">电影展</div>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/star.js"></script>
+</html>
+<script>
+    $(function() {
+        $('._back').click(function() {
+            var load_back1 = "{$load_back}";
+            if(load_back1.trim() != "") {
+                $(function() {
+                    if(load_back1.search('http://') == -1) load_back1 = 'http://' + load_back1;
+                    window.location.href = load_back1;
+
+                });
+            }
+            
+        })
+        //单独判断顶部横条显示隐藏
+        var load_back2 = "{$load_back}";
+            if(load_back2.trim() == "") {
+                $('._back').hide();
+            }
+    })
+</script>
+<script>
+    var load_back = "{$load_back}";
+    if(load_back.trim() != "") {
+        $(function() {
+            if(load_back.search('http://') == -1) load_back = 'http://' + load_back;
+            pushHistory();
+            window.addEventListener("popstate", function(e) {
+                window.location.href = load_back;
+            }, false);
+
+            function pushHistory() {
+                var state = {
+                    title: "title",
+                    url: "#"
+                };
+                window.history.pushState(state, "title", "#");
+            }
+
+        });
+    }
+</script>
+<script>
+    function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+    }
+
+    if(typeof WeixinJSBridge == "undefined") {
+        if(document.addEventListener) {
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        } else if(document.attachEvent) {
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    } else {
+        onBridgeReady();
+    }
+</script>
