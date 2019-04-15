@@ -27,38 +27,46 @@
                 <div class="marvel-fontList ">
                     <img src="./img/marvel07.png" alt="" class="img01">
                     <img src="./img/marvel15.png" alt="" class="img02">
+                    <div class="marvel-fontPop">0</div>
                 </div>
-                <div class="marvel-fontList marvel-fontList-active">
+                <!-- marvel-fontList-active -->
+                <div class="marvel-fontList">
                     <img src="./img/marvel08.png" alt="" class="img01">
                     <img src="./img/marvel16.png" alt="" class="img02">
-                    <div class="marvel-fontPop">1</div>
+                    <div class="marvel-fontPop">0</div>
                 </div>
                 <div class="marvel-fontList">
                     <img src="./img/marvel09.png" alt="" class="img01">
                     <img src="./img/marvel17.png" alt="" class="img02">
+                    <div class="marvel-fontPop">0</div>
                 </div>
                 <div class="marvel-fontList">
                     <img src="./img/marvel10.png" alt="" class="img01">
                     <img src="./img/marvel18.png" alt="" class="img02">
+                    <div class="marvel-fontPop">0</div>
                 </div>
                 <div class="marvel-fontList">
                     <img src="./img/marvel11.png" alt="" class="img01">
                     <img src="./img/marvel19.png" alt="" class="img02">
+                    <div class="marvel-fontPop">0</div>
                 </div>
                 <div class="marvel-fontList">
                     <img src="./img/marvel12.png" alt="" class="img01">
                     <img src="./img/marvel20.png" alt="" class="img02">
+                    <div class="marvel-fontPop">0</div>
                 </div>
                 <div class="marvel-fontList">
                     <img src="./img/marvel13.png" alt="" class="img01">
                     <img src="./img/marvel21.png" alt="" class="img02">
+                    <div class="marvel-fontPop">0</div>
                 </div>
                 <div class="marvel-fontList">
                     <img src="./img/marvel14.png" alt="" class="img01">
                     <img src="./img/marvel22.png" alt="" class="img02">
+                    <div class="marvel-fontPop">0</div>
                 </div>
             </div>
-            <div class="marvel-fontBtn">我要集字（剩余4次）</div>
+            <div class="marvel-fontBtn" id="goLuck1">我要集字（剩余 <span class="luckNum">4</span> 次）</div>
         </div>
         <div class="marvel-listBox">
             <img src="./img/marvel25.png" class="marvel-listHeader1" alt="">
@@ -115,7 +123,7 @@
         <div class="model">
             <div class="model-txt">恭喜您抽中了</div>
             <img src="./img/marvel15.png" class="model-img" alt="">
-            <div class="marvel-fontBtn" id="clickLuck">再次抽奖（剩余2次）</div>
+            <div class="marvel-fontBtn" id="clickLuck">再次抽奖（剩余 <span class="luckNum">4</span> 次）</div>
         </div>
         <img src="./img/marvel28.png" class="model-close" alt="">
     </div>
@@ -127,10 +135,25 @@
         $('.mask').hide()
     })
     $('#clickLuck').click(function () {
-        var random = randomNum(15,22)
+        var luckNum = $('.luckNum').html();
+        if(luckNum >0){
+            goLuck(luckNum)
+        }
+    })
+    function goLuck(luckNum){
+        $('.mask').show()
+        luckNum--;
+        $('.luckNum').html(luckNum);
+        var random1 = randomNum(0,7)
+        var random = random1 + 15
+        var thisfont = $('.marvel-fontList').eq(random1)
+        thisfont.addClass('marvel-fontList-active')
+        var thisfontNum = thisfont.find('.marvel-fontPop').html()
+        thisfontNum++
+        thisfont.find('.marvel-fontPop').html(thisfontNum)
         var imgSrc=  './img/marvel'+random+'.png'
         $('.model-img').attr('src', imgSrc)
-    })
+    }
     function randomNum(minNum, maxNum) {
         switch (arguments.length) {
             case 1:
@@ -144,6 +167,13 @@
                 break;
         }
     } 
+    $('#goLuck1').click(function(){
+        var luckNum = $('.luckNum').html();
+        if(luckNum>0){
+            goLuck(luckNum)
+        }
+        
+    })
 </script>
 
 </html>

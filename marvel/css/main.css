@@ -298,12 +298,17 @@ margin: 0.32rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: #fff;
   border-radius: 0.36rem;
   background: #C2301E;
   font-size:0.26rem;
   right: -0.18rem; 
   top: -0.18rem;
+  display: none;
+}
+.marvel-fontList-active .marvel-fontPop{
+  display:block;
 }
 .marvel-fontList .img01{
   display: block;
@@ -425,7 +430,8 @@ margin: 0 auto;
   top: 0;
   bottom: 0;
   margin: auto;
-  background: rgba(0, 0, 0, 0.8)
+  background: rgba(0, 0, 0, 0.8);
+  display: none
 }
 .model{
   position: fixed;
