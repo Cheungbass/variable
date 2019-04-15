@@ -1,0 +1,466 @@
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+a,
+code,
+em,
+img,
+q,
+small,
+strong,
+dd,
+dl,
+dt,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+table,
+tbody,
+tr,
+th,
+td,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
+  font-family: 'STHeiti', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: none;
+}
+a,
+a:active,
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+}
+a,
+img {
+  -webkit-touch-callout: none;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+textarea,
+input[type="password"],
+input[type="text"] {
+  resize: none;
+  outline: 0;
+  -webkit-appearance: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #fff;
+}
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+
+/**
+ * view-port list:
+320x480
+320x568
+320x570
+360x592
+360x598
+360x604
+360x640
+360x720
+375x667
+375x812
+393x699
+412x732
+414x736
+480x854
+540x960
+640x360
+720x1184
+720x1280
+800x600
+1024x768
+1080x1812
+1080x1920
+ */
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 42.667px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 360px) {
+  html {
+    font-size: 48px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 361px) and (max-width: 375px) {
+  html {
+    font-size: 50px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 393px) {
+  html {
+    font-size: 52.4px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 394px) and (max-width: 412px) {
+  html {
+    font-size: 54.93px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 413px) and (max-width: 414px) {
+  html {
+    font-size: 55.2px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 480px) {
+  html {
+    font-size: 64px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 540px) {
+  html {
+    font-size: 72px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 541px) and (max-width: 640px) {
+  html {
+    font-size: 85.33px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 641px) and (max-width: 720px) {
+  html {
+    font-size: 96px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 721px) and (max-width: 768px) {
+  html {
+    font-size: 102.4px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 102.4px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+body {
+  font-family: "PingFangSC-Regular", "Microsoft YaHei", Helvetica;
+  color: #333333;
+  background: #eaeaea;
+}
+html a {
+  color: #333333;
+}
+.none,
+.hidden {
+  display: none !important;
+}
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 102.4px;
+  }
+  html .wap-wrap ,html .wap-wrap-report{
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  min-height: 10.5rem;
+  background: #07060B;
+}
+.content {
+  font-size: 0.32rem;
+  width: 7.5rem;
+  height: 100%;
+  min-height: 10.5rem;
+  box-sizing: border-box;
+  background: #07060B;
+  position: relative;
+  margin: 0 auto;
+}
+.marvel-img01{
+  width: 7.5rem;
+  height: 9.06rem;
+  
+}
+.marvel-img02{
+  width: 3.13rem;
+  height: 0.68rem;
+  display: block;
+  margin: 0.3rem auto;
+}
+.marvel-time{
+  text-align: center;
+  font-size: 0.3rem;
+  color: #ACACAC;
+}
+.marvel-time span{
+  padding: 0 0.05rem;
+  background: #fff;
+  color: #454C95;
+  margin: 0 0.1rem
+}
+.marvel-play{
+  width: 6.84rem;
+  height: 1.94rem;
+  background: url(../img/marvel24.png) no-repeat;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  padding: 0.25rem 0.58rem;
+  font-size:0.26rem;
+font-family:MicrosoftYaHei;
+font-weight:400;
+color:rgba(42,40,109,1);
+margin: 0.32rem auto;
+}
+.marvel-play img{
+  width: 0.71rem;
+  height: 0.28rem;
+  margin-bottom: 0.13rem;
+  display: block;
+}
+.marvel-fontBox{
+  width: 6.84rem;
+  height: 5.23rem;
+  background: url(../img/marvel05.png) no-repeat;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  padding: 0.56rem 0.3rem;
+  margin: 0 auto;
+}
+.marvel-fontTop{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.marvel-fontList{
+  width:1.36rem;
+  height:1.36rem;
+  background:rgba(210,210,210,1);
+  box-shadow:0px 0px 0.16rem 0px rgba(32, 77, 38, 0.35);
+  border:0.04rem solid rgba(210,210,210,1);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.26rem;
+  margin-bottom: 0.26rem;
+  position: relative;
+}
+.marvel-fontPop{
+  position: absolute;
+  width: 0.36rem;
+  height: 0.36rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 0.36rem;
+  background: #C2301E;
+  font-size:0.26rem;
+  right: -0.18rem; 
+  top: -0.18rem;
+}
+.marvel-fontList .img01{
+  display: block;
+}
+.marvel-fontList .img02{
+  display: none;
+}
+.marvel-fontList:nth-child(4),.marvel-fontList:nth-child(8){
+  margin-right: 0
+}
+.marvel-fontList img{
+  width: 0.55rem;
+  height: 0.55rem;
+}
+.marvel-fontList-active{
+  border: 0.04rem solid #7055DA;
+  background: #EAA277;
+}
+.marvel-fontList-active .img01{
+  display: none;
+}
+.marvel-fontList-active .img02{
+  display: block;
+}
+.marvel-playbox{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.26rem;
+  color: #EE6C1B
+}
+.marvel-playLeft span{
+  color: #2A286D;
+}
+.marvel-playRight span{
+  color: #E73623;
+}
+.marvel-fontBtn{
+  width:5.2rem;
+height:1rem;
+background:linear-gradient(0deg,rgba(19,1,55,1),rgba(63,71,149,1),rgba(105,91,147,1));
+border-radius:0.15rem;
+font-size: 0.38rem;
+line-height: 1rem;
+color: #fff;
+text-align: center;
+margin: 0 auto;
+}
+.marvel-listHeader{
+  width: 2rem;
+  height: 0.57rem;
+  display: block;
+  margin: 0 auto;
+}
+.marvel-listBox{
+  width: 6.85rem;
+  padding: 0.34rem 0.43rem;
+  background:rgba(231,231,231,1);
+  border-radius:0.15rem;
+  margin: 0.44rem auto;
+  box-sizing: border-box;
+}
+.marvel-listHeader1{
+  width: 2.3rem;
+  height: 0.57rem;
+  display: block;
+  margin: 0 auto;
+}
+.marvel-line{
+  width: 5.74rem;
+  height: 0.11rem;
+  display: block;
+  margin: 0.2rem auto;
+}
+.marvel-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.24rem;
+  margin-bottom: 0.3rem;
+  color: #2D2D2D
+}
+.marvel-listLeft{
+  display: flex;
+  align-items: center;
+}
+.marvel-listLeft img{
+  width:0.62rem;
+  height:0.62rem;
+  border-radius:50%;
+  border:1px solid rgba(255,164,107,1);
+  margin-right: 0.2rem;
+}
+.marvel-listname div{
+  width: 2.5rem;
+  overflow: hidden;/*超出部分隐藏*/
+  white-space: nowrap;/*不换行*/
+  text-overflow:ellipsis;/*超出部分文字以...显示*/
+}
+.marvel-rule{
+  font-size: 0.3rem;
+  font-weight:bold;
+  color:rgba(69,76,149,1);
+  margin-top: 0.36rem
+}
+.marvel-rule span{
+  color: #EE6C1B
+}
+.marvel-rule div{
+  margin-bottom: 0.23rem
+}
+.marvel-banner{
+  width: 7.5rem;
+}
+.mask{
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.8)
+}
+.model{
+  position: fixed;
+  z-index: 11;
+  width:5.8rem;
+  height:4.3rem;
+  background:rgba(255,255,255,1);
+  border-radius:0.1rem;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 0.4rem 0;
+  box-sizing: border-box
+}
+.model-img{
+  width: 1.17rem;
+  height: 1.17rem;
+  margin: 0.4rem auto;
+  display: block;
+}
+.model-txt{
+  font-size:0.4rem;
+font-family:MicrosoftYaHei;
+font-weight:400;
+color:rgba(238,108,27,1);
+text-align: center;
+}
+.model-close{
+  width: 0.54rem;
+  height: 0.54rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 2.5rem;
+  margin: auto;
+}

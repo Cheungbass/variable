@@ -1,0 +1,592 @@
+﻿.fudai-list .rt_progress .progress,.fudai-lists .item .btm-msg,.draw-title .info {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.fudai-list .item .inner,.draw-back,.draw-lotto .lotto-area,.draw-lotto .btn-area,.lotto-pop .has_lotto {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex
+}
+
+.draw-lotto .lotto-area {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.draw-back,.lotto-pop .has_lotto {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column
+}
+
+.draw-back,.lotto-pop .has_lotto {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center
+}
+
+.draw-back,.lotto-pop .has_lotto {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.fudai-list .rt_progress .progress ._outer {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1
+}
+
+.fudai-list .rt {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1
+}
+
+html,body {
+    height: auto !important
+}
+
+.wrap {
+    margin: 0 1.0666666667rem
+}
+
+.wp {
+    padding: 0 1.0666666667rem
+}
+
+.draw-success {
+    position: absolute;
+    top: .9244444444rem;
+    left: 1.0666666667rem;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 28px
+}
+
+.draw-success .item {
+    overflow: hidden;
+    width: 12.0888888889rem;
+    height: 28px;
+    padding: 2px;
+    font-size: 11px;
+    line-height: 24px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.draw-success .item .avatar {
+    width: 24px;
+    height: 24px;
+    margin-right: .7111111111rem;
+    border-radius: 50%
+}
+
+.fudai-list {
+    padding-bottom: 1.0666666667rem
+}
+
+.fudai-list .item {
+    padding: 0 1.0666666667rem;
+    margin-top: 1.0666666667rem
+}
+
+.fudai-list .item .inner {
+    padding: 1.0666666667rem;
+    background-color: #fff
+}
+
+.fudai-list .lt {
+    width: 7.8222222222rem;
+    margin-right: 1.0666666667rem;
+    -webkit-box-flex: 7.8222222222rem 0 0;
+    -webkit-flex: 7.8222222222rem 0 0;
+    flex: 7.8222222222rem 0 0
+}
+
+.fudai-list .lt_pic {
+    position: relative;
+    padding-top: 100%
+}
+
+.fudai-list .lt_pic img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+
+.fudai-list .rt_tit {
+    height: 2.8444444444rem;
+    margin-top: -.1422222222rem;
+    font-size: 1.1377777778rem;
+    line-height: 1.4222222222rem;
+    color: #333;
+    overflow: hidden;
+    display: -webkit-box;
+    display: box;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2
+}
+
+.fudai-list .rt_progress {
+    padding-top: .3555555556rem
+}
+
+.fudai-list .rt_progress .status {
+    margin-bottom: .3555555556rem;
+    font-size: .8533333333rem;
+    line-height: 1.0666666667rem;
+    color: #ff8329
+}
+
+.fudai-list .rt_progress .status ._ing {
+    padding: 0 .2844444444rem;
+    font-size: .7111111111rem;
+    color: #fff;
+    background-color: #ff8329;
+    border-radius: 3px
+}
+
+.fudai-list .rt_progress .status ._end {
+    color: #333
+}
+
+.fudai-list .rt_progress .progress {
+    font-size: .8533333333rem;
+    color: #343434
+}
+
+.fudai-list .rt_progress .progress ._outer {
+    overflow: hidden;
+    max-width: 8.5333333333rem;
+    height: .7822222222rem;
+    margin-right: .7111111111rem;
+    background-color: #e5e5e5;
+    border-radius: .3911111111rem
+}
+
+.fudai-list .rt_progress .progress .in {
+    height: inherit;
+    background-color: #ff8329;
+    border-radius: inherit
+}
+
+.fudai-list .rt_date {
+    font-size: .7822222222rem;
+    line-height: 1;
+    color: #969696
+}
+
+.fudai-lists {
+    padding: .8533333333rem
+}
+
+.fudai-lists .item {
+    display: block;
+    background-color: #fff;
+    margin-bottom: 1.0666666667rem;
+    border-radius: 5px
+}
+
+.fudai-lists .item .btm {
+    padding: .8533333333rem
+}
+
+.fudai-lists .item .btm-msg {
+    margin-top: .9955555556rem
+}
+
+.fudai-lists .btm_tit {
+    max-height: 2.5em;
+    font-size: .9955555556rem;
+    font-weight: 500;
+    line-height: 1.3em;
+    overflow: hidden;
+    display: -webkit-box;
+    display: box;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: #2a2a2a
+}
+
+.fudai-lists .btm_date {
+    color: #787878;
+    font-size: .8533333333rem;
+    line-height: 2em
+}
+
+.fudai-lists .btm_button {
+    padding: 0 .5688888889rem;
+    font-size: .8533333333rem;
+    line-height: 2em;
+    color: #fff;
+    border-radius: 3px
+}
+
+.fudai-lists .btm_button.__start {
+    background-color: #ff742f
+}
+
+.fudai-lists .btm_button.__ing {
+    background-color: #da3030
+}
+
+.fudai-lists .btm_button.__end {
+    background-color: #a0a0a0
+}
+
+.draw-back {
+    position: fixed;
+    z-index: 1;
+    bottom: 5rem;
+    bottom: calc(5rem + constant(safe-area-inset-bottom));
+    bottom: calc(5rem + env(safe-area-inset-bottom));
+    right: 1.1377777778rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: .86rem;
+    color: #fff;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 50%
+}
+
+.draw-info {
+    padding-bottom: 1px
+}
+
+.draw-info .section {
+    position: relative;
+    margin-bottom: 1.0666666667rem;
+    background-color: #fff !important;
+    border-radius: .3555555556rem;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.3)
+}
+
+.draw-top .img {
+    width: 100%
+}
+
+.draw-top.__info {
+    margin-bottom: -.9955555556rem
+}
+
+.draw-title {
+    padding-top: 1.1377777778rem;
+    padding-bottom: 1.4222222222rem;
+    text-align: center
+}
+
+.draw-title .countdown {
+    position: relative;
+    padding-bottom: .8533333333rem;
+    margin-bottom: .8533333333rem;
+    font-size: .9955555556rem;
+    line-height: 1.2088888889rem;
+    color: #1e1e1e
+}
+
+.draw-title .countdown .time {
+    font-size: .8533333333rem;
+    color: #4a4a4a
+}
+
+.draw-title .countdown .time em {
+    display: inline-block;
+    vertical-align: top;
+    width: 1.2088888889rem;
+    color: #fff;
+    background-color: #ff8329;
+    border-radius: 3px
+}
+
+.draw-title .countdown:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    border-bottom: 1px dashed #bcbcbc
+}
+
+.draw-title .name {
+    margin-bottom: .2133333333rem;
+    font-size: 1.28rem;
+    font-weight: bold;
+    line-height: 1.7066666667rem;
+    color: #1e1e1e
+}
+
+.draw-title .act_time {
+    font-size: .8533333333rem;
+    color: #777
+}
+
+.draw-title .progress_area {
+    padding: 1.4222222222rem 1.7777777778rem .7111111111rem
+}
+
+.draw-title .progress {
+    overflow: hidden;
+    height: 1.0666666667rem;
+    margin-bottom: .5688888889rem;
+    background-color: #e5e5e5;
+    border-radius: .5333333333rem
+}
+
+.draw-title .progress .in {
+    height: inherit;
+    background-color: #ff8329;
+    border-radius: inherit
+}
+
+.draw-title .info {
+    font-size: .8533333333rem;
+    color: #777
+}
+
+.draw-title .views {
+    padding-top: .64rem;
+    font-size: .9244444444rem;
+    color: #1f1f1f
+}
+
+.draw-title .views:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.draw-lotto {
+    padding-top: 2.1333333333rem;
+    padding-bottom: 2.1333333333rem
+}
+
+.draw-lotto .lotto-area {
+    margin-bottom: 1.7777777778rem
+}
+
+.draw-lotto .lotto-area .img-box {
+    margin-bottom: .5333333333rem;
+    text-align: center
+}
+
+.draw-lotto .lotto-area .img-box .img {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 3.7688888889rem;
+    height: 3.7688888889rem
+}
+
+.draw-lotto .lotto-area .img-box .img img {
+    display: none
+}
+
+.draw-lotto .lotto-area .img-box .img .active {
+    display: block
+}
+
+.draw-lotto .lotto-area .img-box .num {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 32px;
+    color: #fff;
+    border-radius: 50%;
+    transform: translate(40%, -40%) scale(0.5);
+    background-color: #ff8329
+}
+
+.draw-lotto .lotto-area .img-box .num.on {
+    display: block
+}
+
+.draw-lotto .btn-area .btn {
+    height: 2.8444444444rem;
+    margin: 0 .4977777778rem;
+    font-size: 1.0666666667rem;
+    text-align: center;
+    line-height: 2.8444444444rem;
+    color: #fff;
+    background-color: #ff8329;
+    border-radius: 1.4222222222rem
+}
+
+.draw-lotto .btn-area .btn-primary {
+    flex: 1.5
+}
+
+.draw-lotto .btn-area .btn-second {
+    flex: 1
+}
+
+.draw-intro {
+    padding-top: .3555555556rem;
+    padding-bottom: 1.4222222222rem
+}
+
+.draw-intro .title {
+    font-size: 1.0666666667rem;
+    text-align: center;
+    line-height: 2.8444444444rem
+}
+
+.draw-intro .title:after {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg)
+}
+
+.draw-intro .content {
+    overflow: hidden;
+    font-size: .9244444444rem;
+    line-height: 1.6355555556rem;
+    color: #6b6b6b
+}
+
+.m-pop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%
+}
+
+.m-pop .shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6)
+}
+
+.m-pop .modal {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.m-pop .close {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #fff;
+    margin-top: .8533333333rem;
+    margin-left: -14px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 28px;
+    color: #fff;
+    border-radius: 50%
+}
+
+
+.lotto-pop .has_lotto {
+    height: 13.6177777778rem
+}
+
+.lotto-pop .has_lotto .txt {
+    margin-bottom: 1.4222222222rem;
+    font-size: 1.0666666667rem;
+    line-height: 1.7066666667rem;
+    color: #fff
+}
+
+.lotto-pop .has_lotto .card {
+    width: 6.0444444444rem;
+    margin-bottom: 1.4222222222rem
+}
+
+.lotto-pop .btn-wrap {
+    position: absolute;
+    bottom: 1.92rem;
+    left: 0;
+    width: 100%
+}
+
+.lotto-pop .btn-wrap .btn {
+    display: block;
+    width: 12.3022222222rem;
+    margin: 0 auto;
+    font-size: .9244444444rem;
+    text-align: center;
+    line-height: 2.4177777778rem;
+    color: #fff;
+    background-color: #ff8329;
+    border-radius: 1.2088888889rem
+}
+
+.wx-share {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    font-size: 1.0666666667rem;
+    text-align: center;
+    line-height: 1.7777777778rem;
+    color: #fff;
+    background-color: rgba(0,0,0,0.4)
+}
+
+.wx-share .img {
+    padding: .9955555556rem 1.9911111111rem;
+    text-align: right
+}
+
+.wx-share .img img {
+    width: 7.1111111111rem;
+    vertical-align: top
+}
+
+.fix-kefu {
+    position: fixed;
+    bottom: 7.1111111111rem;
+    right: 0;
+    z-index: 9;
+    width: 3.5555555556rem;
+    font-size: .8533333333rem;
+    text-align: center;
+    line-height: 1.28rem;
+    color: #fff
+}
+/*# sourceMappingURL=main.css.map */
