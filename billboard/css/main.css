@@ -1,0 +1,355 @@
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+a,
+code,
+em,
+img,
+q,
+small,
+strong,
+dd,
+dl,
+dt,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+table,
+tbody,
+tr,
+th,
+td,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
+  font-family: 'STHeiti', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: none;
+}
+a,
+a:active,
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+}
+a,
+img {
+  -webkit-touch-callout: none;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+textarea,
+input[type="password"],
+input[type="text"] {
+  resize: none;
+  outline: 0;
+  -webkit-appearance: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #fff;
+}
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+
+/**
+ * view-port list:
+320x480
+320x568
+320x570
+360x592
+360x598
+360x604
+360x640
+360x720
+375x667
+375x812
+393x699
+412x732
+414x736
+480x854
+540x960
+640x360
+720x1184
+720x1280
+800x600
+1024x768
+1080x1812
+1080x1920
+ */
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 42.667px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 360px) {
+  html {
+    font-size: 48px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 361px) and (max-width: 375px) {
+  html {
+    font-size: 50px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 393px) {
+  html {
+    font-size: 52.4px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 394px) and (max-width: 412px) {
+  html {
+    font-size: 54.93px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 413px) and (max-width: 414px) {
+  html {
+    font-size: 55.2px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 480px) {
+  html {
+    font-size: 64px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 540px) {
+  html {
+    font-size: 72px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 541px) and (max-width: 640px) {
+  html {
+    font-size: 85.33px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 641px) and (max-width: 720px) {
+  html {
+    font-size: 96px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 721px) and (max-width: 768px) {
+  html {
+    font-size: 102.4px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 102.4px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+body {
+  font-family: "PingFangSC-Regular", "Microsoft YaHei", Helvetica;
+  color: #333333;
+  background: #6615DA;
+}
+html a {
+  color: #333333;
+}
+.none,
+.hidden {
+  display: none !important;
+}
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 102.4px;
+  }
+  html .wap-wrap ,html .wap-wrap-report{
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  min-height: 10.5rem;
+  background: #6615DA;
+}
+.content{
+  margin: 0 auto;
+  width: 7.5rem;
+  font-size: 0.3rem;
+}
+.bill-header{
+  width: 7.5rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  background: #8769FF;
+  text-align: center;
+}
+.bill-headerList{
+  width: 3.75rem;
+  box-sizing: border-box;
+}
+.bill-headerName{
+  font-size:0.28rem;
+font-family:MicrosoftYaHei;
+font-weight:400;
+color:rgba(255,255,255,1);
+}
+.bill-headerNum{
+  font-size:0.44rem;
+font-family:MicrosoftYaHei;
+font-weight:400;
+color:rgba(255,205,46,1);
+}
+.head-right{
+  border-right: 1px solid #6615DA
+}
+.bill-main{
+  width: 7.1rem;
+  height: 3.64rem;
+  display: flex;
+  background: url(http://public.pdruyujx.cn/phb05.png) no-repeat;
+  background-size: 100% 100%;
+  margin: 0.3rem auto;
+  text-align: center;
+}
+.bill-topHead{
+  width: 1.33rem;
+  height: 1.72rem;
+  
+  box-sizing: border-box;
+  padding-top: 0.40rem;
+  margin: 0 auto;
+}
+.bill-topHead1{
+  background: url(http://public.pdruyujx.cn/phb01.png) no-repeat;
+  background-size: 100% 100%;
+  transform: scale(1.2);
+  margin-bottom: 0.4rem;
+}
+.bill-topHead2{
+  background: url(http://public.pdruyujx.cn/phb02.png) no-repeat;
+  background-size: 100% 100%;
+}
+.bill-topHead3{
+  background: url(http://public.pdruyujx.cn/phb03.png) no-repeat;
+  background-size: 100% 100%;
+}
+.bill-topHead img{
+  width: 1.28rem;
+  height: 1.28rem;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%
+}
+.bill-topName{
+  font-size: 0.28rem;
+  color: #FFF;
+  margin-top: 0.15rem;
+}
+.bill-topName span{
+  color: #F7CB02;
+}
+.bill-top1{
+  flex: 1;
+  padding-top: 0.57rem;
+  box-sizing: border-box;
+}
+.bill-top2{
+  flex: 1.5;
+  padding-top: 0.14rem;
+  box-sizing: border-box;
+}
+.bill-all{
+  width: 7.1rem;
+  height: 7.24rem;
+  background: #8769FF;
+  border-radius: 0.2rem;
+  margin: 0 auto;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.bill-list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.28rem;
+  color: #fff;
+  padding: 0.2rem 0.48rem;
+  border-bottom: 1px solid #6615DA
+}
+.bill-listLeft{
+  display: flex;
+  align-items: center;
+}
+.bill-listNum{
+  color: #FFC500;
+}
+.bill-listName{
+  width: 3rem;
+  overflow: hidden;/*超出部分隐藏*/
+  white-space: nowrap;/*不换行*/
+  text-overflow:ellipsis;/*超出部分文字以...显示*/
+}
+.bill-listLeft img{
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 0.6rem;
+  margin: 0 0.2rem;
+}
+.bill-listRight{
+  display: flex;
+  align-items: center;
+
+}
+.bill-listRight img{
+  width: 0.31rem;
+  height: 0.31rem;
+  margin-right: 0.2rem;
+}
+.bill-listRight div{
+  width: 1rem;
+  overflow: hidden;/*超出部分隐藏*/
+  white-space: nowrap;/*不换行*/
+  text-overflow:ellipsis;/*超出部分文字以...显示*/
+}
