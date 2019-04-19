@@ -355,6 +355,7 @@ line-height: 1rem;
 color: #fff;
 text-align: center;
 margin: 0 auto;
+position: relative;
 }
 .marvel-listHeader{
   width: 2rem;
@@ -363,8 +364,8 @@ margin: 0 auto;
   margin: 0 auto;
 }
 .marvel-listBox{
-  width: 6.85rem;
-  padding: 0.34rem 0.43rem;
+  width: 7rem;
+  padding: 0.34rem 0.23rem;
   background:rgba(231,231,231,1);
   border-radius:0.15rem;
   margin: 0.44rem auto;
@@ -438,8 +439,8 @@ margin: 0 auto;
 .model{
   position: fixed;
   z-index: 11;
-  width:5.8rem;
-  height:4.3rem;
+  width:6.8rem;
+  height:7.3rem;
   background:rgba(255,255,255,1);
   border-radius:0.1rem;
   left: 0;
@@ -462,16 +463,20 @@ font-family:MicrosoftYaHei;
 font-weight:400;
 color:rgba(238,108,27,1);
 text-align: center;
+position: relative;
 }
 .model-close{
   width: 0.54rem;
   height: 0.54rem;
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
-  bottom: 2.5rem;
+  bottom: -4.5rem;
   margin: auto;
 }
 .marvel-container{
   height:4rem
+}
+.marvel-listRight{
+  font-size: 0.18rem
 }
