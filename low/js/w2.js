@@ -29,31 +29,54 @@ $(function() {
     var config = {
         tpl: {
             body: [
-                '<div class="red-packet-container index-show-more-body" style="display: none;">',
-                '  <div class="top-box">',
-                '    <div class="cont-head-portrait">',
-                '      <img   src="http://public.pdruyujx.cn/303964e96c71b2817fb3d605ca47dc7.png">',
-                "    </div>",
-                '    <div class="cont-desc-blessing">',
-                '      <p style="font-size: 23px;">喜结良缘,感恩回馈</p>',
-                '      <p>全民派发现金红包<i class="icon-prompt">可提现</i></p>',
-                "    </div>",
+                // '<div class="red-packet-container index-show-more-body" style="display: none;">',
+                // '  <div class="top-box">',
+                // '    <div class="cont-head-portrait">',
+                // '      <img   src="http://public.pdruyujx.cn/303964e96c71b2817fb3d605ca47dc7.png">',
+                // "    </div>",
+                // '    <div class="cont-desc-blessing">',
+                // '      <p style="font-size: 23px;">喜结良缘,感恩回馈</p>',
+                // '      <p>全民派发现金红包<i class="icon-prompt">可提现</i></p>',
+                // "    </div>",
+                // // '    <a class="btn-open-red-packet" href="javascript:;"><span>開</span></a>',
                 // '    <a class="btn-open-red-packet" href="javascript:;"><span>開</span></a>',
-                '    <a class="btn-open-red-packet" href="javascript:;"><span>開</span></a>',
-                '    <p class="cont-desc-bottom">- 今日已有<span>27671</span>人領取 -</p>',
-                "  </div>",
-                '  <ul class="list"></ul>',
-                "</div>",
+                // '    <p class="cont-desc-bottom">- 今日已有<span>27671</span>人領取 -</p>',
+                // "  </div>",
+                // '  <ul class="list"></ul>',
+                // "</div>",
+                // '<div class="award-container award-body" style="display: none;">',
+                // '  <p class="content-top-tips">恭喜领取红包</p>',
+                // '  <p class="content-price">',
+                // '    <sup>￥</sup><span class="js_money"></span><i class="icon-highest">最高</i>',
+                // "  </p>",
+                // '  <div class="content-charge-box">',
+                // '    <a class="charge-btn" href="javascript:;">立即领取红包</a>',
+                // '    <p class="charge-tips">今日24点前未收钱，将收回红包资格<br/><span style="color: red;">如多次领取以最后一次领取金额为准</span></p>',
+                // "  </div>",
+                // '  <p class="content-tips-total">总共100000份，已成功发出46786份红包</p>',
+                // "</div>"
+                '<div class="red-box">',
+                    '<div class="red-content">',
+                        '<img src="http://public.pdruyujx.cn/didi01.png" class="red-didilogo" alt="">',
+                        '<div class="red-didiFont1">滴滴</div>',
+                        '<div class="red-didiFont1">给你发了一个随机红包</div>',
+                        '<div class="red-didiFont2">五周年感恩老客户</div>',
+                        '<img src="http://public.pdruyujx.cn/didi02.png" alt="" srcset="" class="red-open">',
+                       ' <img src="http://public.pdruyujx.cn/didi05.png" class="red-didiCLose" alt="">',
+                    '</div>',
+                '</div>',
                 '<div class="award-container award-body" style="display: none;">',
-                '  <p class="content-top-tips">恭喜领取红包</p>',
+                '  <p class="content-top-tips">滴滴的红包</p>',
+                '  <p class="content-top-tips1">恭喜你抽中五周年红包</p>',
                 '  <p class="content-price">',
                 '    <sup>￥</sup><span class="js_money"></span><i class="icon-highest">最高</i>',
                 "  </p>",
+                '  <p class="content-top-tips3">分享到朋友圈，15分钟后将存入钱包</p>',
                 '  <div class="content-charge-box">',
-                '    <a class="charge-btn" href="javascript:;">立即领取红包</a>',
-                '    <p class="charge-tips">今日24点前未收钱，将收回红包资格<br/><span style="color: red;">如多次领取以最后一次领取金额为准</span></p>',
+                '    <a class="charge-btn" href="javascript:;">点击领取</a>',
+                // '    <p class="charge-tips">今日24点前未收钱，将收回红包资格<br/><span style="color: red;">如多次领取以最后一次领取金额为准</span></p>',
                 "  </div>",
-                '  <p class="content-tips-total">总共100000份，已成功发出46786份红包</p>',
+                // '  <p class="content-tips-total">总共100000份，已成功发出46786份红包</p>',
                 "</div>"
             ].join(""),
             userItem: [
@@ -350,7 +373,7 @@ $(function() {
             $(".index-show-more-body .list li")
             .eq(0)
             .width() + "px";
-        addUser();
+        //addUser();
         startTimer();
     }
 
@@ -364,7 +387,7 @@ $(function() {
         );
         $(".index-show-more-body").show();
         $(".js_money").text(rondnum);
-        initUser();
+       // initUser();
     }
 
     function openPacket() {
@@ -374,15 +397,15 @@ $(function() {
     }
 
     function bindEvent() {
-        $(document.body).on("click", ".btn-open-red-packet", function() {
-            var $this = $(".btn-open-red-packet");
-            if ($this.hasClass("open")) {
+        $(document.body).on("click", ".red-open", function() {
+            var $this = $(".red-open");
+            if ($this.hasClass("red-openani")) {
                 return false;
             }
-            $this.addClass("open");
+            $this.addClass("red-openani");
             // goShare();
             setTimeout(function() {
-                $(".index-show-more-body").fadeOut(700);
+                $(".red-box").fadeOut(700);
                 $(".award-body").fadeIn(700);
             }, 1500);
             record("play", site);

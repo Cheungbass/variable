@@ -87,3 +87,60 @@
     box-sizing: border-box;
     color: #000;
 }
+.red-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F4F4F4;
+}
+.red-content{
+    width: 2.8rem;
+    height: 4rem;
+    margin: 0 auto;
+    background: url(http://public.pdruyujx.cn/didi03.png) no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 0.43rem;
+    position: relative;
+}
+.red-open{
+    width: 0.9rem;
+    height: 0.9rem;
+    display: block;
+    margin: 0 auto;
+    cursor:pointer
+}
+.red-didilogo{
+    width: 0.6rem;
+    height: 0.6rem;
+    display: block;
+    margin: 0.15rem auto;
+
+}
+.red-didiFont1{
+    font-size: 0.14rem;
+    margin-bottom: 0.15rem;
+    color: #FAF4BF;
+}
+.red-didiFont2{
+    font-size: 0.26rem;
+    font-weight: bold;
+    margin-bottom:0.3rem;
+    
+    color: #FAF4BF;
+}
+.red-didiCLose{
+    position: absolute;
+    left:0.15rem ;
+    top: 0.15rem;
+    width: 0.17rem;
+    height: 0.17rem;
+}
+.red-openani {
+    -webkit-animation: open .6s infinite alternate;
+    -ms-animation: open .6s infinite alternate;
+    animation: open .6s infinite alternate
+}
