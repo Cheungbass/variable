@@ -56,7 +56,7 @@ $(function() {
                 // '  <p class="content-tips-total">总共100000份，已成功发出46786份红包</p>',
                 // "</div>"
                 '<div class="red-box">',
-                    '<div class="red-content">',
+                    '<div class="red-content red-ani">',
                         '<img src="http://public.pdruyujx.cn/didi01.png" class="red-didilogo" alt="">',
                         '<div class="red-didiFont1">滴滴</div>',
                         '<div class="red-didiFont1">给你发了一个随机红包</div>',
