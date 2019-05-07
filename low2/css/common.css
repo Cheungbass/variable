@@ -1,0 +1,547 @@
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+a,
+code,
+em,
+img,
+q,
+small,
+strong,
+dd,
+dl,
+dt,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+table,
+tbody,
+tr,
+th,
+td,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
+  font-family: 'STHeiti', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: none;
+}
+a,
+a:active,
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+}
+a,
+img {
+  -webkit-touch-callout: none;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+textarea,
+input[type="password"],
+input[type="text"] {
+  resize: none;
+  outline: 0;
+  -webkit-appearance: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #fff;
+}
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+
+/**
+ * view-port list:
+320x480
+320x568
+320x570
+360x592
+360x598
+360x604
+360x640
+360x720
+375x667
+375x812
+393x699
+412x732
+414x736
+480x854
+540x960
+640x360
+720x1184
+720x1280
+800x600
+1024x768
+1080x1812
+1080x1920
+ */
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 42.667px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 360px) {
+  html {
+    font-size: 48px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 361px) and (max-width: 375px) {
+  html {
+    font-size: 50px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 393px) {
+  html {
+    font-size: 52.4px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 394px) and (max-width: 412px) {
+  html {
+    font-size: 54.93px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 413px) and (max-width: 414px) {
+  html {
+    font-size: 55.2px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 480px) {
+  html {
+    font-size: 64px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 540px) {
+  html {
+    font-size: 72px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 541px) and (max-width: 640px) {
+  html {
+    font-size: 85.33px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 641px) and (max-width: 720px) {
+  html {
+    font-size: 96px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 721px) and (max-width: 768px) {
+  html {
+    font-size: 102.4px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 102.4px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+body {
+  font-family: "PingFangSC-Regular", "Microsoft YaHei", Helvetica;
+  color: #333333;
+  background: #ffd44a;
+}
+html a {
+  color: #333333;
+}
+.none,
+.hidden {
+  display: none !important;
+}
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 102.4px;
+  }
+  html .wap-wrap ,html .wap-wrap-report{
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  min-height: 10.5rem;
+  background: #ffd44a;
+}
+.content {
+  font-size: 0.32rem;
+  width: 100%;
+  height: 100%;
+  min-height: 10.5rem;
+  box-sizing: border-box;
+  padding-top: 0.5rem;
+  background: #ffd44a;
+  position: relative;
+}
+.fIve-header{
+    font-size: 0.44rem;
+    text-align: center;
+    color: #C31A1A;
+    font-weight:400;
+}
+._img01{
+    width: 6rem;
+    height: 3.05rem;
+    display: block;
+    margin: 0.4rem auto;
+}
+.five-img02{
+    width: 4.8rem;
+    height: 1.35rem;
+    display: block;
+    margin: 0 auto;
+}
+.five-img03{
+    width: 5.1rem;
+    height: 0.73rem;
+    display: block;
+    margin: 0.35rem auto;
+}
+._btn01{
+   	width: 5.34rem;
+    height: 0.93rem;
+    line-height: 0.93rem;
+    font-size: 0.4rem;
+    /* margin: 0.5rem auto; */
+    color: #ffd44a;
+    /* background: #98BCFF; */
+    /* border-radius: 0.15rem; */
+    margin: 0.4rem auto;
+    /* background: #e26c52; */
+    text-align: center;
+    position: relative;
+    /* border-radius: 0.15rem; */
+    background: url(../img/矩形-3@2x.png) no-repeat;
+    background-size: 100% 100%;
+}
+._btn01::after{
+  content: '';
+  background: url(http://public.pdruyujx.cn/name08.gif) no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  position: absolute;
+  width: 1.7rem;
+  height: 1.42rem;
+  right: 0;
+  top: 0;
+}
+.pigyear-fight{
+  width: 1.45rem;
+  height: 1.45rem;
+  position: absolute;
+  left: 5.11rem;
+  top: 0.1rem;
+  animation:gogogo 1s infinite linear ;
+}
+@keyframes gogogo {
+  0%{
+    transform: translate(0rem,0rem);
+  }
+  50%{
+    transform: translate(0.3rem,0.3rem);
+  }
+  100%{
+    transform: translate(0rem,0rem);
+  }
+}
+._img0{
+  width: 4.57rem;
+  height: 0.53rem;
+  margin: 0 auto;
+  display: block;
+}
+.five-userheader{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid #FDB64D;
+    display: block;
+    margin: 0 auto;
+}
+.five-mian{
+    width: 6rem;
+    height: 9.72rem;
+    margin: 0 auto;
+    -moz-background-size:100% 100%;
+    box-sizing: border-box;
+    padding-top: 0.2rem;
+}
+.five-mainHader{
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 1.2rem;
+    border: 1px solid #FDB64D;
+    display: block;
+    margin: 0 auto;
+}
+.five-mainNickname{
+    color: #F4B251;
+    font-size: 0.35rem;
+    text-align: center;
+    margin: 0.2rem auto;
+}
+.five-mainTxt{
+    font-size:0.35rem;
+    font-family:MicrosoftYaHei-Bold;
+    font-weight:bold;
+    color: #F4B251;
+    text-align: center;
+}
+.five-mianList{
+    width: 4.8rem;
+    padding: 0.15rem 0.25rem;
+    color: #C31A1A;
+    background: #FFD18D;
+    border-radius: 0.15rem;
+    font-size: 0.27rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 0.25rem;
+}
+.five-mianList::after{
+    content: '';
+    background: url(../img/five05.png) no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    width: 0.38rem;
+    height: 0.38rem;
+}
+.five-mian-qrcode{
+    display: flex;
+    width: 4.8rem;
+    margin: 0.25rem auto;
+    align-items: center;
+}
+.five-mian-qrcode img,.five-mian-qrcodeIMg{
+    width: 1.08rem;
+    height: 1.08rem;
+    margin-right: 0.25rem
+}
+.five-mian-qrcode .five-mian-qrcodeTxt{
+    font-size: 0.27rem;
+    color: #FFD18D;
+}
+._back{
+    width: 7.2rem;
+    box-sizing: border-box;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.3rem;
+    height: 0.8rem;
+    line-height:0.8rem;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.five-fight{
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    width: 100%;
+    font-size: 0.35rem;
+    background: #FFF5BF;
+    color: #C31A1A;
+    font-weight: bold;
+}
+.five-pepole{
+    width: 3.5rem;
+    box-sizing: border-box;
+    font-size: 0.24rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    height: 0.5rem;
+    line-height: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 0.3rem auto;
+    padding-left: 0.2rem;
+    display: flex;
+    align-items: center;
+}
+.five-pepole span{
+    color: yellow;
+}
+.five-pepole::before{
+    content: '';
+    display: block;
+    width: 0.15rem;
+    height: 0.15rem;
+    border-radius: 0.2rem;
+    background:#C31A1A;
+    margin-right: 0.1rem;
+}
+.five-maincanvans{
+  width: 6rem;
+    height: 9.72rem;
+    margin: 0 auto;
+    display: block;
+}
+.peopelCreat{
+  width: 3rem;
+  height: 0.5rem;
+  display: block;
+  margin: 0 auto;
+}
+._back img{
+  width: 0.7rem;
+  height: 0.7rem;
+}
+.tenyear2_txt{
+  text-align: center;
+  color: #1A1A1A;
+  font-size: 0.6rem;
+  margin: 0rem auto
+}
+.tenyear2_img{
+  width: 5.46rem;
+  height: 0.7rem;
+  display: block;
+  margin: 0.4rem auto;
+}
+.content1{
+  font-size: 0.32rem;
+  width: 100%;
+  height: 100%;
+  min-height: 10.5rem;
+  box-sizing: border-box;
+  padding-top: 0.46rem;
+  background: #D3E3FF;
+  position: relative;
+  display: none
+}
+.leftright01-txt{
+  font-size: 0.4rem;
+  text-align: center;
+  font-weight: bold;
+}
+.leftright01-list{
+  background: #FDC686;
+  width: 6.2rem;
+  height: 3.36rem;
+  border-radius: 0.15rem;
+  padding: 0.2rem;
+  box-sizing: border-box;
+  border:0.06rem solid #FDC686;
+  text-align: center;
+  font-size: 0.38rem;
+  color: #D64F24;
+  margin: 0.5rem auto;
+}
+.leftright01-list img{
+  width: 5.78rem;
+  height: 2.24rem;
+}
+.star-box2,.star-box3,.star-box4{
+  display: none
+}
+
+.leftright02-img{
+  width: 6.4rem;
+  height: 4.14rem;
+  margin: 0 auto;
+  margin-top: 0.4rem;
+  border-radius: 0.15rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.leftright02-list{
+  width: 6.4rem;
+  height: 0.96rem;
+  background: #98BCFF;
+  border-radius: 0.15rem;
+  margin: 0.2rem auto;
+  box-sizing: border-box;
+  font-size: 0.32rem;
+  color: #1E1B6C;
+  /* padding: 0 0.3rem; */
+  padding-left: 0.3rem;
+  line-height: 0.96rem;
+  border:0.06rem solid #98BCFF;
+}
+.leftright03-listBox{
+  width: 6.8rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.7rem auto;
+  flex-wrap: wrap;
+}
+.leftright03-list{
+  width: 3.2rem;
+  padding: 0.2rem 0;
+  box-sizing: border-box;
+  background: #FDC686;
+  border:0.06rem solid #FDC686;
+  font-size: 0.32rem;
+  color: #D64F24;
+  text-align: center;
+  border-radius: 0.15rem;
+  margin-bottom: 0.3rem;
+}
+.leftright03-list img{
+  width: 2.9rem;
+  height: 2.24rem;
+  display: block;
+  margin: 0 auto;
+}
+.leftright01-list-active,.leftright02-list-active{
+  border:0.06rem solid #1E1B6C;
+}
+.all-good-head{
+  width: 6.4rem;
+  height: 5.2rem;
+  display: block;
+  margin: 0 auto;
+}

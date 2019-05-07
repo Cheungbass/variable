@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    font-family: "microsoft yahei";
+  }
+
+  .swiper-container {
+    /*  width: 320px;
+        height: 480px;*/
+    width: 100%;
+    height: 100%;
+    background: #fff;
+  }
+
+  .swiper-slide1 {
+    width: 100%;
+    height: 100%;
+    /* background: url(http://public.pdruyujx.cn/2ec230b6-1b0b-4dae-8287-3f97b05edbd7.jpg) no-repeat center top;
+    background-size: auto 100%; */
+    background: #000
+  }
+  .swiper-slide2 {
+    width: 100%;
+    height: 100%;
+   background: #ff8000
+  }
+
+  .swiper-slide3 {
+    width: 100%;
+    height: 100%;
+    background: url(http://cdn.indus-robot.cn/dang22_bg.png) no-repeat center top;
+    background-size: auto 100%;
+  }
+
+  .swiper-slide4 {
+    width: 100%;
+    height: 100%;
+    background: url(http://cdn.indus-robot.cn/dang23_bg.png) no-repeat center top;
+    background-size: auto 100%;
+  }
+
+  img {
+    display: block;
+  }
+
+  .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    opacity: .4;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  @-webkit-keyframes tipmove {
+    0% {
+      bottom: 10px;
+      opacity: 0
+    }
+
+    50% {
+      bottom: 15px;
+      opacity: 1
+    }
+
+    100% {
+      bottom: 20px;
+      opacity: 0
+    }
+  }
+
+  .ani {
+    position: absolute;
+  }
+
+  .txt {
+    position: absolute;
+  }
+
+  #array {
+    position: absolute;
+    z-index: 999;
+    -webkit-animation: tipmove 1.5s infinite ease-in-out;
+  }
+
+  .love-music {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 20;
+  }
+
+  .play_music {
+    animation: rotating 5s linear infinite
+  }
+
+  @keyframes rotating {
+    from {
+      transform: rotate(0)
+    }
+
+    to {
+      transform: rotate(360deg)
+    }
+  }
