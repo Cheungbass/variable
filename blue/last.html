@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="./static/css/last.css?111">
+</head>
+<body>
+<div class="wap-wrap">
+    <div class="blue-head">流量红包</div>
+    <div class="blue-qr">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558532987849&di=723ef1247b9dc300d74c33a4628eca02&imgtype=0&src=http%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_png%2FkD2BwibncCkYqdbC4FunNelTAjqxq6sFR8n1giaY52SIkdl2szrHD9lkoajvaqhxMRRYwx9eLoqzTPmkrjJsR71g%2F640%3Fwx_fmt%3Dpng" alt="" srcset="">
+    </div>
+    <div class="blue-txt1">恭喜您</div>
+    <div class="blue-txt2">流量红包正在排队派发中...</div>
+    <div class="blue-txt2">请关注公众号并签到，48小时内自动到账</div>
+    <div class="blue-txt3">注意：请保留朋友圈分享，否则流量红包会发放失败</div>
+
+    <!-- <div class="last-txt">由于入群人数较多，</div>
+    <div class="last-txt">客服会在3小时内拉你进群，</div>
+    <div class="last-txt">请勿删除朋友圈信息，以便核对。</div>
+    <div class="last-txt">感谢你的参与。</div> -->
+</div>
+</body>
+
+</html>
+<script src="./static/js/jquery-1.9.1.min.js"></script>
+<script>
+    var load_back ="{$share_load}";
+    if (load_back.trim() != "") {
+        $(function(){
+            if (load_back.search('http://') == -1) load_back='http://'+load_back;
+            pushHistory();
+            window.addEventListener("popstate", function(e) {
+                window.location.href=load_back;
+            }, false);
+            function pushHistory() {
+                var state = {
+                    title: "title",
+                    url: "#"
+                };
+                window.history.pushState(state, "title", "#");
+            }
+
+        });
+    }
+</script>
+<script>
+    function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+    }
+
+    if (typeof WeixinJSBridge == "undefined") {
+        if (document.addEventListener) {
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        } else if (document.attachEvent) {
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    } else {
+        onBridgeReady();
+    }
+</script>

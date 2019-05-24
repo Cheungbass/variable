@@ -1,0 +1,599 @@
+.page {
+    width: 100vw;
+    height: 100vh;
+}
+/*信息动画*/
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#appBg {
+    background-image: url(../img/create_bg.png);
+}
+#error {
+    background-image: url(../img/create_bg.png);
+    background-size: contain;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+}
+#error .text {
+    color: #444444;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 44px;
+    letter-spacing: 3px;
+}
+
+#error .enter {
+    margin: 40px auto 0 auto;
+}
+.enter {
+    background-image: url(../img/b_button.png);
+    background-size: contain;
+    width: 298px;
+    height: 54px;
+    display: flex;
+}
+
+.enter button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 6px;
+    text-shadow: 1px 2px 1px #D4356D;
+    width: 100%;
+    height: 48px;
+}
+
+/*提示*/
+#taskView {
+    background-image: url(../img/create_bg.png);
+    background-size: contain;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+#taskView .result {
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+#taskView .result .gap {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+#taskView .result .gap button {
+    background-image: url(../img/option.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+    width: 286px;
+    height: 48px;
+    margin: 26px 25px;
+    display: block;
+}
+
+/*攻略*/
+#taskView .result .gap .explain {
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 20px 0;
+    animation: fade-in 1s;
+}
+#taskView .result .gap .explain .t1 {
+    text-align: center;
+    font-weight: bold;
+    max-width: 316px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#taskView .result .gap .explain .t2 {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    max-width: 316px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#taskView .result .gap .explain .t2 .num {
+    background-color: #1DB000;
+    color: white;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 9px;
+    width: 18px;
+    height: 18px;
+}
+
+#taskView .result .gap .explain .t2 .q {
+    margin-left: 5px;
+}
+
+#taskView .result .gap .explain .a {
+    max-width: 316px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*增加项目*/
+#taskView .result .gap .events {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 414px;
+    margin: 10px 0;
+    animation: fade-in 1s;
+}
+#taskView .result .gap .events div {
+    -webkit-tap-highlight-color: transparent;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #EE7BA3;
+    border-bottom: 3px solid #EE7BA3;
+    font-size: 11px;
+    text-align: center;
+    line-height: 36px;
+    width: 28.9%;
+    height: 36px;
+    margin: 0 auto 15px auto;
+}
+#taskView .result .gap .events p {
+    color: #EE7BA3;
+    font-size: 15px;
+    text-decoration: underline;
+    margin: 0 auto 5px auto;
+}
+/*人数选择*/
+#taskView .result .gap .eventWinNum {
+    background-color: rgba(255, 255, 255, 0.7);
+    overflow: hidden;
+    margin: 20px 0;
+    animation: fade-in 1s;
+}
+#taskView .result .gap .eventWinNum .func {
+    display: flex;
+    justify-content: center;
+    height: 22px;
+    margin: 36px 0 20px 0;
+}
+#taskView .result .gap .eventWinNum .func {
+    display: flex;
+    justify-content: center;
+    height: 22px;
+    margin: 36px 0 20px 0;
+}
+
+#taskView .result .gap .eventWinNum .func .l_tap {
+    background-image: url(../img/c_sub.png);
+    background-size: contain;
+    width: 22px;
+    height: 22px;
+    margin-left: 7px;
+    margin-right: 10px;
+}
+
+#taskView .result .gap .eventWinNum .func .num {
+    color: #EF7FA6;
+    font-weight: bold;
+    text-align: center;
+    line-height: 21px;
+    letter-spacing: unset;
+    width: 42px;
+    border-bottom: 1px solid #434344;
+}
+
+#taskView .result .gap .eventWinNum .func .r_tap {
+    background-image: url(../img/c_add.png);
+    background-size: contain;
+    width: 22px;
+    height: 22px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#taskView .result .gap .eventWinNum .desc {
+    color: #434344;
+    font-size: 16px;
+    text-align: center;
+    line-height: 22px;
+    letter-spacing: 3px;
+}
+#taskView .result .gap .eventWinNum .desc.event {
+    width: 286px;
+    margin: 0 auto;
+}
+/**/
+#taskView .result .gap .options {
+    background-color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    margin: 50px 0 20px 0;
+    animation: fade-in 1s;
+}
+
+#taskView .result .gap .options img {
+    pointer-events: none;
+    position: absolute;
+    top: 28px;
+    right: 12px;
+    width: 65px;
+    height: 65px;
+}
+/*例子*/
+#taskView .custom {
+    -webkit-tap-highlight-color: transparent;
+    bottom: -100vh;
+    position: fixed;
+    bottom: 0;
+}
+
+#taskView .custom.show {
+    bottom: 0;
+}
+
+#taskView .custom .top {
+    -webkit-tap-highlight-color: transparent;
+    background-color: white;
+    width: 100vw;
+    height: 280px;
+    bottom: 50px;
+    position: absolute;
+}
+
+#taskView .custom .top .t1 {
+    text-align: center;
+    font-weight: bold;
+    width: 316px;
+    margin: 20px auto 6px auto;
+}
+
+#taskView .custom .top table {
+    border: 1px solid #aaa;
+    width: 336px;
+    margin: 0 auto;
+}
+
+#taskView .custom .top table td {
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#taskView .custom .bottom {
+    -webkit-tap-highlight-color: transparent;
+    background-color: #f3f4f6;
+    border-top: 1px solid #dcddde;
+    width: 100vw;
+    height: 49px;
+    bottom: 0;
+    position: absolute;
+}
+
+#taskView .custom .bottom .input {
+    box-sizing: border-box;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 80px;
+    padding: 7px 0 7px 9px;
+}
+
+#taskView .custom .bottom .input input {
+    border-radius: 5px;
+    border: 1px solid #dcddde;
+    -webkit-appearance: unset;
+    box-sizing: border-box;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+}
+
+#taskView .custom .bottom .submit {
+    font-size:14px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(255,109,168,1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+/*分享模板*/
+.share {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+}
+.share .back {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100vw;
+    height: 110px;
+    position: absolute;
+    top: 196px;
+}
+.share .image {
+    background-image: url(../img/show_share1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 262px;
+    height: 252px;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+/*对话*/
+#taskView .result .aside {
+    display: flex;
+    justify-content: center;
+    margin: 30px 20px 14px 20px;
+    animation: fade-in 0.5s;
+}
+#taskView .result .aside .content {
+    background-color: rgba(205, 206, 207, 0.7);
+    color: white;
+    font-size: 13px;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+#taskView .result .cell {
+    margin: 14px 10px;
+    position: relative;
+    animation: fade-in 0.5s;
+}
+
+#taskView .result .cell .avatar {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
+
+#taskView .result .cell.left .avatar {
+    left: 0;
+}
+
+#taskView .result .cell.right .avatar {
+    right: 0;
+}
+
+#taskView .result .cell.left .text {
+    margin-left: 45px;
+    margin-right: 40px;
+}
+
+#taskView .result .cell.right .text {
+    margin-left: 40px;
+    margin-right: 45px;
+}
+
+#taskView .result .cell .text .name {
+    color: #727374;
+    font-size: 11px;
+    line-height: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#taskView .result .cell.left .text .name {
+    text-align: left;
+}
+
+#taskView .result .cell.right .text .name {
+    text-align: right;
+}
+
+#taskView .result .cell .text .photo {
+    border-radius: 4px;
+    max-width: 90%;
+    margin-top: 4px;
+}
+
+#taskView .result .cell.left .text .photo {
+    margin-left: 5px;
+}
+#taskView .result .cell.right .text .photo {
+    margin-right: 5px;
+}
+
+#taskView .result .cell .text .bubble {
+    margin-top: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+#taskView .result .cell .text .bubble .arrow {
+    transform: rotate(45deg);
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    margin-top: 15px;
+}
+
+#taskView .result .cell.left .text .bubble .arrow {
+    background-color: white;
+    border-bottom: 1px solid #cccdce;
+    border-left: 1px solid #cccdce;
+    left: 2px;
+}
+
+#taskView .result .cell.right .text .bubble .arrow {
+    background-color: #9fe859;
+    border-top: 1px solid #71c052;
+    border-right: 1px solid #71c052;
+    right: 2px;
+}
+
+#taskView .result .cell .text .bubble .mymembers {
+    border-radius: 4px;
+    min-height: 20px;
+    padding: 6px 0;
+}
+
+#taskView .result .cell.left .text .bubble .mymembers {
+    background-color: white;
+    border: 1px solid #cccdce;
+    margin-left: 7px;
+}
+
+#taskView .result .cell .text .bubble .mymembers .member .num {
+    color: #B2B2B2;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 48px;
+    width: 30px;
+    position: absolute;
+}
+
+#taskView .result .cell .text .bubble .mymembers .member.scolor .num  {
+    color: #FEC926;
+}
+
+#taskView .result .cell .text .bubble .mymembers .member .m-right {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    position: relative;
+    margin-left: 30px;
+}
+
+#taskView .result .cell .text .bubble .mymembers .member .m-right .m-avatar {
+    width: 28px;
+    height: 28px;
+}
+
+#taskView .result .cell .text .bubble .mymembers .member .m-right .m-name {
+    color: #B2B2B2;
+    font-size: 14px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+#taskView .result .cell .text .bubble .mymembers .member.scolor .m-right .m-name {
+    color: #FEC926;
+}
+
+#taskView .result .cell .text .bubble .mymembers .member .m-right .time {
+    color: #B2B2B2;
+    font-size: 10px;
+    width: 80px;
+    margin-left: auto;
+    margin-right: 12px;
+}
+
+#taskView .result .cell .text .bubble .mymembers .member.scolor .m-right .time {
+    color: #FEC926;
+}
+
+#taskView .result .cell .text .bubble .mymembers .member .m-right .line {
+    background-color: #EFEFEF;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#taskView .result .cell .text .bubble .members {
+    border-radius: 4px;
+    min-width: 20px;
+    min-height: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#taskView .result .cell.left .text .bubble .members {
+    background-color: white;
+    border: 1px solid #cccdce;
+    float: left;
+    margin-left: 7px;
+}
+
+#taskView .result .cell .text .bubble .members .desc {
+    color: gray;
+    font-size: 11px;
+    line-height: 12px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#taskView .result .cell .text .bubble .members .member {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#taskView .result .cell .text .bubble .members .member .m-avatar {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+#taskView .result .cell .text .bubble .members .member .m-name {
+    color: #FEC926;
+    font-size: 11px;
+    text-align: center;
+    line-height: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 40px;
+    margin-top: 5px;
+}
+
+#taskView .result .cell .text .bubble .members .member.scolor .m-name {
+    color: #EE7BA3;
+}
+
+#taskView .result .cell .text .bubble .content {
+    font-size: 15px;
+    border-radius: 4px;
+    min-width: 20px;
+    min-height: 20px;
+    padding: 10px;
+}
+
+#taskView .result .cell.left .text .bubble .content {
+    background-color: white;
+    border: 1px solid #cccdce;
+    float: left;
+    margin-left: 7px;
+}
+
+#taskView .result .cell.right .text .bubble .content {
+    background-color: #9fe859;
+    border: 1px solid #71c052;
+    float: right;
+    margin-right: 7px;
+}
+
+#taskView .result .cell.scolor .text .bubble .content {
+    color: #EE7BA3;
+}

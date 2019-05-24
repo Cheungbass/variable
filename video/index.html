@@ -246,13 +246,13 @@ if (self != top) {
   </script>
 <script>
     var info = new tvp.VideoInfo();
-    info.setVid("a07497cu0uh");
+    info.setVid("u0867zirw78");
     var _player = new tvp.Player();
     _player.create({
         'video': info,
         'modId': "tvp_video",
-        'width': $(document).width(),
-        'height': "249",
+        'width': $(document).width()*0.6,
+        'height': $(document).width()*0.6/9*16,
 		'player':'auto',
         'autoplay': 0,
         'pic': '',
@@ -279,6 +279,8 @@ if (self != top) {
             }
         }, 1000);
     }
-    setTagStart.setPlaytime('10');
-            //_player.play();
+    setTimeout(function(){
+        _player.setPlaytime('50');
+        _player.play();
+    },1000)
 </script>

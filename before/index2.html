@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>你跟同龄人的差别</title>
+    <link rel="stylesheet" href="./css/main.css?s222222222">
+</head>
+<style>
+    canvas {
+        scale: 0.5
+    }
+
+    .o-img,
+    .img-container img {
+        /* position: absolute;
+        top: 1.2rem;
+        left: 0;
+        right: 0; */
+        width: 5.57rem;
+        height: 9.41rem;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .canvasBox {
+        margin: 0 auto;
+        width: 320px;
+        height: 475px;
+        /*background:url({$source}) no-repeat ;*/
+        /*background-size: 100% 100%;*/
+    }
+
+    .canvasBox img {
+        width: 320px;
+        height: 475px;
+    }
+
+    .five-fightImg01 {
+        width: 7.5rem;
+        height: 0.66rem;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+
+    .five-fightImg02 {
+        width: 4.94rem;
+        height: 0.44rem;
+        display: block;
+        margin: 0.45rem auto;
+    }
+
+    .imgalert {
+        width: 3.63rem;
+        height: 2.66rem;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 2.26rem;
+    }
+
+    .leftright-bigTxt {
+        color: #D64F24;
+        font-size: 0.56rem;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 0.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .leftright-bigTxt img {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+
+    #content,#content2,body {
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Chrome/Safari/Opera */
+        -khtml-user-select: none;
+        /* Konqueror */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currentlynot supported by any browser */
+    }
+</style>
+
+<body>
+    <p style="display:none">
+        {$setting.contents}
+    </p>
+    <div class="wap-wrap">
+        <div class="back-box">
+            <span>&lt;返回</span>
+            <span>关闭</span>
+        </div>
+        <img src="http://public.pdruyujx.cn/difference07.png" alt="" class="five-fightImg01">
+        <div class="img-container touchBox"></div>
+        <div style="opacity: 0;">
+            <div class="PicBox" id="content2"
+                style="position: relative; width: 1000px;height: 1691px;margin: 0 auto;overflow: hidden;">
+                <img src="./img/29a241f73b072973886a380531e4f18d_1.jpg" alt=""
+                    style="left:157px; top:1224px;position:absolute;width: 110px;height: 110px;">
+                <img src="./img/1 (5).png" alt="" style="left:0;top:0;position:absolute;width: 1000px;height: 1691px;"
+                    class="bg-img">
+                <div style="font-size:37px;color:#DD1F8E;text-align: center;width: 200px;height: 40px; top:1357px;left: 110px;position: absolute;">{$nickname}</div>
+                <!-- <div style="width:120px;height:120px;position:absolute;left: 440px;top: 760px" id="code3"></div> -->
+                <div style="background:#fff;width: 150px;height: 150px; position: absolute;left: 133px;top:1429px ">
+                </div>
+                <img src="" alt="" style="width:143px;height:143px;position:absolute;left: 136px;top: 1432px"
+                    class="code3img">
+            </div>
+        </div>
+        <!-- <img src="http://cdn.indus-robot.cn/tenyear2_07.png" class="imgalert" alt=""> -->
+        <img src="http://public.pdruyujx.cn/difference08.png" class="five-fightImg02" alt="">
+        
+        <div id="code3" style="display:none"></div>
+    </div>
+</body>
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/html2canvas.min.js"></script>
+<script src="./js/canvas2image.js"></script>
+<script src="./js/jcanvas.js"></script>
+<script src="./js/qrcode.min.js"></script>
+<script>
+    convertImgToBase64('./img/1 (5).png', function (base64Img) {
+        // Base64DataURL
+        $('.bg-img').attr('src', base64Img);
+        setTimeout(function () { goPic() }, 300)
+    });
+    function goPic() {
+        var str = toUtf8("https://www.baidu.com");
+        $("#code3").qrcode({
+
+            render: "canvas",
+
+            width: 300,
+
+            height: 300,
+
+            text: str
+
+        });
+
+        var codecanvas = $('#code3 canvas')[0]
+        convertCanvasToImage(codecanvas);
+        function convertCanvasToImage(canvas) {
+            //var image = new Image();
+            var imgUrl = canvas.toDataURL("image/png");
+            $(".code3img").attr('src', imgUrl);
+            $("#code2").attr('src', imgUrl);
+            console.log(imgUrl)
+
+            //return image;
+        }
+
+
+        var dom = $("#content2"); //你要转变的dom
+        var width = dom.width();
+        var height = dom.height();
+        var type = "png";
+        var scaleBy = 3;  //缩放比例
+        var canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height + 35;  //35是我处理完后发现短了一点，具体为什么不清楚,如果你也少的话，根据自己的项目调吧
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        var context = canvas.getContext('2d');
+        // 【重要】关闭抗锯齿
+        context.mozImageSmoothingEnabled = false;
+        context.webkitImageSmoothingEnabled = false;
+        context.msImageSmoothingEnabled = false;
+        context.imageSmoothingEnabled = false;
+        context.scale(scaleBy, scaleBy);
+        html2canvas(dom[0], {
+            canvas: canvas,
+            scale: 3,
+            onrendered: function (canvas) {
+                dom.css("display", "none");//处理完后将dom隐藏,如果一开始就隐藏的话,canvas出不来,不知道大家是不是这样
+                //convertCanvasToImage(canvas);
+
+                $(".img-container").append(Canvas2Image.convertToImage(canvas, width, height, type));//这是放大了很3倍的图片
+                //$(".img-container img").css("width","320px").css("height","475px");//在将放大的图片用css缩小,在手机上就非常清晰了
+
+            }
+        });
+    }
+    function convertImgToBase64(url, callback, outputFormat) {
+        var canvas = document.createElement('CANVAS'),
+            ctx = canvas.getContext('2d'),
+            img = new Image;
+        img.crossOrigin = 'Anonymous';
+        img.onload = function () {
+            canvas.height = img.height;
+            canvas.width = img.width;
+            ctx.drawImage(img, 0, 0);
+            var dataURL = canvas.toDataURL(outputFormat || 'image/png');
+            callback.call(this, dataURL);
+            canvas = null;
+        };
+        img.src = url;
+    }
+    //进入时
+    $.ajax({
+        url: "/index/WxLogin/sitCount",
+        data: { pic: '{$source}', type: 1, },
+        type: "POST",
+        dataType: "json",
+        success: function (data) {
+            // data = jQuery.parseJSON(data);  //dataType指明了返回数据为json类型，故不需要再反序列化
+
+        }
+    });
+
+    var time = 0;//初始化起始时间
+    var timeFlag = 1;//只触发一次
+
+    $('.touchBox').click(function () {
+        if (timeFlag) {
+            timeFlag = 0;
+            $.ajax({
+                url: "/index/WxLogin/sitCount",
+                data: { pic: '{$source}', type: 2, },
+                type: "POST",
+                dataType: "json",
+                success: function (data) {
+                    // data = jQuery.parseJSON(data);  //dataType指明了返回数据为json类型，故不需要再反序列化
+
+                }
+            });
+        }
+    });
+
+    function toUtf8(str) {
+
+        var out, i, len, c;
+
+        out = "";
+
+        len = str.length;
+
+        for (i = 0; i < len; i++) {
+
+            c = str.charCodeAt(i);
+
+            if ((c >= 0x0001) && (c <= 0x007F)) {
+
+                out += str.charAt(i);
+
+            } else if (c > 0x07FF) {
+
+                out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+
+                out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+
+            } else {
+
+                out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+
+            }
+
+        }
+
+        return out;
+
+    }
+
+</script>
+
+</html>
+
+<script>
+    var load_back = "{$load_back}";
+    if (load_back.trim() != "") {
+        $(function () {
+            if (load_back.search('http://') == -1) load_back = 'http://' + load_back;
+            pushHistory();
+            window.addEventListener("popstate", function (e) {
+                window.location.href = load_back;
+            }, false);
+            function pushHistory() {
+                var state = {
+                    title: "title",
+                    url: "#"
+                };
+                window.history.pushState(state, "title", "#");
+            }
+
+        });
+    } else {
+        //防止页面后退
+        history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+            history.pushState(null, null, document.URL);
+        });
+    }
+
+</script>
+<script>
+    $(function () {
+        $('.back-box').click(function () {
+            var load_back1 = "{$load_back}";
+            if (load_back1.trim() != "") {
+                $(function () {
+                    if (load_back1.search('http://') == -1) load_back1 = 'http://' + load_back1;
+                    window.location.href = load_back1;
+
+                });
+            }
+        })
+        //单独判断顶部横条显示隐藏
+        var load_back2 = "{$load_back}";
+        if (load_back2.trim() == "") {
+            $('.back-box').hide();
+        };
+        //3秒后消失
+        setTimeout(function () {
+            $('.imgalert').hide();
+        }, 2000)
+    })
+</script>
+<script>
+    function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+    }
+
+    if (typeof WeixinJSBridge == "undefined") {
+        if (document.addEventListener) {
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        } else if (document.attachEvent) {
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    } else {
+        onBridgeReady();
+    }
+</script>
+
+
+
+

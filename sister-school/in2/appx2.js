@@ -47,12 +47,24 @@ function wxalert(msg, btn, callback) {
     d.show(200);
     d.find("#lly_dialog_msg").html(msg);
     d.find("#lly_dialog_btn").html(btn);
-    d.find("#lly_dialog_btn").off('click').on('click', function() {
+    // d.find("#lly_dialog_btn").off('click').on('click', function() {
+    //     d.hide(200);
+    //     if (callback) {
+    //         callback()
+    //     }
+    // });
+    $('body').on('click','#lly_dialog_btn',function(){
         d.hide(200);
         if (callback) {
             callback()
         }
-    });
+    })
+    $('body').on('click','#lly_dialog_msg',function(){
+        d.hide(200);
+        if (callback) {
+            callback()
+        }
+    })
   
     d.find("#lly_dialog_msg").off('click').on('click', function() {
         d.hide(200);

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>你跟同龄人的差别</title>
+    <link rel="stylesheet" href="./css/common.css?v1222222">
+</head>
+
+
+<body>
+
+    <div class="content">
+        <div class="back-box">
+            <span>&lt;返回</span>
+            <span>关闭</span>
+        </div>
+        <img src="http://public.pdruyujx.cn/difference02.png" alt="" class="dif-img01">
+        <img src="http://public.pdruyujx.cn/difference03.png" alt="" class="dif-img02">
+        <div class="dif-box">
+            <img src="http://public.pdruyujx.cn/difference04.png" class="dif-img03">
+            <img src="http://public.pdruyujx.cn/difference05.gif" class="dif-img04">
+        </div>
+        <div class="dif-btnBox">
+            <div class="dif-btn">10-20岁</div>
+            <div class="dif-btn">20-30岁</div>
+            <div class="dif-btn">30-40岁</div>
+            <div class="dif-btn">50岁以上</div>
+        </div>
+
+    </div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script>
+        $('.dif-btn').click(function(){
+            var that = $(this)
+            that.addClass('black-border')
+            setTimeout(function(){
+               window.location.href = './index2.html'
+            },300)
+        })
+        
+    </script>
+</body>
+
+</html>

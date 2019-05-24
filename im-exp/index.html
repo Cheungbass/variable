@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>心跳实验</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="css/main.css?v=1.0">
+		<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css">
+	</head>
+
+	<body>
+		<div id="app">
+			<router-view>
+				<div class="page" id="appBg"></div>
+			</router-view>
+		</div>
+		<div class="page" id="error">
+			<div>
+				<p class="text">当前实验室太过拥挤<br>稍后刷新试试看吧~</p>
+
+				<div class="enter">
+					<button onclick="error.reload()">重新加载</button>
+				</div>
+			</div>
+		</div>
+
+		
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+		<script src="https://res.wx.qq.com/open/libs/weuijs/1.1.4/weui.min.js"></script>
+
+		<script src="js/vconsole.min.js"></script>
+		<script src="js/common.js?v=56"></script>
+		<script defer="" src="js/vue.min.js"></script>
+		<script defer="" src="js/vue-router.min.js"></script>
+		<script defer="" src="js/vue-resource.min.js"></script>
+		<script defer="" src="js/main.js?v=56"></script>
+
+		<script>
+			var error = {
+				element: document.getElementById("error"),
+				show: function() {
+					this.element.style.display = "flex"
+				},
+				hide: function() {
+					this.element.style.display = "none"
+				},
+				reload: function() {
+					common.buryCounterOnce('errorTapReload', 'errorTapReload')
+
+					localStorage.removeItem('user')
+
+					location.href = location.origin + location.pathname + '?reload=' + Date.parse(Date()) + location.hash
+				},
+			}
+		</script>
+
+		<div class="page" id="alert">
+			<p>alert</p>
+		</div>
+		<script>
+			function ShowTextAlert(text) {
+				var alert = document.getElementById("alert")
+
+				if(alert.style.display == "flex") {
+					return
+				}
+
+				alert.firstElementChild.innerHTML = text
+				alert.style.display = "flex"
+
+				setTimeout(function() {
+					alert.style.display = "none"
+				}, 2000)
+			}
+		</script>
+
+		<script type="text/x-template" id="homeTemp">
+			<div id="homeView">
+				<img class="image" src="https://dl.qingdianyuedu.com/material/web/hepaihaoyou/home4.png">
+			</div>
+		</script>
+
+		<script type="text/x-template" id="enterTemp">
+			<div id="enterView">
+				<img class="bottom" src="https://dl.qingdianyuedu.com/material/web/hepaihaoyou/e_bottom.png">
+				<img class="title" src="https://dl.qingdianyuedu.com/material/web/hepaihaoyou/e_title.png">
+
+				<div class="enter" v-if="showEnter">
+					<button @click="start()">开启实验</button>
+				</div>
+				<div class="loading" v-else></div>
+			</div>
+		</script>
+
+		<script type="text/x-template" id="taskTemp">
+			<!--内容-->
+		<div id="taskView">
+			<div class="result">
+				<!--对话-->
+				<div>
+					<div class="aside" v-if="item.type == 'aside'">
+						<p class="content">{{item.content}}</p>
+					</div>
+
+					<div class="cell" v-else :class="[users[item.id].self ? 'right' : 'left', {scolor: item.sColor}]">
+						<img class="avatar" :src="users[item.id].headimgurl">
+
+						<div class="text">
+							<p class="name">{{users[item.id].nickname}}</p>
+
+							<img class="photo" v-if="item.type == 'photo'" :src="item.content.url" :style="item.content.style">
+
+							<div class="bubble" v-else>
+								<div class="arrow"></div>
+
+								<div class="mymembers" v-if="item.type == 'ownMember'">
+									<div class="member" v-for="(member, i) in item.content" :key="'member' + i" :class="{scolor: member.sColor}">
+										<p class="num">{{member.num}}</p>
+
+										<div class="m-right">
+											<img class="m-avatar" :src="users[member.id].headimgurl">
+											<p class="m-name">{{users[member.id].nickname}}</p>
+											<p class="time">{{member.time}}</p>
+
+											<div class="line" v-if="i < item.content.length - 1"></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="members" v-else-if="item.type == 'joinMember'">
+									<p class="desc" v-if="item.mcount > 20">{{'前面还有' + (item.mcount - 20) + '人……'}}</p>
+
+									<div class="member" v-for="(member, i) in item.content" :key="'member' + i" :class="{scolor: member.sColor}">
+										<img class="m-avatar" :src="users[member.id].headimgurl">
+										<p class="m-name">{{member.content}}</p>
+									</div>
+								</div>
+
+								<p class="content" v-else>{{item.content}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--提示-->
+				<div class="gap">
+					<!--<div class="options" v-if="options.length">
+						<button v-for="(item, index) in options" :key="'button' + index" @click="optionSelect(index)">
+                        button 内容
+                    	</button>
+						<img v-if="showFinger" src="https://dl.qingdianyuedu.com/material/web/hepaihaoyou/touch2.gif">
+					</div>-->
+
+					<!--<div class="events" v-else-if="events">
+						<div v-for="(item, index) in events" :key="'e' + index" @click="chooseEvent({custom: 0, event: item})">
+							你
+						</div><div v-for="(item, index) in events" :key="'e' + index" @click="chooseEvent({custom: 0, event: item})">
+							你
+						</div>
+						<div v-for="(item, index) in events" :key="'e' + index" @click="chooseEvent({custom: 0, event: item})">
+							你
+						</div>
+						<div v-for="(item, index) in events" :key="'e' + index" @click="chooseEvent({custom: 0, event: item})">
+							你
+						</div>
+
+						<p @click="customShow()" v-if="allowCustom && inputBadText < 3">增加我自己的实验项目</p>
+					</div>-->
+
+					<!--<div class="eventWinNum" v-else-if="showWinNum">
+						<div class="func">
+							<p class="desc">第</p>
+							<div class="l_tap" @click="editWinNum(false)"></div>
+							<p class="num">3</p>
+							<div class="r_tap" @click="editWinNum(true)"></div>
+							<p class="desc">个点开的人，</p>
+						</div>
+						<p class="desc event">去</p>
+
+						<button @click="submit()">确认好了，发起实验</button>
+					</div>-->
+
+					<!--<div class="explain" v-else-if="showExplain">
+						<p class="t1">心跳实验攻略</p>
+						<div class="t2">
+							<p class="num">1</p>
+							<p class="q">有没有容易完成的实验项目？</p>
+						</div>
+						<p class="a">答：有很多，比如“回答你三个问题”、“告诉你一个秘密”…</p>
+						<div class="t2">
+							<p class="num">2</p>
+							<p class="q">怎么发起我的实验？</p>
+						</div>
+						<p class="a">答：选好实验项目以后，再按照提示分享给好友或者朋友圈就可以了。</p>
+						<div class="t2">
+							<p class="num">3</p>
+							<p class="q">一次实验能不能发到多个群里？</p>
+						</div>
+						<p class="a">答：可以的。这样每个好友进来看到的总人数会多一些啦~</p>
+						<div class="t2">
+							<p class="num">4</p>
+							<p class="q">怎么知道有好友参加了我的实验？</p>
+						</div>
+						<p class="a">答：有新的好友进来的时候，@好友实验站会给你发通知消息</p>
+
+						<button @click="toLaunch()">知道了，发起我的心跳实验</button>
+					</div>-->
+				</div>
+			</div>
+
+			<div class="page custom" :class="{show: showCustom}" @touchend="customHide()">
+				<div class="top" @touchend.stop>
+					<p class="t1">举个例子</p>
+					<table rules="all">
+						<tr>
+							<td @touchend="clickExample($event)">回答你一个八卦的问题</td>
+							<td @touchend="clickExample($event)">答应你一个不过分的要求</td>
+						</tr>
+						<tr style="background-color: #F5F5F5;">
+							<td @touchend="clickExample($event)">做你一个星期的{{common.userInfo.sex == 1 ? '男' : '女'}}朋友</td>
+							<td @touchend="clickExample($event)">陪你聊10块钱的天📞</td>
+						</tr>
+						<tr>
+							<td @touchend="clickExample($event)">给你发52句情话，一天一句</td>
+							<td @touchend="clickExample($event)">520陪你玩一整天</td>
+						</tr>
+						<tr style="background-color: #F5F5F5;">
+							<td @touchend="clickExample($event)">陪你去成都吃火锅</td>
+							<td @touchend="clickExample($event)">陪你去**影院看《***》</td>
+						</tr>
+					</table>
+				</div>
+				<!--输入框-->
+				<div class="bottom" @touchend.stop>
+					<div class="input">
+						<input id="customOption" maxlength="20" placeholder="戳上面试试↑">
+					</div>
+					<div class="submit" @touchend="customDone()">确认提交</div>
+				</div>
+			</div>
+
+			<!--分享模板-->
+			<!--<div class="page share" v-if="showShare" @click="hideShare()">
+				<div class="back"></div>
+				<div class="image"></div>
+			</div>-->
+		</div>
+
+		</script>
+	</body>
+
+</html>
