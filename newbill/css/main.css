@@ -210,7 +210,8 @@ html,body{
   width: 100%;
   height: 100%;
   min-height: 10.5rem;
-  background: #FFE980;
+  background: #FFE980 url(http://public.pdruyujx.cn/phby13.png) no-repeat;
+  background-size: 100% auto;
 }
 .content{
   margin: 0 auto;
@@ -220,7 +221,7 @@ html,body{
 .billn-head{
   width: 6.9rem;
   background: #fff;
-  height: 2.54rem;
+  height: 2.8rem;
   border-radius: 0.15rem;
   margin: 0.4rem auto;
 }
@@ -270,12 +271,12 @@ html,body{
   justify-content: center;
   align-items: center;
   font-size: 0.26rem;
-
+  flex-direction: column
 }
 .billn-bottom-list img{
   width: 0.64rem;
   height: 0.64rem;
-  margin-right: 0.2rem;
+  margin-bottom: 0.1rem;
 }
 .list-head{
   width: 4.2rem;
@@ -478,4 +479,11 @@ html,body{
 }
 .info-list{
   margin-bottom: 0.3rem
+}
+.list-head1{
+  background: #FF5745
+}
+.my-fans1{
+  background: url(http://public.pdruyujx.cn/phby17.png) no-repeat;
+  background-size: 100% 100%;
 }
