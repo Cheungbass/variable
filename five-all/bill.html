@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>标题</title>
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+
+<body>
+    <div class="content">
+        <div class="back-box">
+            <span>&lt;返回</span>
+            <span>关闭</span>
+        </div>
+        <div class="bill-header">测试排行榜</div>
+        <div class="bill-box">
+            <div class="bill-list">
+                <div class="bill-num">1</div>
+                <img src="http://public.pdruyujx.cn/halfYear01.jpg" alt="">
+                <div class="bill-listTxt">
+                    <div class="bill-listTxt01">你的左右脑年龄鉴定</div>
+                    <div class="bill-listTxt02">4200925人在玩</div>
+                </div>
+            </div>
+            <div class="bill-list">
+                <div class="bill-num">1</div>
+                <img src="http://public.pdruyujx.cn/halfYear01.jpg" alt="">
+                <div class="bill-listTxt">
+                    <div class="bill-listTxt01">你的左右脑年龄鉴定</div>
+                    <div class="bill-listTxt02">4200925人在玩</div>
+                </div>
+            </div>
+        </div>
+        <div class="bill-layout">
+            <div class="bill-layoutTxt01">关注我<br/>会有更多好玩游戏</div>
+            <img class="bill-qrcode" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560245780266&di=3d01c5e818260e7398cc0c1811a497fe&imgtype=0&src=http%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_png%2FF0ia7S03R9rBxzF51Uj2rBxS5czVyTRYia2Y018uIsmqsfzAmNJz5w1Z7flQsWjZVdf9z0zoIFOic8j9uR5hxgNQw%2F640%3Fwx_fmt%3Dpng" alt="">
+            <img class="bill-img01" src="http://public.pdruyujx.cn/fiveAll01.png" alt="" srcset="">
+            <div class="bill-layoutTxt01">长按识别</div>
+            <img class="bill-img02" src="http://public.pdruyujx.cn/fiveAll02.png" alt="" srcset="">
+
+        </div>
+    </div>
+</body>
+<script src="http://public.pdruyujx.cn/jquery-1.9.1.min.js"></script>
+</html>
+<script>
+    var load_back = "{$load_back}";
+</script>
+<script src="./js/bill.js"></script>
+<script>
+    
+    function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+    }
+
+    if (typeof WeixinJSBridge == "undefined") {
+        if (document.addEventListener) {
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        } else if (document.attachEvent) {
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    } else {
+        onBridgeReady();
+    }
+</script>
