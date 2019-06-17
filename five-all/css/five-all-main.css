@@ -499,3 +499,4 @@ canvas {
   user-select: none;
   /* Non-prefixed version, currentlynot supported by any browser */
 }
+.five-fightImg01,.five-fightImg02{ pointer-events: none; }
