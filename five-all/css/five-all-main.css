@@ -499,4 +499,3 @@ canvas {
   user-select: none;
   /* Non-prefixed version, currentlynot supported by any browser */
 }
-img{ pointer-events: none; }
