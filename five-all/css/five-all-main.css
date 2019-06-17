@@ -452,8 +452,8 @@ canvas {
 }
 
 .five-fightImg02 {
-  width: 4.94rem;
-  height: 0.44rem;
+  width: 4.48rem;
+  height: 0.52rem;
   display: block;
   margin: 0.45rem auto;
 }
@@ -499,3 +499,4 @@ canvas {
   user-select: none;
   /* Non-prefixed version, currentlynot supported by any browser */
 }
+img{ pointer-events: none; }
