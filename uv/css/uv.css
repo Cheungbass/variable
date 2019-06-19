@@ -222,6 +222,7 @@ html,body{
 }
 .card-header{
     width: 7.5rem;
+    margin: 0 auto;
     padding: 0.45rem;
     box-sizing: border-box;
     font-size: 0.5rem;
