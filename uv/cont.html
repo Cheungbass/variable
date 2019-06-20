@@ -17,6 +17,15 @@
                 <img src="http://public.pdruyujx.cn/uv02.png" alt="" srcset="">
                 <span>60</span>s
             </div>
+
+        </div>
+        <div class="card-form">
+            <form action="" id="myform">
+                <select onchange="submitForm()" name="data">
+                    <option value="111">111</option>
+                    <option value="111">111</option>
+                </select>
+            </form>
         </div>
         <div class="card-box">
             <div class="card">
@@ -35,6 +44,12 @@
             </div>
         </div>
     </div>
+    <script>
+        function submitForm() {
+            var form = document.getElementById("myform");
+            form.submit();
+        }
+    </script>
 </body>
 
 </html>
