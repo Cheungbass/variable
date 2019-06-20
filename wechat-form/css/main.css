@@ -1,0 +1,82 @@
+.wechat-box{
+    padding: 10px 5px;
+}
+.input-box{
+    display: flex;
+}
+.input-main{
+    flex: 1;
+    margin-right: 5px;
+    border-radius: 5px;
+    background: #fff;
+    border:1px solid #eee
+}
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:14px;
+	color:#333333;
+	border-width: 1px;
+    border-color: #ddd;
+    border-radius: 5px;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 10px auto;
+    text-align: center;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #ddd;
+	background-color: #eee;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 4px 6px;
+	border-style: solid;
+	border-color: #ddd;
+	background-color: #ffffff;
+}
+.img-btn{
+    width: 30px;
+    height: 30px;
+}
+.layout{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    z-index: 9;
+}
+.img-alertBox{
+    padding-top: 50px;
+    text-align: center;
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+}
+.img-alertBox img{
+    width: 50%;
+    margin-bottom: 50px;
+}
+.page-box{
+    text-align: center;
+}
+.select-page{
+    width: 30px;
+    text-align: center;
+    border-radius: 5px;
+    border:1px solid #ddd;
+    display: inline-block;
+    padding: 0 1.32em;
+    line-height: 2.3;
+    font-size: 13px;
+}
