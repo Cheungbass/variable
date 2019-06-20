@@ -80,3 +80,9 @@ table.gridtable td {
     line-height: 2.3;
     font-size: 13px;
 }
+.weui-btn + .weui-btn {
+    margin-top: 0px;
+}
+td .weui-btn_warn{
+    margin-right: 2px;
+}
