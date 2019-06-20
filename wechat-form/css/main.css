@@ -86,3 +86,11 @@ table.gridtable td {
 td .weui-btn_warn{
     margin-right: 2px;
 }
+.all-font{
+    text-align: center;
+    font-size: 12px;
+    margin: 2px auto;
+}
+.all-font span{
+    color:#3385ff
+}
