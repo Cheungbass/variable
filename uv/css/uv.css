@@ -282,6 +282,9 @@ html,body{
   text-align: center;
   padding: 0.2rem 0.3rem;
   display: flex;
+  width: 7.5rem;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 .card-form{
   flex: 1
@@ -325,4 +328,15 @@ html,body{
 } */
 option {
   background: #fff;
+}
+.nav{
+  width: 7.3rem;
+  margin: 0 auto;
+  padding: 0.1rem 0.1rem;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.3rem;
+  color: #000;
 }
