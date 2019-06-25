@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>标题</title>
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+
+<body>
+    <div class="content">
+        <div class="back-box">
+            <span>&lt;返回</span>
+            <span>关闭</span>
+        </div>
+        <!-- 高考 -->
+        <div class="point-box">
+            <div class="point-header">2019高考成绩单生成器</div>
+            <div class="point-content">
+                <div class="point-list">
+                    <label for="">姓名:</label>
+                    <input type="text" maxlength="5" placeholder="请输入姓名">
+                </div>
+                <div class="point-list">
+                    <label for="">语文成绩:</label>
+                    <input type="number" maxlength="3" placeholder="请输入语文成绩" />
+                </div>
+                <div class="point-list">
+                    <label for="">数学成绩:</label>
+                    <input type="number" maxlength="3" placeholder="请输入数学成绩" />
+                </div>
+                <div class="point-list">
+                    <label for="">外语成绩:</label>
+                    <input type="number" maxlength="3" placeholder="请输入外语成绩" />
+                </div>
+                <div class="point-list">
+                    <label for="">综合成绩:</label>
+                    <input type="number" maxlength="3" placeholder="请输入综合成绩" />
+                </div>
+                <div class="point-list">
+                    <label for="">总分:</label>
+                    <span class="point-all">0</span>
+                    <!-- <input type="number" maxlength="3" placeholder="请输入综合成绩" /> -->
+                </div>
+                <div class="point-btn">生成结果</div>
+            </div>
+        </div>
+        <!-- 高考end -->
+    </div>
+</body>
+<script src="http://public.pdruyujx.cn/jquery-1.9.1.min.js"></script>
+</html>
+<script>
+    $(function () {
+        $('.back-box').click(function () {
+            var load_back1 = "{$load_back}";
+            if (load_back1.trim() != "") {
+                $(function () {
+                    if (load_back1.search('http://') == -1) load_back1 = 'http://' + load_back1;
+                    window.location.href = load_back1;
+                });
+            }
+
+        })
+        //单独判断顶部横条显示隐藏
+        var load_back2 = "{$load_back}";
+        if (load_back2.trim() == "") {
+            $('.back-box').hide();
+        }
+    })
+</script>
+<script>
+    var load_back = "{$load_back}";
+    if (load_back.trim() != "") {
+        $(function () {
+            if (load_back.search('http://') == -1) load_back = 'http://' + load_back;
+            pushHistory();
+            window.addEventListener("popstate", function (e) {
+                window.location.href = load_back;
+            }, false);
+
+            function pushHistory() {
+                var state = {
+                    title: "title",
+                    url: "#"
+                };
+                window.history.pushState(state, "title", "#");
+            }
+
+        });
+    } else {
+        //防止页面后退
+        history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+            history.pushState(null, null, document.URL);
+        });
+        $('.back-box').hide();//单独判断顶部横条显示隐藏
+        // window.history.pushState('forward', null, location.href); //在IE中必须得有这两行  
+        // window.history.forward(1);  
+    }
+</script>
+<script>
+    function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+    }
+
+    if (typeof WeixinJSBridge == "undefined") {
+        if (document.addEventListener) {
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        } else if (document.attachEvent) {
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    } else {
+        onBridgeReady();
+    }
+</script>

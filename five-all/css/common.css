@@ -408,3 +408,57 @@ border-bottom:1px solid #eee;
   display: block;
   margin: 0.5rem auto;
 }
+.point-box{
+  width: 7rem;
+  margin: 0.2rem auto;
+  border-radius: 0.15rem;
+  padding-top: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #fff;
+  box-shadow:2px 3px 12px 1px rgba(172,172,172,0.46);
+}
+.point-content{
+  padding: 0.2rem 0.2rem;
+}
+.point-header{
+  background: #ffbc41;
+  line-height: 2;
+  font-size: 0.4rem;
+  color: #fff;
+  padding: 0 0.2rem;
+  box-sizing: border-box;
+}
+.point-list{
+  font-size: 0.32rem;
+  padding: 0.3rem 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ffe9c2
+}
+.point-list label{
+  width: 1.5rem;
+  margin-right: 0.2rem;
+  text-align: right;
+}
+.point-list input{
+  font-size: 0.32rem;
+}
+.point-list input::placeholder{
+  color: #999;
+}
+input:focus{
+  outline: none;
+}
+.point-btn{
+  width: 6rem;
+  margin: 0.3rem auto;
+  background: #ffbc41;
+  border-radius: 0.8rem;
+  color: #fff;
+  font-size: 0.32rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 0.8rem;
+}
