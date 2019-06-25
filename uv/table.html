@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>系统列表</title>
+    <link rel="stylesheet" href="./css/uv.css">
+    <!-- <link rel="stylesheet" href="https://weui.io/weui.css"> -->
+</head>
+<style>
+    .content {
+        width: 7.5rem;
+        padding-top: 1rem;
+        margin: 0 auto;
+        overflow-x: auto;
+    }
+
+    .fixed-box {
+        width: 7.5rem;
+        height: 1rem;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: auto;
+    }
+
+    table {
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    th {
+        background: #eee
+    }
+
+    table,
+    tr th,
+    tr td {
+        border: 1px solid #ccc;
+        padding: 0.1rem 0.12rem;
+    }
+
+    .selectBox {
+        width: 7rem;
+        height: 1rem;
+        line-height: 1rem;
+        border: 0;
+    }
+
+    option {
+
+        background: #fff;
+    }
+
+    .com-sel {
+        width: 7.5rem;
+        height: 0.8rem;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: auto;
+        line-height: 0.8rem;
+        cursor: pointer;
+
+        background: #fff;
+        /*鼠标上移变成小手*/
+    }
+
+    .com-opt {
+        padding-right: 0.9rem;
+        padding-left: 0.3rem;
+        color: #afbac0;
+        font-size: 0.35rem;
+        border: none;
+        outline: none;
+        /*去掉默认的下拉三角*/
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border: 1px solid #afbac0;
+        border-radius: 0.1rem;
+        /*添加下拉三角图标*/
+        background: url("http://suprese.findmymantra.com/20180903162343300.jpg") no-repeat right center transparent;
+    }
+</style>
+
+<body>
+    <div class="content">
+        <form class="com-sel" method="POST" id="myform">
+            <select onchange="submitForm()" name="data" class="com-opt">
+                <option value="2019-6-18">2019-6-18</option>
+                <option value="2019-6-18">2019-6-18</option>
+            </select>
+        </form>
+        <table>
+            <tr>
+                <th>Month</th>
+                <th>Savings</th>
+                <th>Month</th>
+                <th>Savings</th>
+                <th>Month</th>
+                <th>Savings</th>
+                <th>Month</th>
+                <th>Savings</th>
+                <th>Month</th>
+                <th>Savings</th>
+            </tr>
+            <tr>
+                <td>January</td>
+                <td>$100</td>
+                <td>January</td>
+                <td>$100</td>
+                <td>January</td>
+                <td>$100</td>
+                <td>January</td>
+                <td>$100</td>
+                <td>January</td>
+                <td>$100</td>
+            </tr>
+        </table>
+    </div>
+    <!-- <script src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
+    <script>
+        // weui.datePicker({
+        //     start: 2016,      // 起始时间
+        //     end: 2018,       // 结束时间
+        //    // defaultValue: [2016, 12, 9],   // 文档说默认当前值、但tm没用啊。fuck~
+        //     onChange: function (result) {
+        //         console.log(result);
+        //     },
+        //     onConfirm: function (result) {
+        //         result[1] = result[1] + 1;// 月份索引+1、否则比实际月份小一个月
+        //         console.log(result);
+        //     }
+        // });
+        function submitForm() {
+            var form = document.getElementById("myform");
+            form.submit();
+        }
+    </script>
+</body>
+
+</html>

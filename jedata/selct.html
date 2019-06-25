@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>开始使用jeLayout</title>
+  <link rel="stylesheet" href="http://public.aishangwl.com/jeui.css">
+  <script src="http://public.aishangwl.com/jquery.min.js"></script>
+  <script src="http://public.aishangwl.com/jeCheck.js"></script>
+</head>
+<body>
+    
+    <select class="myselect">
+        <option value="交互设计">交互设计</option>
+        <option value="视觉设计">视觉设计</option>
+        <optgroup label="技术开发">
+            <option value="前端开发">前端开发</option>
+            <option value="后端开发">后端开发</option>
+        </optgroup>
+        <option value="用户研究">用户研究</option>
+        <option value="产品经理">产品经理</option>
+        <optgroup label="学生时代">
+            <option value="你的工号">你的工号</option>
+            <option value="你最喜欢的老师">你最喜欢的老师</option>
+        </optgroup>
+    </select>
+    <select class="myselect">
+        <option value="交互设计11">交互设计11</option>
+        <option value="视觉设计22">视觉设计22</option>
+        <optgroup label="开发">
+            <option value="前端开发">前端开发</option>
+            <option value="后端开发" selected>后端开发</option>
+        </optgroup>
+        <option value="用户研究33">用户研究33</option>
+    </select>
+    <select class="myselect" disabled>
+        <option value="交互设计11">交互设计11</option>
+        <option value="视觉设计22" selected>视觉设计22</option>
+        <optgroup label="开发">
+            <option value="前端开发">前端开发</option>
+            <option value="后端开发">后端开发</option>
+        </optgroup>
+        <option value="用户研究33">用户研究33</option>
+    </select>
+    
+<script>  
+    $(function(){
+        $(".myselect").jeSelect({
+            sosList:false
+        });
+    })
+</script>
+</body>
+</html>
