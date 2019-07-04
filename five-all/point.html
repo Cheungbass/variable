@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <title>标题</title>
-    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/five-all.css">
 </head>
 
 
@@ -22,23 +22,23 @@
             <div class="point-content">
                 <div class="point-list">
                     <label for="">姓名:</label>
-                    <input type="text" maxlength="5" placeholder="请输入姓名">
+                    <input type="text" maxlength="5" placeholder="请输入姓名" id="point-name">
                 </div>
                 <div class="point-list">
                     <label for="">语文成绩:</label>
-                    <input type="number" maxlength="3" placeholder="请输入语文成绩" />
+                    <input type="tel" maxlength="3" placeholder="请输入语文成绩"  id="point-yuwen" class="point-num"/>
                 </div>
                 <div class="point-list">
                     <label for="">数学成绩:</label>
-                    <input type="number" maxlength="3" placeholder="请输入数学成绩" />
+                    <input type="tel" maxlength="3" placeholder="请输入数学成绩" id="point-shuxue" class="point-num"/>
                 </div>
                 <div class="point-list">
                     <label for="">外语成绩:</label>
-                    <input type="number" maxlength="3" placeholder="请输入外语成绩" />
+                    <input type="tel" maxlength="3" placeholder="请输入外语成绩" id="point-waiyu" class="point-num"/>
                 </div>
                 <div class="point-list">
                     <label for="">综合成绩:</label>
-                    <input type="number" maxlength="3" placeholder="请输入综合成绩" />
+                    <input type="tel" maxlength="3" placeholder="请输入综合成绩" id="point-allp" class="point-num"/>
                 </div>
                 <div class="point-list">
                     <label for="">总分:</label>
@@ -51,7 +51,7 @@
         <!-- 高考end -->
     </div>
 </body>
-<script src="http://public.pdruyujx.cn/jquery-1.9.1.min.js"></script>
+<script src="http://public.aishangwl.com/jquery-1.9.1.min.js"></script>
 </html>
 <script>
     $(function () {
@@ -71,6 +71,45 @@
             $('.back-box').hide();
         }
     })
+</script>
+<script>
+    var pointName = $('#point-name').val()
+    var pointYuwen = $('#point-yuwen').val()
+    var pointShuxue = $('#point-shuxue').val()
+    var pointWaiyu = $('#point-waiyu').val()
+    var pointAll = $('#point-allp').val()
+    $('.point-btn').click(function(){
+        if(pointName == ''|| pointName == null){
+            alert('请输入名字')
+            return false
+        }
+        if(pointYuwen == ''|| pointYuwen == null){
+            alert('请输入语文成绩')
+            return false
+        }
+        if(pointShuxue == ''|| pointShuxue == null){
+            alert('请输入数学成绩')
+            return false
+        }
+        if(pointWaiyu == ''|| pointWaiyu == null){
+            alert('请输入外语成绩')
+            return false
+        }
+        if(pointAll == ''|| pointAll == null){
+            alert('请输入综合成绩')
+            return false
+        }
+        //跳转的链接
+        window.location.href = ''
+    })
+    $('.point-num').bind('input propertychange', function(){
+      var total = 0;
+      $(".point-num").each(function(){
+          total+=(parseFloat($(this).val())?parseFloat($(this).val()):0);
+      });
+      /*total=total.toFixed(1);保留小数点后一位，因为js累加可能会出现小数点后出现多位的情况，可以通过它控制小数点位数*/
+     $(".point-all").text(total);
+  });
 </script>
 <script>
     var load_back = "{$load_back}";
