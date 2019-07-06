@@ -255,6 +255,16 @@ html,body{
 .card-name{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+.card-name-btn{
+  padding: 0.1rem 0.15rem;
+  background: #FF4E63;
+  border-radius: 0.15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 .card-name img{
     width: 0.55rem;
