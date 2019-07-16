@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="./css/main.css">
+	<title>如何识破绿茶婊</title>
+</head>
+<body>
+    <div class="content">
+        <img src="./img/green05.png" class="green-img04" alt="">
+        <img src="./img/green04.png" class="green-img05" alt="">
+        <img src="./img/green06.png" class="green-img06" alt="">
+
+       <div class="layout-green">
+           <div class="layout-img">
+                <img src="./img/green01.png" alt="" class="green-img01">
+                <img src="./img/green02.png" alt="" class="green-img02">
+                <img src="./img/green03.png" alt="" class="green-img03">
+           </div>
+       </div>
+    </div>
+    <script src="https://beiducom.oss-cn-shenzhen.aliyuncs.com/jquery-1.9.1.min.js"></script>
+    <script>
+        //启动页面
+    var moveFlag = 1 
+        $("body").on("touchstart", function(e) {
+　　　　e.preventDefault();
+　　　　startX = e.originalEvent.changedTouches[0].pageX,
+　　　　startY = e.originalEvent.changedTouches[0].pageY;
+　　});
+　　$("body").on("touchmove", function(e) {
+　　　　e.preventDefault();
+　　　　moveEndX = e.originalEvent.changedTouches[0].pageX,
+　　　　moveEndY = e.originalEvent.changedTouches[0].pageY,
+　　　　X = moveEndX - startX,
+　　　　Y = moveEndY - startY;
+
+　　　　if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
+　　　　　　//alert("left 2 right");
+            if(moveFlag){
+                $('.layout-green').fadeOut(function(){
+                    moveFlag = 0
+                $('html , body').animate({scrollTop: 0},0);
+            })
+            }
+           
+　　　　}
+　　　　else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
+　　　　　　//alert("right 2 left");
+            if(moveFlag){
+                $('.layout-green').fadeOut(function(){
+                    moveFlag = 0
+                $('html , body').animate({scrollTop: 0},0);
+            })
+            }
+　　　　}
+　　　　else if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
+　　　　　　//alert("top 2 bottom");
+            if(moveFlag){
+                $('.layout-green').fadeOut(function(){
+                    moveFlag = 0
+                $('html , body').animate({scrollTop: 0},0);
+            })
+            }
+　　　　}
+　　　　else if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
+　　　　　　//alert("bottom 2 top");
+            if(moveFlag){
+                $('.layout-green').fadeOut(function(){
+                    moveFlag = 0
+                $('html , body').animate({scrollTop: 0},0);
+                })
+            }
+　　　　}
+　　　　else{
+　　　　　　//alert("just touch");
+            // $('.layout-green').hide()
+　　　　}
+　　});
+    </script>
+</body>
+
+</html>
