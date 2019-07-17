@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>你是否真的能识破绿茶婊的招术？</title>
+    <link rel="stylesheet" href="__STATIC__/green/green.css?v3">
+    <!-- <link rel="stylesheet" href="../../../../public/static/green/green.css"> -->
+</head>
+
+<body>
+    <div class="green-rightTxt">点击右上方<img src="https://beiducom.oss-cn-shenzhen.aliyuncs.com/green-pot.png" alt="">发送给好友<br/>看看他们的鉴婊水平</div>
+    <div class="content">
+        <div class="green-header">测评结果</div>
+        <div class="green-text" id="green-text">测评结果测评结果测评结果测评结果测评结果</div>
+        <div class="green-header">成绩单</div>
+        <div class="green-box">
+            <div class="green-list">
+                <div class="green-list-top"><span id="green-point">20</span>/100</div>
+                <div class="green-list-bottom">您的得分</div>
+            </div>
+            <div class="green-list">
+                <div class="green-list-top"><span id="green-times">2</span>/10</div>
+                <div class="green-list-bottom">答对题数</div>
+            </div>
+        </div>
+        <a href="/index/share/three?point={$Think.get.point}"><div class="green-seeAnswer">查看答案</div></a>
+        <div class="green-title">{$setting.name}</div>
+       <img src="{$setting.image}" class="green-img" alt="">
+    </div>
+    <div style="width: 1px;height: 1px;opacity: 0; overflow: hidden;">
+            {$setting.contents|raw}
+        </div>
+        <script src="https://beiducom.oss-cn-shenzhen.aliyuncs.com/jweixin-1.2.0.js"></script>
+        <script src="https://beiducom.oss-cn-shenzhen.aliyuncs.com/jquery-1.9.1.min.js"></script>
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+    <script>
+
+        var share_config = '{$share_config|raw}';
+        var share_href = '{$setting.share_back}'
+        var share_json = JSON.parse(share_config)
+        console.log(share_json)
+        var myPoint =  parseInt("{$Think.get.point}")
+        console.log('myPoint',myPoint)
+        $('#green-point').html(myPoint*10)
+        $('#green-times').html(myPoint)
+        var pointArr = ['恭喜你通关成功！你非常了解绿茶婊的外貌，行为和话术，你的鉴婊能力非常高能！一遇到绿茶婊就能嗅出她们的气息并且加以防范，你比其他女孩更不容易被绿茶婊影响到你的婚恋，你的感情比其他人要更无往不利，祝福你！',
+                        '你对绿茶婊的外貌、行为和话术有一定了解，但你的鉴婊能力还需提高。遇到比较表面的绿茶婊也许你还要加以识别，可一旦你遇到比较走心的绿茶婊，你就会惊慌失措，不知道怎么应对，建议你再接再厉，努力学习！',
+                        '你完全不了解绿茶婊这种生物，当这样的人出现在你身边时，你很难察觉出来。如果你长得好看性格不太好，还有一个非常优秀的男朋友，她们非常容易撬走你的男朋友。建议你多看看绿茶婊有关的故事，多多提高鉴婊技能！',
+                    ]
+        if(myPoint >= 7){
+            $('#green-text').html(pointArr[0])
+        }else if(myPoint >= 4){
+            $('#green-text').html(pointArr[1])
+        }else{
+            $('#green-text').html(pointArr[2])
+        }
+        if(share_href == null ||share_href == '' || share_href == undefined ){
+            $('.green-title').hide()
+            $('.green-img').hide()
+        }
+        wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: "{$wx_config.appId}", // 必填，公众号的唯一标识
+            timestamp: "{$wx_config.timestamp}", // 必填，生成签名的时间戳
+            nonceStr: "{$wx_config.nonceStr}", // 必填，生成签名的随机串
+            signature: "{$wx_config.signature}",// 必填，签名，见附录1
+            jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ', 'onMenuShareWeibo', 'hideMenuItems', 'showMenuItems']
+        });
+        var smallTitle = '我考了'+myPoint*10+'分，快来挑战我吧！'
+
+        wx.ready(function () {
+            wx.showMenuItems({
+                menuList: ['menuItem:share:appMessage', 'menuItem:share:timeline']
+            })
+            wx.onMenuShareTimeline({
+
+                title: share_json[0].big_title,
+                desc: smallTitle,
+                link: "{$share_url}",
+                imgUrl: share_json[0].share_img,
+                success: function () {
+                    // if (show == 1) $('.dialogBox').show();
+                },
+                cancel: function () {
+                    // if (show == 1) $('.dialogBox').show();
+                }
+            });
+            wx.onMenuShareAppMessage({
+                title: share_json[0].big_title,
+                desc: smallTitle,
+                link: "{$share_url}",
+                imgUrl: share_json[0].share_img,
+                success: function () {
+                    // if (show == 1) $('.dialogBox').show();
+                },
+                cancel: function () {
+                    // if (show == 1) $('.dialogBox').show();
+                }
+            });
+        });
+    </script>
+    <script>
+
+        function disable_back() {
+            XBack = {};
+
+            (function (XBack) {
+                XBack.STATE = 'x - back';
+                XBack.element;
+
+                XBack.onPopState = function (event) {
+                    event.state === XBack.STATE && XBack.fire();
+                    XBack.record(XBack.STATE); //初始化事件时，push一下
+                };
+
+                XBack.record = function (state) {
+                    history.pushState(state, null, location.href);
+                };
+
+                XBack.fire = function () {
+                    var event = document.createEvent('Events');
+                    event.initEvent(XBack.STATE, false, false);
+                    XBack.element.dispatchEvent(event);
+                };
+
+                XBack.listen = function (listener) {
+                    XBack.element.addEventListener(XBack.STATE, listener, false);
+                };
+
+                XBack.init = function () {
+                    XBack.element = document.createElement('span');
+                    window.addEventListener('popstate', XBack.onPopState);
+                    XBack.record(XBack.STATE);
+                };
+
+            })(XBack); // 引入这段js文件
+
+            XBack.init();
+            XBack.listen(function () { });
+        }
+
+        var load_back = "{$share_load}";
+        if (load_back.trim() == "") {
+            disable_back();
+            $('.back-box').hide()
+        } else {
+
+            if (load_back.search('http://') == -1) load_back = 'http://' + load_back;
+            $(function () {
+                pushHistory();
+                window.addEventListener("popstate", function (e) {
+                    window.location.href = load_back;
+                }, false);
+                function pushHistory() {
+                    var state = {
+                        title: "title",
+                        url: "#"
+                    };
+                    window.history.pushState(state, "title", "#");
+                }
+
+            });
+        }
+    </script>
+    <script>
+        $('.back-box').click(function () {
+            var load_back1 = "{$share_load}";
+            if (load_back1.trim() != "") {
+                $(function () {
+                    if (load_back1.search('http://') == -1) load_back1 = 'http://' + load_back1;
+                    window.location.href = load_back1;
+
+                });
+            } else {
+                $('.back-box').hide()
+            }
+        })
+        $('.green-img').click(function () {
+            var load_back2 = "{$setting.share_back}";
+            if (load_back2.trim() != "") {
+                $(function () {
+                    if (load_back2.search('http://') == -1) load_back2 = 'http://' + load_back2;
+                    window.location.href = load_back2;
+
+                });
+            } else {
+                // $('.back-box').hide()
+            }
+        })
+    </script>
+</body>
+
+</html>

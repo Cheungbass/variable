@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, hr, pre, form, fieldset, input, textarea, p, blockquoteth, td {
+	margin:0px;
+	padding:0px;
+}
+img, input, select, button {
+	vertical-align:middle;
+}
+ul, ol, li {
+	list-style:none;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset, img {
+	border:0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+a {
+	/*text-decoration:none;*/
+	color:#2e2f2f;
+}
+*:focus {
+	outline:none;
+}
+body {
+	font-family:arial, Microsoft Yahei;
+	font-size:14px;
+	font-family:"微软雅黑";
+	color:#36353d;
+	min-width: 1200px;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset, img {
+	border:0;
+}
+.ydsy-dhl{height: 695px;background: url(../img/banner.png) no-repeat center;}
+.ydsy-dhl-xq{width: 1200px;margin: auto;}
+.ydsy-bar ul li a{float: left;margin:0px 24px;color: #fff;opacity: 0.6;line-height: 84px;text-decoration:none;font-size: 16px;}
+.ydsy-bar ul li a:hover{color: #FFFFFF;opacity: 1;}
+.ydsy-dhl-logo{width: 500px;}
+.ydsy-dhl-logo img{float: left;margin: 20px 20px 0 0;}
+.clear{clear: both;}
+.ydsy-dhl-yyqh{float: right;}
+.ydsy-dhl-yyqh p{float: right;line-height: 84px;font-size: 16px;}
+.ydsy-dhl-yyqh-fgx{float: right;width: 1px;height: 16px;background:rgba(255,255,255,0.6);margin-top: 34px;}
+.ydsy-dhl-yyqh-z{margin: 0 10px;color:rgba(255,255,255,1) ;}
+.ydsy-dhl-yyqh-y{margin: 0 10px;color:rgba(255,255,255,0.4) ;}
+.ydsy-dhl-yyqh-ydqx{margin-right: 20px;color:rgba(255,255,255,1) ;}
+.ydsy-dhl-by{width: 1200px;text-align: center;font-size: 60px;color: #FFFFFF;line-height: 540px;}
+.ydsy-gywm{width: 1200px;margin: auto;margin-top: 100px;}
+.ydsy-gywm-bt-gywm{font-size:24px;color:rgba(0,69,195,1);}
+.ydsy-gywm-bt-yy{font-size:38px;color:rgba(0,69,195,1);font-family:ArialMT;margin: 16px 0;}
+.ydsy-gywm-xq{margin:  40px 0;width: 600px;}
+.ydsy-gywm-xq-nb{width: 33%; float: left;}
+.ydsy-gywm-xq-wb{text-align: center;opacity: 0.45;}
+.ydsy-gywm-xq-sz{font-size: 55px;text-align: center;position: relative;}
+.ydsy-gywm-xq-fgx{width:1px;height:49px;background:rgba(0,0,0,0.15);float: left;margin-top: 30px;}
+.ydsy-gywm-xq-nb img{position: absolute;margin: -70px 0 0 132px;}
+.ydsy-gywm-xq-nbp{width: 33%; float: left;}
+.ydsy-gywm-xq-nbp img{position: absolute;margin: -70px 0 0 142px;}
+.ydsy-gywm-wb{width: 600px;opacity: 0.65;}
+.ydsy-gywm-text{float: left;}
+.ydsy-gywm-img{float: right;margin-top: 84px;}
+.ydsy-gywm-xq-ckxq{width:170px;height:40px;border:1px solid rgba(0, 0, 0, 0.1);border-radius:3px;margin-top: 54px;}
+.ydsy-gywm-xq-ckxq-jz p{line-height: 40px;float: left;}
+.ydsy-gywm-xq-ckxq-jz img{float: right;margin-top: 16px;}
+.ydsy-gywm-xq-ckxq-jz{width: 100px;margin: auto;}
+.ydsy-ywfw{height: 720px;background: url(../img/ydsy-ywfw-bj.png) no-repeat center;}
+.ydsy-ywfw-bt{width: 400px;margin: auto;}
+.ydsy-ywfw-xbt{color:rgba(255,255,255,1);font-size: 24px;text-align: center;padding-top: 140px;}
+.ydsy-ywfw-yw{color:rgba(255,255,255,1);font-size: 38px;text-align: center;padding: 6px 0 }
+.ydsy-ywfw-img{width: 48px;margin: auto;}
+
+.box li{ width:345px; height:478px; margin:40px 20px ; float:left; overflow:hidden; position:relative;background:rgba(255,255,255,1);box-shadow:0px 11px 13px 0px rgba(0, 0, 0, 0.14);}
+.toll_info{  width:345px; height:478px; background:#EEE; vertical-align:middle;display:table-cell;}
+.box li p{ padding:10px; font:normal 13px/24px '΢���ź�'; cursor:pointer;}
+.box li a{  text-decoration:none; position:absolute; top:0; left:0;}
+.ydsy-ywfw-nr{width: 1200px;margin: auto;}
+.ydsy-ywfw-nr-bh{font-size: 60px;padding-top: 50px;width: 55px;margin: auto;opacity: 0.5;}
+.ydsy-ywfw-nr-fgx{width: 148px;height: 1px;opacity: 0.5;background: #000;margin: auto;position: relative;margin-top: 6px;}
+.ydsy-ywfw-nr-bho{width:70px;height: 48px;background: #FFFFFF;position: absolute;margin: -24px 0px 0px 137px;}
+.ydsy-ywfw-nr-bhv{font-size: 14px;margin: auto;width: 27px;padding-top: 14px;}
+.ydsy-ywfw-nr-bt{font-size: 20px;width: 127px;margin:20px auto ;font-weight:bold;}
+.ydsy-ywfw-nr-zw{font-size: 14px;width: 285px;margin: auto ;opacity: 0.8;text-align: center;line-height:24px;}
+.ydsy-ywfw-nr-gd{width: 115px;border-bottom:1px solid rgba(0, 0, 0, 0.2);height: 32px;margin:46px auto;}
+.ydsy-ywfw-nr-gd-wb{width:72px;font-size:14px;float: left;}
+.ydsy-ywfw-nr-gd-img{float: right;}
