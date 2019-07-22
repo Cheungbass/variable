@@ -194,8 +194,8 @@
 
 <body id="body">
     <div id="yaodiv" style="width: 100%; height: auto;display: block;">
-        <div class="do" style="margin-top: 50%;" onclick="yao()"><span
-                style="font-size: 17px;">手机摇一摇&nbsp;&nbsp;摇出好运来</span></div>
+        <div class="do" style="margin-top: 50%;" onclick="yao()"></div>
+        <div style="position: fixed;left:0;right:0;bottom:20px;margin:auto;text-align:center;color:gold"><span style="font-size: 17px;">手机摇一摇&nbsp;&nbsp;摇出好运来</span></div>
         <div id="share" style="display: none;" onClick="javascript:hide_share();">
             <div style="display:none"><audio id="media"
                     src="https://res.wx.qq.com/voice/getvoice?mediaid=MzAxNzQ5NTczMV81MDMzNjEwMDU=" controls=""></audio>
@@ -210,6 +210,7 @@
                         src="https://beiducom.oss-cn-shenzhen.aliyuncs.com/chouqian03.png"
                         alt="shareimg" style="width:80%; "></div>
             </div>
+            <div class="" id="jieqian1" style="display: none;padding-top:20px;text-align: center;color: #fff;font-size: 20px">倒计时 <span style="color: gold" id="mytime">3</span> 秒</div>
         </div>
     </div>
     <div id="result" style="display: none;width: 94%;padding-left: 3%;padding-top: 10px;">
@@ -275,12 +276,23 @@
                     }
                 })
             }</script>
-        <script
-            type="text/javascript">var flag = 0; function yao() { document.getElementById('share').style.display = 'block'; if (flag == 0) { document.getElementById("media"); media.play(); setTimeout("yaobai()", 2000); } flag = 1; } function yaobai() { document.getElementById('qiantong').style.display = 'none'; document.getElementById('jieqian').style.display = 'block'; setTimeout(function () { tiaozhuan(); }, 2000); } function tiaozhuan() {
+        <script type="text/javascript">
+            var time = 4; var flag = 0; function yao() { document.getElementById('share').style.display = 'block'; if (flag == 0) { document.getElementById("media"); media.play(); setTimeout("yaobai()", 2000); } flag = 1; } function yaobai() { document.getElementById('qiantong').style.display = 'none'; document.getElementById('jieqian').style.display = 'block';document.getElementById('jieqian1').style.display = 'block'; 
+           // setTimeout(function () { tiaozhuan(); }, 2000); } 
+            var atime = setInterval(function(){
+                time--;
+                $('#mytime').html(time)
+                if(time <= 0 || time == 0){
+                    tiaozhuan()
+                    clearInterval(atime)
+                }
+            },1000);} 
+            function tiaozhuan() {
                     var num2 = parseInt(90 * Math.random() + 10); var url = "./index3.html";
                     url = encodeURI(encodeURI(url));
-                    location.href = url;
-                } function fen() { document.getElementById('shareXX').style.display = 'block'; } function hide_share() { document.getElementById('shareXX').style.display = 'none'; }</script>
+                    //location.href = url;
+                } function fen() { document.getElementById('shareXX').style.display = 'block'; } function hide_share() { document.getElementById('shareXX').style.display = 'none'; }
+        </script>
         <script type="text/javascript">window.onload = function () {
                 setTimeout("yao()", 3000); document.addEventListener("WeixinJSBridgeReady", function () {
                     document.getElementById('media').play();
