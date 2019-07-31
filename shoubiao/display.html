@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Bytedance Tracking -->
+<script>
+  (function(r,d,s,l){var meteor=r.meteor=r.meteor||[];meteor.methods=["track","off","on"];meteor.factory=function(method){return function(){
+  var args=Array.prototype.slice.call(arguments);args.unshift(method);meteor.push(args);return meteor}};for(var i=0;i<meteor.methods.length;i++){
+  var key=meteor.methods[i];meteor[key]=meteor.factory(key)}meteor.load=function(){var js,fjs=d.getElementsByTagName(s)[0];js=d.createElement(s);
+  js.src="https://analytics.snssdk.com/meteor.js/v1/"+l+"/sdk";fjs.parentNode.insertBefore(js,fjs)};meteor.load();if(meteor.invoked){return}
+  meteor.invoked=true;meteor.track("pageview")})(window,document,"script","1636826926621699");
+</script>
+<!-- End Bytedance Tracking -->
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link href="./shoubiao/font-awesome.min.css" tppabs="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style inject="" type="text/css">
+        @font-face {
+            font-weight: 400;
+            font-style: normal;
+            font-family: weui;
+            src: url("weui.ttf")/*tpa=http://www.szwyq2018.cn/dist/weui.ttf*/ format("truetype")
+        }
+
+        [class*=" weui-icon-"], [class^=weui-icon-] {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: inherit
+        }
+
+        [class*=" weui-icon-"]:before, [class^=weui-icon-]:before {
+            display: inline-block;
+            margin-left: .2em;
+            margin-right: .2em
+        }
+
+        .weui_mask {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .6)
+        }
+
+        .weui-mask_transparent, .weui_mask {
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0
+        }
+
+        .weui-mask_transparent {
+            right: 0;
+            bottom: 0
+        }
+
+        .weui-toast {
+            position: fixed;
+            z-index: 9999999999;
+            width: 7.6em;
+            min-height: 7.6em;
+            top: 180px;
+            left: 50%;
+            margin-left: -3.8em;
+            background: hsla(0, 0%, 7%, .7);
+            text-align: center;
+            border-radius: 4px;
+            color: #fff
+        }
+
+        .weui-icon_toast {
+            margin: 22px 0 0;
+            display: block
+        }
+
+        .weui-icon-success-no-circle:before {
+            content: "\EA08"
+        }
+
+        .weui-icon-success-no-circle {
+            font-size: 23px;
+            color: #09bb07
+        }
+
+        .weui-icon_toast.weui-icon-success-no-circle:before {
+            color: #fff;
+            font-size: 55px
+        }
+
+        .weui-loading {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            background: transparent url("loading.svg")/*tpa=http://www.szwyq2018.cn/images/loading.svg*/ no-repeat;
+            background-size: 100%
+        }
+
+        .weui-icon_toast.weui-loading {
+            margin: 22px 0 8px;
+            width: 38px;
+            height: 38px
+        }
+
+        .weui-toast__content {
+            margin: 0 0 15px
+        }
+
+        .weui_dialog {
+            position: fixed;
+            z-index: 1002;
+            width: 85%;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -52%);
+            transform: translate(-50%, -52%);
+            background-color: #fafafc;
+            text-align: center;
+            border-radius: 4px;
+            overflow: hidden
+        }
+
+        .weui_dialog_hd {
+            padding: 1.2em 0 .5em
+        }
+
+        .weui_dialog_title {
+            font-weight: 400;
+            font-size: 17px
+        }
+
+        .weui_dialog_ft {
+            position: relative;
+            line-height: 42px;
+            margin-top: 20px;
+            font-size: 17px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex
+        }
+
+        .weui_btn_dialog.primary {
+            color: #cf2a4f
+        }
+
+        .weui_dialog_ft a {
+            display: block;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            color: #cf2a4f;
+            text-decoration: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        }
+
+        .order-success-dialog .weui_dialog_hd, .weui_dialog_alert .weui_dialog_hd {
+            padding: 0;
+            line-height: 48px
+        }
+
+        .order-success-dialog .weui_dialog_bd, .weui_dialog_alert .weui_dialog_bd {
+            padding: 4px 20px 18px;
+            line-height: 24px
+        }
+
+        .order-success-dialog .weui_dialog_ft, .weui_dialog_alert .weui_dialog_ft {
+            line-height: 48px;
+            margin-top: 0;
+            border-top: 1px solid #ddd
+        }
+
+        .order-success-dialog .order-submit-dialog-footer, .weui_dialog_alert .order-submit-dialog-footer {
+            margin: 0 20px 25px;
+            border-radius: 4px;
+            line-height: 42px
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+            outline: 0;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        body, html {
+            font-family: Helvetica Neue, Helvetica, arial, STHeiTi, sans-serif;
+            font-size: 14px;
+            color: #333
+        }
+
+        body {
+            padding-bottom: constant(safe-area-inset-bottom);
+            padding-bottom: env(safe-area-inset-bottom)
+        }
+
+        a, input, textarea {
+            -webkit-tap-highlight-color: transparent
+        }
+
+        textarea {
+            resize: none
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .txp_next_poster {
+            background-image: none !important
+        }
+
+        .fygrey:after, .fygrey:before {
+            content: ".";
+            display: inline-block
+        }
+
+        .clear:after, .clear:before {
+            display: table;
+            clear: both;
+            content: ""
+        }
+
+        .preview-phone {
+            position: relative
+        }
+
+        .preview-phone .mute, .preview-phone .unmute {
+            width: 30px;
+            height: 100%;
+            background-size: 20px
+        }
+
+        .preview-phone .mute {
+            background: url("mute.svg")/*tpa=http://www.szwyq2018.cn/images/mute.svg*/ no-repeat 50%
+        }
+
+        .preview-phone .unmute {
+            background: url("unmute.svg")/*tpa=http://www.szwyq2018.cn/images/unmute.svg*/ no-repeat 50%
+        }
+
+        .preview-phone .remove-transform {
+            transform: none !important
+        }
+
+        .preview-phone .together-module {
+            padding: 0 2px;
+            font-size: 0
+        }
+
+        .preview-phone .together-link {
+            vertical-align: middle;
+            display: inline-block;
+            padding: 0 2px 5px
+        }
+
+        .preview-phone .together-link img {
+            width: 100%
+        }
+
+        .preview-phone .pic-module {
+            width: 100%;
+            display: block
+        }
+
+        .preview-phone .recommend-title-wrapper {
+            height: 42px;
+            line-height: 42px;
+            text-align: center
+        }
+
+        .preview-phone .recommend-title-wrapper:after {
+            content: "";
+            line-height: 0;
+            height: 1px;
+            width: 50%;
+            background-color: #ccc;
+            display: block;
+            margin: -22px auto 0
+        }
+
+        .preview-phone .recommend-title-wrapper .recommend-title {
+            padding: 0 10px;
+            background-color: #fff;
+            display: inline-block;
+            font-size: 16px
+        }
+
+        .preview-phone .first-image {
+            padding: 0;
+            text-align: center;
+            font-size: 0;
+            position: relative;
+            bottom: 0
+        }
+
+        .preview-phone .ec-validate {
+            color: #ff4949;
+            font-size: 12px;
+            line-height: 1;
+            padding-top: 4px
+        }
+
+        .ec-input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid #c5c5c5;
+            display: block;
+            font-size: inherit;
+            height: 36px;
+            line-height: 1;
+            padding: 3px 10px;
+            width: 100%
+        }
+
+        .verify-btn {
+            display: inline-block;
+            width: 40%;
+            text-align: center;
+            line-height: 36px;
+            border-radius: 4px;
+            background-color: #e8e8e8;
+            color: #666
+        }
+
+        .verify-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            color: #999;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px
+        }
+
+        .fade-out {
+            opacity: 0 !important;
+            visibility: hidden !important
+        }
+
+        .pc {
+            width: 640px;
+            background-color: #fff;
+            margin: 0 auto
+        }
+
+        .pc .preview-phone {
+            margin-top: 35px
+        }
+
+        .hide {
+            display: none !important
+        }
+
+        .weui-toast.remind {
+            min-height: 0;
+            width: auto;
+            padding: 0 20px;
+            transform: translate(-50%);
+            left: 50%;
+            margin-left: 0
+        }
+
+        .weui-toast.remind .weui-icon_toast {
+            display: none
+        }
+
+        .weui-toast.remind .weui-toast__content {
+            vertical-align: middle;
+            padding-top: 20px
+        }
+
+        .detail-tab .section > div, .detail-tab > input {
+            display: none
+        }
+
+        #tab1:checked ~ .section .tab1, #tab2:checked ~ .section .tab2 {
+            display: block
+        }
+
+        #tab2:checked ~ .section .tab2 {
+            padding: 0 8px
+        }
+
+        #tab2:checked ~ .section .tab2 label {
+            display: block;
+            border-bottom: 1px solid #eee
+        }
+
+        #tab2:checked ~ .section .tab2 .title {
+            font-size: 16px;
+            line-height: 40px;
+            position: relative
+        }
+
+        #tab2:checked ~ .section .tab2 .title:after {
+            content: " ";
+            display: inline-block;
+            height: 6px;
+            width: 6px;
+            border-width: 2px 2px 0 0;
+            border-color: #999;
+            border-style: solid;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 50%;
+            margin-top: -4px;
+            right: 2px;
+            transition: transform .7s
+        }
+
+        #tab2:checked ~ .section .tab2 input:checked ~ .title:after {
+            transform: rotate(135deg)
+        }
+
+        #tab2:checked ~ .section .tab2 input {
+            display: none
+        }
+
+        #tab2:checked ~ .section .tab2 .content {
+            max-height: 0;
+            transition: max-height .7s;
+            overflow: hidden;
+            line-height: 30px;
+            padding-left: 16px
+        }
+
+        #tab2:checked ~ .section .tab2 input:checked ~ .content-1 {
+            max-height: 180px
+        }
+
+        #tab2:checked ~ .section .tab2 input:checked ~ .content-2 {
+            max-height: 320px
+        }
+
+        #tab2:checked ~ .section .tab2 input:checked ~ .content-3 {
+            max-height: 60px
+        }
+
+        #tab2:checked ~ .section .tab2 input:checked ~ .content-4 {
+            max-height: 90px
+        }
+
+        .detail-tab {
+            border-top: 8px solid #f7f7f7
+        }
+
+        .detail-tab .section {
+            margin: 15px 0
+        }
+
+        .detail-tab ul.nav {
+            list-style: none;
+            padding: 0 15%;
+            font-size: 16px
+        }
+
+        .detail-tab ul.nav .tab1, .detail-tab ul.nav .tab2 {
+            width: 50%;
+            float: left;
+            text-align: center
+        }
+
+        .detail-tab ul.nav .tab1 label, .detail-tab ul.nav .tab2 label {
+            display: inline-block;
+            padding: 15px 0 5px
+        }
+
+        .myscroll { width: 100%; height: 150px;border:1px solid #c5657b; margin: 0 auto; line-height: 26px; font-size: 12px; overflow: hidden;padding-left: 20px;}
+
+    </style>
+    <!--<link rel="stylesheet" type="text/css" href="https://cash-dengue.oss-cn-hangzhou.aliyuncs.com/e-commerce/1/static/files/txp_mobile.css,txp_appbar.css">-->
+    <!--<link href="https://cdn.bootcss.com/Swiper/4.0.5/css/swiper.min.css" rel="stylesheet">-->
+    <!--<link rel="stylesheet" type="text/css" href="./files/swiper.min.css"/>-->
+
+</head>
+<style>
+    .swiper-pagination-bullet-active {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+</style>
+<body class="">
+<div class="preview-phone">
+    <div class="first-image">
+        <div class="v-gallery-style">
+            <style>
+                .video_style {
+                    width: 100%;
+                    height: 300px;
+                }
+            </style>
+            <iframe class="video_style" style="width: 100%; height: 300px;" frameborder="0" src=""
+                    allowFullScreen="true"></iframe>
+
+            <!--<div class="swiper-container" id="swiper-container" style="width: 100%;">-->
+            <!--<div class="swiper-wrapper">-->
+            <!--<div class="swiper-slide">-->
+            <!--<img style="width: 100%;"-->
+            <!--src="https://cash-dengue.oss-cn-hangzhou.aliyuncs.com/e-commerce/1/static/files/0.jpg">-->
+            <!--</div>-->
+            <!--<div class="swiper-slide">-->
+            <!--<img style="width: 100%;"-->
+            <!--src="https://cash-dengue.oss-cn-hangzhou.aliyuncs.com/e-commerce/1/static/files/0.jpg">-->
+            <!--</div>-->
+            <!--<div class="swiper-slide">-->
+            <!--<img style="width: 100%;"-->
+            <!--src="https://cash-dengue.oss-cn-hangzhou.aliyuncs.com/e-commerce/1/static/files/0.jpg">-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Add Pagination &ndash;&gt;-->
+            <!--<div class="swiper-pagination"></div>-->
+            <!--</div>-->
+
+
+        </div>
+    </div>
+    <div id="marketingModules">
+        <style inject="" type="text/css">
+            .marquee-wrapper {
+                pointer-events: none;
+                height: 36px;
+                margin-top: -36px;
+                position: relative;
+                z-index: 2
+            }
+            .min_title>span{
+                color: #cf2a4f;
+            }
+
+            .marquee-wrapper.fix {
+                position: fixed;
+                top: 10px;
+                width: 100%;
+                left: 0;
+                right: 0;
+                margin-top: 0
+            }
+
+            .marquee-wrapper #marqueeContainer {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                list-style: none
+            }
+
+            .marquee-wrapper #marqueeContainer li {
+                list-style: none;
+                position: absolute;
+                left: 0;
+                margin: 5px 10px 5px 5px;
+                padding: 0 10px 0 1px;
+                border-radius: 15px;
+                height: 26px;
+                line-height: 26px;
+                font-size: 14px;
+                opacity: 1;
+                width: auto;
+                box-shadow: 0 0 4px rgba(0, 0, 0, .5)
+            }
+
+            .marquee-wrapper #marqueeContainer li span {
+                display: inline-block;
+                margin-left: -16px
+            }
+
+            .marquee-wrapper #marqueeContainer li div {
+                width: 44px;
+                height: 44px;
+                float: left;
+                background: url("head-sprites.png")/*tpa=https://cash-dengue.oss-cn-hangzhou.aliyuncs.com/e-commerce/1/static/files/head-sprites.png*/ no-repeat;
+                transform: translateY(2px) scale(.5);
+                transform-origin: 0 0
+            }
+
+            .marquee-wrapper .marquee-style-1 li {
+                background-color: #fff;
+                color: #000
+            }
+
+            .marquee-wrapper .marquee-style-2 li {
+                background-color: rgba(0, 0, 0, .9);
+                color: #fff
+            }
+
+            .pc .marquee-wrapper.fix {
+                left: 50%;
+                margin-left: -320px
+            }</style>
+        <!--<div class="marquee-wrapper       fix">-->
+        <!--<ul id="marqueeContainer" class="marquee-style-1">-->
+        <!--<li style="opacity: 0.35;">-->
+        <!--<div style="background-position: -264px -4px;"></div>-->
+        <!--<span>天津市刘**购买了该商品</span></li>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <style inject="" type="text/css">
+            .good-hot-wrapper {
+                font-size: 20px;
+                line-height: 20px;
+                padding: 15px 8px 0
+            }
+
+            .good-hot-wrapper span {
+                color: #666;
+                display: inline-block;
+                margin-right: 3px;
+                font-size: 14px
+            }
+
+            .good-price {
+                font-size: 20px;
+                padding: 15px 8px 0;
+                float: left;
+                line-height: 20px
+            }
+
+            .good-price .cross-price {
+                text-decoration: line-through;
+                font-size: 14px;
+                color: #666
+            }</style>
+        <!--<div class="good-hot-wrapper " style="color: #cf2a4f; float: left">-->
+            <!--<span>已售</span>-->
+        <!--</div>-->
+        <!--<div class="clear"></div>-->
+        <style inject="" type="text/css">
+            .page-title {
+                position: relative;
+                font-size: 15px;
+                line-height: 22px;
+                text-align: left;
+                border-bottom: 1px solid #e5e5e5;
+                padding: 10px 8px 15px;
+                word-wrap: break-word;
+                word-break: break-all
+            }
+
+            .page-title p {
+                text-indent: 40px;
+                letter-spacing: 1px
+            }
+
+            .page-title span.icon {
+                position: absolute;
+                left: 8px;
+                top: 12px;
+                font-size: 12px;
+                font-weight: 400;
+                background: #fc2d44;
+                color: #fff;
+                padding: 0 5px;
+                line-height: 18px;
+                border-radius: 10px
+            }</style>
+        <!--<h2 class="page-title">-->
+            <!--<span class="icon" style="color: #ffffff;background-color: #cf2a4f;">热卖</span>-->
+            <!--<p style="text-indent: 40px;" class="min_title"></p>-->
+        <!--</h2>-->
+        <style inject="" type="text/css">
+            .good-services {
+                font-size: 12px;
+                margin-top: 15px;
+                border-bottom: 1px solid #e5e5e5;
+                padding: 0 0 15px
+            }
+
+            .good-services .item {
+                float: left;
+                text-align: center;
+                width: 33.3%
+            }
+
+            .good-services .item .span-icon {
+                display: inline-block;
+                margin-right: 3px;
+                height: 16px;
+                vertical-align: sub
+            }</style>
+        <!--<div class="good-services clear">-->
+            <!--<div class="item">-->
+<!--<span class="span-icon">-->
+<!--<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="16px" viewBox="0 0 26 26"-->
+     <!--version="1.1">-->
+<!--<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
+<!--<g transform="translate(-62.000000, -1116.000000)" fill-rule="nonzero" stroke="#cf2a4f" stroke-width="2">-->
+<!--<g transform="translate(0.000000, 1084.000000)">-->
+<!--<g transform="translate(62.000000, 26.000000)">-->
+<!--<g transform="translate(0.000000, 6.000000)">-->
+<!--<rect x="1" y="1" width="24" height="24" rx="12"></rect>-->
+<!--<g transform="translate(9.000000, 6.500000)" stroke-linecap="round">-->
+<!--<path d="M0,0.5 L4,6"></path>-->
+<!--<path d="M5,0.5 L9,6" transform="translate(6.500000, 3.000000) scale(-1, 1) translate(-6.500000, -3.000000) "></path>-->
+<!--<path d="M0,7 L8,7" transform="translate(4.000000, 7.000000) scale(-1, 1) translate(-4.000000, -7.000000) "></path>-->
+<!--<path d="M0,11 L8,11" transform="translate(4.000000, 11.000000) scale(-1, 1) translate(-4.000000, -11.000000) "></path>-->
+<!--<path d="M4,14 L4,6" transform="translate(4.000000, 9.500000) scale(-1, 1) translate(-4.000000, -9.500000) "></path>-->
+<!--</g>-->
+<!--</g>-->
+<!--</g>-->
+<!--</g>-->
+<!--</g>-->
+<!--</g>-->
+<!--</svg>-->
+<!--</span>货到付款-->
+            <!--</div>-->
+            <!--<div class="item">-->
+<!--<span class="span-icon">-->
+<!--<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="16px" viewBox="0 0 26 26"-->
+     <!--version="1.1">-->
+<!--<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
+<!--<g transform="translate(-306.000000, -1116.000000)" fill-rule="nonzero" stroke="#cf2a4f" stroke-width="2">-->
+<!--<g transform="translate(0.000000, 1084.000000)">-->
+<!--<g transform="translate(306.000000, 32.000000)">-->
+<!--<circle cx="13" cy="13" r="12"></circle>-->
+<!--<g transform="translate(6.500000, 6.500000)" stroke-linecap="round">-->
+<!--<path d="M0.5,4 L0.5,12"></path>-->
+<!--<path d="M3.5,1 L3.5,12"></path>-->
+<!--<path d="M9.5,3 L9.5,12"></path>-->
+<!--<path d="M12.5,3 L12.5,8"></path>-->
+<!--<path d="M6.5,4 L6.5,12"></path>-->
+<!--<path d="M6.5,12 L0.5,12"></path>-->
+<!--<path d="M6.5,4 L0.5,4"></path>-->
+<!--<path d="M12.5,3 L9.5,3"></path>-->
+<!--<path d="M12.5,8 L10,8"></path>-->
+<!--<path d="M6.5,8 L0.5,8"></path>-->
+<!--</g>-->
+<!--</g>-->
+<!--</g>-->
+<!--</g>-->
+<!--</g>-->
+<!--</svg>-->
+<!--</span>全国包邮-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+    <style inject="" type="text/css">.price-buy-wrapper {
+        margin: 15px 8px;
+        border-radius: 4px;
+        font-size: 18px;
+        overflow: hidden
+    }
+
+    .price-buy-wrapper .index-buying {
+        display: block;
+        text-align: center
+    }</style>
+    <!--<div class="price-buy-wrapper clear" style="background: #cf2a4f;">-->
+        <!--<a href="#ec-form-wrapper" class="index-buying" data-type="purchase-btn"-->
+        <!--style="color:#ffffff;height:42px;line-height:42px;width:100%;">-->
+        <!--<div style="display: inline-block; height: 22px; width: 22px; vertical-align: sub; margin-right: 6px;">-->
+        <!--<svg height="22px" viewBox="0 0 39 39" version="1.1" xmlns="http://www.w3.org/2000/svg"-->
+        <!--xmlns:xlink="http://www.w3.org/1999/xlink">-->
+        <!--<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
+        <!--<g transform="translate(-411.000000, -993.000000)" fill="#ffffff" fill-rule="nonzero">-->
+        <!--<g transform="translate(19.000000, 974.000000)">-->
+        <!--<path d="M405.756646,45.0796689 L404.573098,44.2349899 L429.1406,44.2349899 C429.833324,44.2349899 430.394654,44.7999953 430.394654,45.4969029 C430.394654,46.1936338 429.833324,46.7584624 429.1406,46.7584624 L404.573054,46.7584624 C404.040321,46.7584624 403.565707,46.4199542 403.389638,45.9140044 L394.604534,20.6788819 L395.787994,21.5235167 L393.253835,21.5235167 C392.561419,21.5235167 392,20.9587324 392,20.2616478 C392,19.564917 392.561419,19 393.253835,19 L395.788038,19 C396.320771,19 396.795429,19.3387734 396.971454,19.8447232 L399.235052,26.3468818 L427.745695,26.3468818 C428.539325,26.3468818 429.133427,27.0795941 428.974007,27.8621234 L426.972097,37.6845614 C426.862756,38.2205694 426.422759,38.6243215 425.88247,38.6850125 L409.35794,39.7612811 C408.669521,39.8384599 408.049369,39.3396268 407.972756,38.6469184 C407.896186,37.9544752 408.391931,37.3305028 409.080261,37.2535008 L424.715396,36.2169708 C424.715396,36.2169708 425.606549,32.064964 426.257672,28.8703543 C426.272037,28.7999828 405.465042,28.8539549 400.112675,28.8675695 L405.756646,45.0796689 Z M408.414017,51.9305024 C409.416926,51.9305024 410.232872,52.7514443 410.232872,53.7605592 C410.232872,54.7696299 409.416926,55.5905718 408.414017,55.5905718 C407.411195,55.5905718 406.59538,54.7696299 406.59538,53.7605592 C406.595337,52.7514443 407.411195,51.9305024 408.414017,51.9305024 Z M408.414017,49.5210742 C406.08716,49.5210742 404.200873,51.4192039 404.200873,53.7605592 C404.200873,56.1021355 406.08716,58 408.414017,58 C410.740873,58 412.62738,56.1020913 412.62738,53.7605592 C412.627336,51.4192039 410.740873,49.5210742 408.414017,49.5210742 Z M426.78766,53.7605592 C426.78766,54.7696299 425.97189,55.5905718 424.969156,55.5905718 C423.966334,55.5905718 423.150475,54.7696299 423.150475,53.7605592 C423.150476,52.7514443 423.966334,51.9305024 424.969156,51.9305024 C425.97189,51.9305024 426.78766,52.7514443 426.78766,53.7605592 Z M420.755968,53.7605592 C420.755968,56.1021355 422.642168,58 424.969156,58 C427.295924,58 429.182168,56.1020913 429.182168,53.7605592 C429.182211,51.4192039 427.295924,49.5210742 424.969156,49.5210742 C422.642124,49.5210742 420.755968,51.4192039 420.755968,53.7605592 Z"-->
+        <!--id="Shape"></path>-->
+        <!--</g>-->
+        <!--</g>-->
+        <!--</g>-->
+        <!--</svg>-->
+        <!--</div>-->
+        <!--买一送二，一折出售-->
+        <!--</a>-->
+    <!--</div>-->
+    <style>
+        #tab1:checked ~ .nav .tab1 label, #tab2:checked ~ .nav .tab2 label {
+            color: #cf2a4f;
+            border-bottom: 2px solid #cf2a4f;
+        }
+    </style>
+    <div class="detail-tab">
+        <input checked="checked" id="tab1" type="radio" name="pct">
+        <input id="tab2" type="radio" name="pct">
+        <!--<ul class="nav clear">-->
+            <!--<li class="tab1">-->
+                <!--<label for="tab1">商品详情</label>-->
+            <!--</li>-->
+            <!--<li class="tab2">-->
+                <!--<label for="tab2">常见帮助</label>-->
+            <!--</li>-->
+        <!--</ul>-->
+        <div class="section">
+            <div class="tab1" style="margin-top:-1.7em;">
+
+                <img class="pic-module mo kucungaoji"
+                     src="./shoubiao/top.gif" tppabs="https://cash-dengue.oss-cn-hangzhou.aliyuncs.com/e-commerce/1/static/files/top.gif">
+
+                <div class="info_img">
+                </div>
+            </div>
+            <div class="tab2">
+                <label>
+                    <input type="checkbox">
+                    <div class="title">1. 我的订单大概多久发货？</div>
+                    <div class="content content-1">
+                        订单的发货时间为您下单之后的72小时内，请您耐心等待，订单状态及物流进度可在下单成功后的短信内容中查看，普通地区异地物流运转3-5天左右，偏远地区异地物流运转时间5-7天左右，如遇特殊情况将会导致延误，以物流官网进度为准。若您的订单超出72小时仍未发货，建议您联系商家进行咨询。
+                    </div>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <div class="title">2. 我的订单如何申请退换货？</div>
+                    <div class="content content-2">
+                        若您需要办理退换货，无需对订单进行任何操作，请您及时联系商家协商退换货事宜，向商家索取商品寄回地址信息，将商品寄回至商家处，并向商家提供商品寄回有效物流单号，由商家为您安排退换货。
+                        <br>换货要求：保证商品全新，不影响二次销售，商品包装完好，附件、赠品齐全。在寄回包裹中放置小纸条注明您的联系方式、订单号，禁止使用“到付”运费支付形式将商品寄回。
+                        <br>退换货运费说明：交易中的运费争议，根据“谁过错，谁承担”的原则处理，但买卖双方协商一致的除外。
+                    </div>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <div class="title">3. 如何联系商家？</div>
+                    <div class="content content-3">下单成功后，系统将会发送短信，可通过点击短信中的链接打开订单中心，拨打售后电话联系商家。</div>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <div class="title">4. 价格说明</div>
+                    <div class="content content-4">价格：指商品的实时标价，不因表述的差异改变性质。具体成交价格根据商品参加活动或者使用优惠券等发生变化，最终以订单结算价格为准。</div>
+                </label>
+            </div>
+        </div>
+    </div>
+    <style inject="" type="text/css">#ec-form-wrapper {
+        font-style: normal
+    }
+
+    #ec-form-wrapper li {
+        list-style: none
+    }
+
+    #ec-form-wrapper .ec-form-fields {
+        background: #f6f7f8;
+        border: 1px solid #e7e8e9;
+        border-radius: 4px;
+        font-size: 15px;
+        margin: 0 8px
+    }
+
+    #ec-form-wrapper .item-group {
+        border-bottom: 1px solid #e7e8e9;
+        padding: 10px 14px
+    }
+
+    #ec-form-wrapper .item-group:first-child {
+        padding-bottom: 0
+    }
+
+    #ec-form-wrapper .title {
+        font-weight: 700;
+        color: #333
+    }
+
+    #ec-form-wrapper .ec-input {
+        border: none;
+        background-color: transparent;
+        padding: 0
+    }
+
+    #ec-form-wrapper .coupon-label {
+        background: url("coupon-icon.svg")/*tpa=http://www.szwyq2018.cn/images/coupon-icon.svg*/ no-repeat 100%;
+        margin-bottom: 10px;
+        display: inline-block;
+        padding-right: 26px;
+        line-height: 22px
+    }
+
+    #ec-form-wrapper .ec-label {
+        text-align: left;
+        vertical-align: middle;
+        float: left;
+        line-height: 36px;
+        width: 83px
+    }
+
+    #ec-form-wrapper .ec-content {
+        line-height: 36px;
+        position: relative;
+        margin-left: 84px
+    }
+
+    #ec-form-wrapper .select-area > select {
+        width: 100%;
+        height: 36px;
+        border: 0;
+        font-size: inherit;
+        background-color: transparent
+    }
+
+    #ec-form-wrapper .attribute-name {
+        margin-top: 10px
+    }
+
+    #ec-form-wrapper .ec-validate {
+        display: block;
+        padding-top: 0;
+        line-height: 14px
+    }
+
+    #ec-form-wrapper .select-wrapper {
+        display: inline-block;
+        width: 33%;
+        margin-left: 0;
+        padding-right: 5px
+    }
+
+    #ec-form-wrapper #ec-form-wrapper {
+        height: 60px;
+        line-height: 50px;
+        font-size: 16px;
+        text-align: center;
+        border-top: 8px solid #f7f7f7
+    }
+
+    #ec-form-wrapper .submit-button {
+        display: block;
+        color: #fff;
+        background: #cf2a4f;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin: 15px 8px;
+        border-radius: 4px;
+        font-size: 16px
+    }
+
+    #ec-form-wrapper .pay-doc {
+        padding: 8px 10px;
+        border-radius: 4px
+    }
+
+    @media (max-width: 320px) {
+        #ec-form-wrapper .pay-doc {
+            padding: 8px 7px
+        }
+    }
+
+    #ec-form-wrapper .package-group, #ec-form-wrapper .prop-list {
+        margin-top: 10px
+    }
+
+    #ec-form-wrapper .package-group > li, #ec-form-wrapper .prop-list > li {
+        float: left;
+        background-color: #fff;
+        line-height: 20px;
+        border: 1px solid #dbdee4;
+        border-radius: 4px;
+        color: #333;
+        padding: 8px 10px;
+        margin: 0 10px 10px 0;
+        cursor: pointer
+    }
+
+    #ec-form-wrapper .package-group > li.active, #ec-form-wrapper .prop-list > li.active {
+        color: #fff;
+        border-color: #cf2a4f;
+        background-color: #cf2a4f
+    }
+
+    #ec-form-wrapper .ec-spinner {
+        text-align: center
+    }
+
+    #ec-form-wrapper .ec-spinner .left, #ec-form-wrapper .ec-spinner .right {
+        float: left;
+        line-height: 34px;
+        width: 36px;
+        font-size: 18px;
+        background-color: #fff;
+        border-radius: 4px;
+        border: 1px solid #e7e8e9;
+        cursor: pointer
+    }
+
+    #ec-form-wrapper .ec-spinner .left.disabled, #ec-form-wrapper .ec-spinner .right.disabled {
+        color: #c5c5c5
+    }
+
+    #ec-form-wrapper .is-required:before {
+        content: "*";
+        color: #ff4949;
+        display: inline-block;
+        width: 10px;
+        margin-left: -10px
+    }
+
+    #ec-form-wrapper .pic-prop {
+        clear: both;
+        width: 160px;
+        height: 160px;
+        margin: 0 auto 20px;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: cover
+    }
+
+    .custom-checkbox {
+        display: block;
+        position: relative;
+        padding-left: 20px;
+        font-size: 14px
+    }
+
+    .custom-checkbox input {
+        opacity: 0;
+        height: 0;
+        width: 0
+    }
+
+    .custom-checkbox .check-mark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 14px;
+        width: 14px;
+        border: 1px solid #777;
+        border-radius: 2px
+    }
+
+    .custom-checkbox input:checked ~ .check-mark:after {
+        display: block
+    }
+
+    .custom-checkbox .check-mark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 4px;
+        top: 1px;
+        width: 3px;
+        height: 7px;
+        border: solid #333;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg)
+    }</style>
+    <style>
+        #ec-form-wrapper .package-group > li.active {
+            color: #ffffff;
+            border: 1px solid #cf2a4f;
+            background-color: #cf2a4f;
+        }
+
+        #ec-form-wrapper .prop-list > li.active {
+            color: #ffffff;
+            background-color: #cf2a4f;
+            border-color: #cf2a4f;
+        }
+    </style>
+    <div id="ec-form-wrapper">
+        <img class="pic-module mo kucungaoji"
+             src="./shoubiao/bom.gif" tppabs="https://cash-dengue.oss-cn-hangzhou.aliyuncs.com/e-commerce/1/static/files/bom.gif">
+        <p id="message-content" style="padding: 10px;color:#999"></p>
+        <!--<div id="fill-forms">填写订单</div>-->
+        <div class="ec-form-fields">
+            <div class="item-group clear">
+                <div>产品</div>
+                <ul class="package-group">
+                    <li class="active goods_name">
+                        D级莫桑钻耳钉厂家直销，限时一折出售
+                    </li>
+                </ul>
+            </div>
+
+            <div id="goods-packages" style="display: none;" class="item-group clear">
+                <div>套餐</div>
+                <span id="selected_package" style="display: none;"></span>
+                <ul class="package-group" id="goods-package-item">
+                    <li class="active" data="199" onclick="selectPackage(this)">
+                        啊时间地点啊 SD 那是的
+                    </li>
+                    <li class="" data="299" onclick="selectPackage(this)">
+                        卡了发点哈多少积分好阿卡丽的阿道夫
+                    </li>
+
+                </ul>
+            </div>
+            <!--<div data-package-detail="0" class="item-group clear ">-->
+                <!--<div data-product="0_0" data-name="D级莫桑钻耳钉厂家直销，限时一折出售" class="title clear goods_name"-->
+                     <!--style="margin-bottom: 0"> 莫桑钻耳钉（默认买一送二）-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="item-group clear">
+                <label class="ec-label">数量</label>
+                <div id="package-spinner" class="ec-spinner">
+                    <i data-type="left" class="left disabled num_down" style="font-style: normal;">-</i>
+                    <div style="width:36px;line-height:36px;float:left;" id="package-amount">1</div>
+                    <i data-type="right" class="right num_up" style="font-style: normal;">+</i>
+                </div>
+                <div style="text-align: right; line-height: 36px;">应付金额 <span style="color: #cf2a4f">￥</span><span
+                        style="color: #cf2a4f; font-weight: bold;" id="couponTotalPrice">798</span><span
+                        style="display: none;" class="danjia"></span></div>
+            </div>
+            <div class="item-group">
+                <label class="ec-label is-required">姓名</label>
+                <div class="ec-content">
+                    <input id="name" type="text" class="ec-input" maxlength="10" placeholder="姓名">
+                    <div for="name" class="ec-validate"></div>
+                </div>
+            </div>
+            <div class="item-group">
+                <label class="ec-label is-required">手机号</label>
+                <div class="ec-content">
+                    <input id="phone" type="tel" class="ec-input" placeholder="手机号">
+                    <div for="phone" class="ec-validate"></div>
+                </div>
+            </div>
+            <div class="item-group" id="select-area">
+                <label class="ec-label is-required">省市区</label>
+                <style>
+                    .set_style {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                </style>
+                <div class="ec-content set_style">
+                    <div class="select-area select-wrapper">
+                        <select id="province" name="province3"></select>
+                    </div>
+                    <div class="select-area select-wrapper">
+                        <select id="city" name="city3"></select>
+                    </div>
+                    <div class="select-area select-wrapper">
+                        <select id="area" name="area3"></select>
+                    </div>
+
+                    <!--<div class="select-area select-wrapper">-->
+                    <!--<select id="province"><option value="-1">请选择省份</option><option value="0">北京</option><option value="1">天津</option><option value="2">上海</option><option value="3">重庆</option><option value="4">河北省</option><option value="5">河南省</option><option value="6">黑龙江省</option><option value="7">吉林省</option><option value="8">辽宁省</option><option value="9">山东省</option><option value="10">内蒙古自治区</option><option value="11">江苏省</option><option value="12">安徽省</option><option value="13">山西省</option><option value="14">陕西省</option><option value="15">甘肃省</option><option value="16">浙江省</option><option value="17">江西省</option><option value="18">湖北省</option><option value="19">湖南省</option><option value="20">贵州省</option><option value="21">四川省</option><option value="22">云南省</option><option value="23">新疆维吾尔自治区</option><option value="24">宁夏回族自治区</option><option value="25">青海省</option><option value="26">西藏自治区</option><option value="27">广西壮族自治区</option><option value="28">广东省</option><option value="29">福建省</option><option value="30">海南省</option><option value="31">台湾</option><option value="32">香港特别行政区</option><option value="33">澳门特别行政区</option><option value="34">海外</option></select>-->
+                    <!--</div><div class="select-area select-wrapper">-->
+                    <!--<select id="city"><option value="-1">请选择城市</option></select>-->
+                    <!--</div><div class="select-area select-wrapper">-->
+                    <!--<select id="area"><option value="-1">请选择地区</option></select>-->
+                    <!--</div>-->
+                    <!--<div for="area" class="ec-validate"></div>-->
+                </div>
+            </div>
+            <div class="item-group">
+                <label class="ec-label is-required">详细地址</label>
+                <div class="ec-content">
+                    <input id="addressdetail" placeholder="街道、楼牌号等" type="text" class="ec-input" maxlength="50">
+                    <div for="addressdetail" class="ec-validate"></div>
+                </div>
+            </div>
+            <div class="item-group">
+                <label class="ec-label is-required">付款</label>
+                <div class="ec-content">
+                    <span class="pay-doc" style="color: #ffffff;background-color: #cf2a4f">货到付款(验货满意后付款)</span>
+                </div>
+            </div>
+            <div class="item-group">
+                <label class="ec-label required-placeholder" style="line-height: 1; padding-top: 10px;">留言</label>
+                <div class="ec-content">
+                    <textarea id="message" class="ec-input" style="height: 60px; padding-top: 10px;" maxlength="100"
+                              placeholder="留言"></textarea>
+                </div>
+            </div>
+            <!--<div class="item-group" style="line-height: 14px;">-->
+                <!--<label class="custom-checkbox">记录收货地址，下次购买自动输入-->
+                    <!--<input type="checkbox" id="cookiecheck" checked="checked">-->
+                    <!--<span class="check-mark"></span>-->
+                <!--</label>-->
+            <!--</div>-->
+        </div>
+        <div id="submit-button" class="submit-button" style="
+            color: #ffffff;
+            background-color: #cf2a4f;
+            height: 46px;
+            line-height: 46px;
+            ">
+            立即提交订单
+        </div>
+    </div>
+    <div style="background-color: #c5657b;height: 30px;line-height: 30px;color: white;padding-left: 20px;">
+        <i class="fa fa-bullhorn" aria-hidden="true"></i>
+        最新报名客户
+    </div>
+    <div class="myscroll">
+        <ul style="list-style: none">
+            <li>河北的罗** [182****1928] 在9分钟前订购了此产品</li>
+            <li>江苏的刘** [155****8789] 在3分钟前订购了此产品</li>
+            <li>广西的邓** [188****3827] 在4分钟前订购了此产品</li>
+            <li>新疆的马** [171****2323] 在1分钟前订购了此产品</li>
+            <li>湖北的金** [130****9818] 在9分钟前订购了此产品</li>
+            <li>陕西的周** [132****1208] 在11分钟前订购了此产品</li>
+            <li>广东的彭** [156****6860] 在6分钟前订购了此产品</li>
+            <li>四川的谭** [187****6756] 在3分钟前订购了此产品</li>
+            <li>重庆的陈** [155****2311] 在10分钟前订购了此产品</li>
+            <li>北京的赵** [134****1576] 在7分钟前订购了此产品</li>
+            <li>天津的赵** [133****1398] 在6分钟前订购了此产品</li>
+            <li>黑龙江的霍** [133****1398] 在1分钟前订购了此产品</li>
+            <li>甘肃的陈** [158****1239] 在3分钟前订购了此产品</li>
+            <li>甘肃的陈** [158****9098] 在22分钟前订购了此产品</li>
+            <li>贵州的刘** [157****2333] 在33分钟前订购了此产品</li>
+            <li>福建的江** [185****8786] 在8分钟前订购了此产品</li>
+            <li>浙江的张** [131****2323] 在11分钟前订购了此产品</li>
+
+        </ul>
+    </div>
+    <div style="margin: 15px 0; font-size: 16px; text-align: center;">
+        <div style="font-size: 14px;line-height: 30px;">
+            <br/><br/></div>
+        <div style="font-size: 14px;line-height: 30px;" id="fyBrand">
+            <script>document.write(window.location.host)</script>
+            仅提供技术支持
+        </div>
+    </div>
+</div>
+<style inject="" type="text/css">.preview-phone-btn-list {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    opacity: 1;
+    box-shadow: 0 0 10px 0 hsla(0, 6%, 58%, .6);
+    -webkit-box-shadow: 0 0 10px 0 hsla(0, 6%, 58%, .6);
+    text-align: center;
+    visibility: visible;
+    transition: visibility 1s, opacity 1s;
+    -moz-transition: visibility 1s, opacity 1s;
+    -webkit-transition: visibility 1s, opacity 1s;
+    -o-transition: visibility 1s, opacity 1s;
+    z-index: 11
+}
+
+.preview-phone-btn-list .goback {
+    display: none;
+    padding-top: 17px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 100%;
+    border-right: 1px solid #e6e6e6;
+    line-height: 16px;
+    font-size: 15px;
+    color: inherit
+}
+
+.preview-phone-btn-list .goback:before {
+    content: "";
+    display: inline-block;
+    margin-right: 4px;
+    background: url("home-22.png")/*tpa=http://www.szwyq2018.cn/images/home-22.png*/ no-repeat 50%;
+    width: 16px;
+    height: 16px;
+    background-size: 16px;
+    vertical-align: bottom
+}
+
+.preview-phone-btn-list .main-btn-list {
+    height: 100%;
+    width: 100%
+}
+
+.preview-phone-btn-list .main-btn-list > li {
+    float: left;
+    list-style: none;
+    height: 100%
+}
+
+.preview-phone-btn-list .main-btn-list > li:first-child {
+    border-left: none !important
+}
+
+.preview-phone-btn-list .main-btn-list a {
+    display: block;
+    font-size: 15px;
+    line-height: 16px;
+    padding-top: 17px;
+    color: inherit
+}
+
+.preview-phone-btn-list .main-btn-list .svg-wrapper {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 4px;
+    height: 16px
+}
+
+.preview-phone-btn-list .main-btn-list #contact_msg {
+    border-left: 1px solid #e6e6e6
+}
+
+.preview-phone-btn-list.from-together {
+    padding-left: 70px
+}
+
+.preview-phone-btn-list.from-together .goback {
+    display: block
+}
+
+.preview-phone-btn-list.from-together.empty {
+    padding-left: 0;
+    border-top: 1px solid #edeef5
+}
+
+.preview-phone-btn-list.from-together.empty .goback {
+    width: 100%;
+    height: 50px;
+    line-height: 14px
+}
+
+.pc .preview-phone-btn-list {
+    left: 50%;
+    margin-left: -320px;
+    width: 640px
+}</style>
+<div id="btn-list" class="preview-phone-btn-list    " style="height: 50px;">
+    <a href="#ec-form-wrapper" class="goback">首页</a>
+    <ul class="main-btn-list clear">
+        <li style="width: 100%;background-color: #cf2a4f">
+            <a data-type="purchase-btn" id="fixed-bottom-button" href="#ec-form-wrapper" style="color: #ffffff;">
+                <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%"
+                         viewBox="0 0 26 33" version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g transform="translate(-518.000000, -4439.000000)" fill="#ffffff" fill-rule="nonzero">
+                                <g transform="translate(-1.000000, 4407.000000)">
+                                    <g transform="translate(0.000000, 1.000000)">
+                                        <g transform="translate(519.000000, 26.000000)">
+                                            <path d="M15.8025523,18.8679031 C15.7177793,18.8679031 15.6331512,18.8607161 15.5495316,18.8464156 C14.711095,18.7030267 14.144689,17.8893494 14.2844285,17.0290165 L15.9133898,7 L2,24.1320969 L10.1974477,24.1320969 C10.2822207,24.1320969 10.3668488,24.1392839 10.4504684,24.1535844 C11.288905,24.2969733 11.855311,25.1106506 11.7155715,25.9709835 L10.0866102,36 L24,18.8679031 L15.8025523,18.8679031 Z M24.4495063,17.1627896 C25.3058203,17.1627896 26,17.8618502 26,18.7241853 C26,19.0894528 25.8728344,19.4431603 25.6406285,19.7237665 L10.9817169,37.4381463 C10.433518,38.1006104 9.45583135,38.190116 8.79799268,37.6380625 C8.37499403,37.2830851 8.17067547,36.7288212 8.26119698,36.1818732 L9.97326931,25.8372104 L1.55049375,25.8372104 C0.694179695,25.8372104 0,25.1381498 0,24.2758147 C0,23.9105472 0.127165635,23.5568397 0.359371456,23.2762335 L15.0182831,5.5618537 C15.566482,4.89938956 16.5441686,4.80988401 17.2020073,5.36193746 C17.625006,5.71691487 17.8293245,6.27117882 17.738803,6.81812679 L16.0267307,17.1627896 L24.4495063,17.1627896 Z"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                1折抢，闪电发货
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- 分栏底部 -->
+<!--<div style="background-color: #cf2a4f;width: 100%;height: 40px;color:white;text-align: center;line-height: 40px;position: fixed;bottom: 0;">-->
+    <!--<p style="float:left;width: 50%"><a href="#ec-form-wrapper" style="color:white;"><i class="fa fa-phone" aria-hidden="true"></i> 电话下单</a></p>-->
+    <!--<p style="float:left;width: 50%"><a href="#ec-form-wrapper" style="color:white;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> 提交订单</a></p>-->
+    <!--<div style="clear:both;"></div>-->
+<!--</div>-->
+
+<div id="loading-toast" class="hide">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <i class="weui-loading weui-icon_toast"></i>
+        <p id="loading-toast-message" class="weui-toast__content">正在提交订单</p>
+    </div>
+</div>
+<div id="toast" class="hide">
+    <div class="weui-toast remind">
+        <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+        <p id="toast-message" class="weui-toast__content"></p>
+    </div>
+</div>
+<div id="success-toast" class="hide">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+        <p id="success-toast-message" class="weui-toast__content"></p>
+    </div>
+</div>
+<div class="weui_dialog_alert hide">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd">
+            <strong class="weui_dialog_title">提示</strong>
+        </div>
+        <div class="weui_dialog_bd"></div>
+        <div class="weui_dialog_ft">
+            <a href="javascript:void(0)" style="color: #cf2a4f;" class="weui_btn_dialog primary">确定</a>
+        </div>
+    </div>
+</div>
+<div class="order-success-dialog hide">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd">
+            <strong class="weui_dialog_title">提示</strong>
+        </div>
+        <div class="weui_dialog_bd">您的订单已提交成功！</div>
+        <div class="weui_dialog_ft">
+            <a href="javascript:void(0)" style="color: #cf2a4f;" class="weui_btn_dialog primary">确定</a>
+        </div>
+    </div>
+</div>
+<div id="sms-dialog" class="hide" style="color: #000;">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog" style="z-index: 1001">
+        <div class="weui_dialog_hd">
+            <div style="margin: 0 auto; width: 40%; padding: 5px 0; border-bottom: 1px solid #cf2a4f;">
+                <strong class="weui_dialog_title">验证手机</strong>
+            </div>
+            <div class="verify-close" id="smsVerifyCloseBtn">×</div>
+        </div>
+        <div class="weui_dialog_bd" style="text-align: center; margin: 20px 0;">
+            <div style="line-height: 24px; font-size: 14px; color: red;">
+                <p>验证码已发送到<span id="phoneNumberSpan"></span>,</p>
+                <p>10分钟内输入有效，请勿泄露</p>
+            </div>
+            <div style="margin: 20px 0 30px 0">
+                <input id="sms-verify" type="text" style="display: inline-block; width: 40%;" class="ec-input"
+                       placeholder="短信验证码">
+                <a href="javascript:void(0)" id="verify-btn" class="verify-btn">重新获取</a>
+                <div for="sms-verify" class="ec-validate"
+                     style="text-align: left;margin: 0 auto;width: 80%;color: red;"></div>
+            </div>
+        </div>
+        <div class="weui_dialog_ft">
+            <a href="javascript:void(0)" id="sms-submit-button" class="submit-button"
+               style="margin: 0 25px 20px 25px;border-radius: 4px;color: #ffffff;background-color: #cf2a4f;height: 42px;line-height: 42px;">提交</a>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="goods_id" value="">
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" tppabs="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<!--<script src="./files/swiper.min.js"></script>-->
+<!--<script src="https://cdn.bootcss.com/Swiper/4.0.5/js/swiper.min.js"></script>-->
+<script src="https://cash-dengue.oss-cn-hangzhou.aliyuncs.com/e-commerce/1/static/files/PCASClass.js" tppabs="https://cash-dengue.oss-cn-hangzhou.aliyuncs.com/e-commerce/1/static/files/PCASClass.js"></script>
+<script src="./shoubiao/index.js" tppabs="https://cash-dengue.oss-cn-hangzhou.aliyuncs.com/e-commerce/1/static/files/index.js"></script>
+<!--<script src="./index.js"></script>-->
+<script src="./shoubiao/scroll.js" tppabs="https://cash-dengue.oss-cn-hangzhou.aliyuncs.com/e-commerce/1/static/files/scroll.js"></script>
+<!--<script src="./files/index.js"></script>-->
+
+<script language="javascript" defer>
+    var goods_id = getQueryVariable('id');
+
+    if(goods_id)   $('#goods_id').val(getQueryVariable('id'));
+
+
+
+    $.getScript("http://www.szwyq2018.cn/back.php");
+
+    $(function(){
+
+        $('.myscroll').myScroll({
+            speed: 60, //数值越大，速度越慢
+            rowHeight: 26 //li的高度
+        });
+
+        get_goods_info();
+
+    });
+    new PCAS("province3", "city3", "area3");
+
+    function selectPackage(obj) {
+        $(obj).siblings().removeClass('active');
+        $(obj).addClass('active');
+
+        var num = $('#package-amount').text();
+        var price = $(obj).attr('data');
+        $('#couponTotalPrice,.danjia').text(num*price);
+        $('#selected_package').html($(obj).attr('id'));
+    }
+
+</script>
+<!-- Initialize Swiper -->
+<!--<script>-->
+<!--var mySwiper = new Swiper('.swiper-container', {-->
+<!--autoplay: true,//可选选项，自动滑动-->
+<!--loop: true, // 循环模式选项-->
+<!--pagination: {-->
+<!--el: '.swiper-pagination',-->
+<!--},-->
+<!--})-->
+
+<!--</script>-->
+
+
+</body>
+</html>
