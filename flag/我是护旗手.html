@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://servguoqi.sjzzimu.com/guoqi/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>我是护旗手</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #ffffff;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+
+    <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
+    <!--modules_files_start-->
+    <!-- <script src="./我是护旗手_files/stats.js.下载" name="MTAH5" sid="500692594"></script> -->
+    <script egret="lib" src="./我是护旗手_files/egret.min.js.下载"></script>
+	<script egret="lib" src="./我是护旗手_files/egret.web.min.js.下载"></script>
+	<script egret="lib" src="./我是护旗手_files/game.min.js.下载"></script>
+	<script egret="lib" src="./我是护旗手_files/tween.min.js.下载"></script>
+	<script egret="lib" src="./我是护旗手_files/res.min.js.下载"></script>
+	<!--modules_files_end-->
+
+    <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
+    <!--other_libs_files_start-->
+    <script egret="lib" src="./我是护旗手_files/promise.min.js.下载"></script>
+    <script src="./我是护旗手_files/jquery-2.1.4-min.js.下载"></script>
+    <script type="text/javascript" src="./我是护旗手_files/jweixin-1.0.0.js.下载"></script>
+    <!--<script src="resource/js/dellWx.js"></script>-->
+    <script src="./我是护旗手_files/ZiMuWx.js.下载"></script>
+    <!--other_libs_files_end-->
+
+    <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
+    <!--game_files_start-->
+	<script src="./我是护旗手_files/main.min.js.下载"></script>
+	<!--game_files_end-->
+</head>
+<body>
+    <div style="display: none;">
+        <audio id="media" class="media" controls="controls" preload="auto" loop="loop"><!--autoplay="autoplay"-->
+            <source src="https://servcdn.sjzzimu.com/guoqi/resource/bg.mp3" type="audio/mpeg">
+            您的浏览器不支持HTML5的音频标签audio
+        </audio>
+    </div>
+
+    <div style="margin: auto; width: 100%; height: 100%; overflow: hidden; position: relative;" class="egret-player" data-entry-class="Main" data-orientation="portrait" data-scale-mode="fixedWidth" data-frame-rate="60" data-content-width="640" data-content-height="1136" data-show-paint-rect="false" data-multi-fingered="2" data-show-fps="false" data-show-log="false" data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+    <canvas style="cursor: inherit; position: absolute; top: 937.5px; bottom: 0px; left: 0px; right: 0px; transform-origin: 0% 0% 0px; width: 938px; height: 1920px; transform: rotate(-90deg);" width="640" height="1312"></canvas><div id="StageDelegateDiv" style="position: absolute; left: 0px; top: 937.5px; border: none; padding: 0px; transform: rotate(-90deg); transform-origin: 0% 0% 0px;"><div style="position: absolute; left: 0px; top: -100px; border: none; padding: 0px; width: 0px; height: 0px; transform-origin: 0% 0% 0px;"><textarea id="egretTextarea" tabindex="-1" style="resize: none; width: 1px; height: 12px; position: absolute; left: 0px; top: 0px; border: none; padding: 0px; outline: thin; background: none; overflow: hidden; word-break: break-all; opacity: 0;"></textarea><input id="egretInput" type="text" tabindex="-1" style="width: 1px; height: 12px; position: absolute; left: 0px; top: 0px; border: none; padding: 0px; outline: thin; background: none; overflow: hidden; word-break: break-all; opacity: 0;"></div></div></div>
+    <img id="fu" style="display: none;position: absolute;top:0%;left:0%;width:100%;opacity: 0.001;">
+    <script>
+        function onBridgeReady(){
+            document.getElementById("media").load();
+        }
+
+        if (typeof WeixinJSBridge == "undefined"){
+            if( document.addEventListener ){
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            }else if (document.attachEvent){
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        }else{
+            onBridgeReady();
+        }
+        /**
+         * {
+         * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
+         * "audioType": 0 //使用的音频类型，0:默认，1:qq audio，2:web audio，3:audio
+         * "antialias": //WebGL模式下是否开启抗锯齿，true:开启，false:关闭，默认为false
+         * "retina": //是否基于devicePixelRatio缩放画布
+         * }
+         **/
+        var manNum = 1300000 + Math.floor(Math.random() * 30000);
+        if(1){
+            // manNum = localStorage.getItem("lastname");
+            manNum = manNum + 58;
+            //localStorage.setItem("lastname", manNum);
+        }else{
+            //localStorage.setItem("lastname", manNum);
+        }
+        $.ajax({
+            "url":"http://servguoqi.sjzzimu.com/jdfServ/Choice/jdf_getManNum.do",
+            data:{
+                mtype:1,
+            },
+            dataType:"json",
+            type:"post",
+            success: function(data){
+                manNum = data.num;
+//                yundaoWx.share_title="我是第"+manNum+"位护旗手";
+//                yundaoWx.share_desc="五星红旗有14亿护旗手！";
+//                yundaoWx.share_link="http://servguoqi.sjzzimu.com/guoqi/index.html";
+//                yundaoWx.share_imgUrl="http://servguoqi.sjzzimu.com/guoqi/resource/share.jpg";
+//                yundaoWx.share();
+
+                zimuWx.share_title="我是第"+manNum+"位护旗手";
+                zimuWx.share_desc="五星红旗有14亿护旗手！";
+                zimuWx.share_link="http://servguoqi.sjzzimu.com/guoqi/index.html";
+                zimuWx.share_imgUrl="http://servguoqi.sjzzimu.com/guoqi/resource/share.jpg";
+                zimuWx.share();
+            },
+            error:function(data){
+                manNum = 1300000 + Math.floor(Math.random() * 30000);
+//                yundaoWx.share_title="我是第"+manNum+"位护旗手";
+//                yundaoWx.share_desc="五星红旗有14亿护旗手！";
+//                yundaoWx.share_link="http://servcdn.sjzzimu.com/guoqi/index.html";
+//                yundaoWx.share_imgUrl="http://servcdn.sjzzimu.com/guoqi/resource/share.jpg";
+//                yundaoWx.share();
+
+//                zimuWx.share_title="我是第"+manNum+"位护旗手";
+//                zimuWx.share_desc="五星红旗有14亿护旗手！";
+//                zimuWx.share_link="http://p.sjzzimu.com/guoqi/index.html";
+//                zimuWx.share_imgUrl="http://p.sjzzimu.com/guoqi/resource/share.jpg";
+//                zimuWx.share();
+            }
+        });
+
+
+
+        function isWeiXin(){
+            //window.navigator.userAgent属性包含了浏览器类型、版本、操作系统类型、浏览器引擎类型等信息，这个属性可以用来判断浏览器类型
+            var ua = window.navigator.userAgent.toLowerCase();
+            //通过正则表达式匹配ua中是否含有MicroMessenger字符串
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        var isWx = isWeiXin();
+
+        egret.runEgret();
+
+        document.getElementById("fu").addEventListener("touchmove",function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        },false);
+
+        var _mtac = {};
+        (function() {
+            var mta = document.createElement("script");
+            mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+            mta.setAttribute("name", "MTAH5");
+            mta.setAttribute("sid", "500692594");
+            var s = document.getElementsByTagName("script")[0];
+            // s.parentNode.insertBefore(mta, s);
+        })();
+    </script>
+
+
+</body></html>
