@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>普通用户主页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="css/ydui.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/userHome.css">
+</head>
+
+<body>
+  <div class="uh-infor-wrap">
+    <div class="uh-nav">
+      <a href="#" class="uh-return"></a>
+      <button class="uh-share"></button>
+    </div>
+    <div class="uh-infor">
+      <a href="edit.html" class="uh-edit-btn fs-12">编辑</a>
+      <img src="images/demo.jpg" class="uh-avatar">
+      <div class="uh-main">
+        <p class="uh-name">颜琦</p>
+        <p class="uh-count">关注10 <i class="uh-line"></i> 粉丝54</p>
+        <p class="uh-job">珠海约见科技有限公司 职位</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-outline">
+    <div class="content-list create-list">
+      <a class="uh-list-item video-item">
+    <i class="uh-item-type uh-video"></i>
+    <img src="images/demo-l-2.png" class="uh-item-video">
+    <div class="uh-item-txt">
+      <p class="uh-item-name fs-14 txt-cut">关于颜氏姓氏起源、发展、分支</p>
+      <p class="uh-item-bot">
+        <span class="uh-item-title fs-12">姓氏文化知多少</span>
+        <span class="uh-item-like liked fs-13">452</span>
+      </p>
+    </div>
+  </a>
+      <a class="uh-list-item art-item">
+    <i class="uh-item-type uh-art"></i>
+    <img src="images/demo-l-1.png" class="uh-item-img">
+    <div class="uh-item-txt">
+      <p class="uh-item-name fs-14 txt-cut">关于颜氏姓氏起源、发展、分支</p>
+      <p class="uh-item-bot">
+        <span class="uh-item-title fs-12">姓氏文化知多少</span>
+        <span class="uh-item-like fs-13">452</span>
+      </p>
+    </div>
+  </a>
+      <a class="uh-list-item video-item">
+    <i class="uh-item-type uh-video"></i>
+    <img src="images/demo-l-2.png" class="uh-item-video">
+    <div class="uh-item-txt">
+      <p class="uh-item-name fs-14 txt-cut">关于颜氏姓氏起源、发展、分支</p>
+      <p class="uh-item-bot">
+        <span class="uh-item-title fs-12">姓氏文化知多少</span>
+        <span class="uh-item-like liked fs-13">452</span>
+      </p>
+    </div>
+  </a>
+      <a class="uh-list-item video-item">
+    <i class="uh-item-type uh-video"></i>
+    <img src="images/demo-l-2.png" class="uh-item-video">
+    <div class="uh-item-txt">
+      <p class="uh-item-name fs-14 txt-cut">关于颜氏姓氏起源、发展、分支</p>
+      <p class="uh-item-bot">
+        <span class="uh-item-title fs-12">姓氏文化知多少</span>
+        <span class="uh-item-like liked fs-13">452</span>
+      </p>
+    </div>
+  </a>
+    </div>
+  </div>
+
+</body>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/ydui.flexible.js"></script>
+<script src="js/ydui.js"></script>
+<script src="js/masonry-docs.min.js"></script>
+
+<script type="text/javascript">
+  $(function() {
+
+    var $container = $('.content-list.create-list');
+    $container.masonry({
+      itemSelector: '.uh-list-item',
+      gutter: 7,
+      isAnimated: true,
+    });
+  });
+</script>
+<script>
+  window.onload = () => {
+    //获取滚动条距离顶部的距离;
+    function getScrollTop() {
+      let scrollTop = document.documentElement.scrollTop;
+      return scrollTop;
+    }
+
+    //获取可视范围的高度
+    function getClientHeight() {
+      var clientHeight = 0;
+      if (document.body.clientHeight && document.documentElement.clientHeight) {
+        clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+      } else {
+        clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+      }
+      return clientHeight;
+    }
+    //获取高度
+    function getScrollHeight() {
+      var eleHeight;
+      eleHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
+      return eleHeight;
+    }
+
+
+    window.onscroll = () => {
+      getScrollTop();
+      getClientHeight();
+      getScrollHeight();
+      if (getScrollTop() + getClientHeight() == getScrollHeight()) {
+        console.log("到底了");
+      }
+    }
+  }
+</script>
+
+</html>

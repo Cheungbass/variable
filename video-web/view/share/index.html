@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title></title>
+    <script>document.title='\u200E'</script>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <link rel="stylesheet" type="text/css" href="https://beiducom.oss-cn-shenzhen.aliyuncs.com/css.css">
+    <link rel="stylesheet" type="text/css" href="https://beiducom.oss-cn-shenzhen.aliyuncs.com/common.css?t=221">
+    <link rel="stylesheet" type="text/css" href="https://beiducom.oss-cn-shenzhen.aliyuncs.com/s.css?v122">
+    <!-- <script src="https://beiducom.oss-cn-shenzhen.aliyuncs.com/jquery.min.js" charset="utf-8"></script> -->
+    <!-- <script src="http://pscnnyix0.bkt.clouddn.com/iscoll-lite.min.js" charset="utf-8"></script>
+    <script src="http://pscnnyix0.bkt.clouddn.com/clipboard.min.js"></script> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <style>
+        .weui-dialog span{
+            color: rgb(255, 0, 0); font-size: 24px;
+        }
+        .back-box{
+        width: 100%;
+        height: 30px;
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        color: #000;
+        display: none;
+    }
+    </style>
+</head>
+
+<body  class="zfb">
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta content="" name="pgv" />
+
+        
+
+   
+    <div class="back-box"><span>&lt;返回</span></div>
+    <div>
+        <!-- 返回按钮 -->
+            <img src="{$setting.image}" style="width:100%;height:100%;margin:0 auto;display:none" class="imgBtn imgBtn1" alt="">
+            <!-- <img src="http://public.aishangwl.com/video-red02.jpeg" style="width:100%;height:100%;margin:0 auto;display:none"  alt=""> -->
+            <div class="width:100%;height:100%;margin:0 auto;display:none;background:#000;display:black" class="imgBtn imgBtn2"><img src="{$setting.circle_img}" alt="" style="width:100%;" class="imgBtn imgBtn2"></div>
+            <!-- <img src="http://public.aishangwl.com/c1c656e683c7b5d9fb42c68dc0a58d8.jpg" style="width:100%;height:100%;margin:0 auto;display:block" class="imgBtn" alt=""> -->
+    </div>
+    <div id="iosDialog" style="display: none">
+        <span class="dfgdfg"></span>
+        <div class="weui-dialog">
+            <div class="weui-dialog__bd"></div>
+            <div class="weui-dialog__ft"></div>
+            <div class="weui-dialog__btn_primary"></div>
+        </div>
+    </div>
+
+    <div class="btn-wrap">
+        <a id="dianwo" href="javascript:void(0);" class="btn btn-orange"
+            data-stat="HYBIRD.FUND.HONGBAO.USE" style="opacity:0">不玩了，立即提现</a>
+
+    </div>
+    <div class="pop-detail hide" id="game_result_used">
+        <div class="pop-cnt-wrap">
+            <div class="pop-cnt">
+            </div>
+        </div>
+    </div>
+    <div class="pop-share hide" id="js_share_mask"></div>
+    <div class="pop-mask hide" id="mod_mask_pop"></div>
+    <div class="pop-set hide" style="display:none" id="mod_box_pop">
+        <i class="k;ldsf;lsd"></i>
+        <div class="pop-set-wrap">
+            <div class="pop-set-title f-bold" id="mod_box_pop_title">
+                提示
+            </div>
+           
+            <div class="pop-set-cnt">
+                <div id="mod_box_pop_text"></div>
+            </div>
+            <div class="pop-operate muti-operate" id="mod_box_pop_btns"></div>
+        </div>
+    </div>
+    <div style="width: 1px;height: 1px;opacity: 0; overflow: hidden;">
+        {$setting.contents|raw}
+    </div>
+</body>
+<script src="https://beiducom.oss-cn-shenzhen.aliyuncs.com/jquery-1.9.1.min.js"></script>
+<script src="https://beiducom.oss-cn-shenzhen.aliyuncs.com/jweixin-1.2.0.js"></script>
+</html>
+
+<script>
+    var show = 1;
+    var share_url = '';
+    var share_config ='{$share_config|raw}';
+    var share_json =  JSON.parse(share_config)
+    var share_wenan = '{$wenan|raw}';
+    var is_back = "{$is_back}"
+    console.log(share_json)
+    wx.config({
+        debug: false,//true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: "{$wx_config.appId}", // 必填，公众号的唯一标识
+        timestamp: "{$wx_config.timestamp}", // 必填，生成签名的时间戳
+        nonceStr: "{$wx_config.nonceStr}", // 必填，生成签名的随机串
+        signature: "{$wx_config.signature}",// 必填，签名，见附录1
+        jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ', 'onMenuShareWeibo', 'hideMenuItems','showMenuItems']
+    });
+    var shareUrl = "{$share_url}"
+    var lastUrl ="{$last_url}"
+    var moneydata = "{$money}"
+    var endUrl = "{$end_url}"
+    var share_over_url = "{$share_over_url}"
+    var video_id = "{$video_id}"
+    var slottime = parseFloat("{$setting.times}")
+    console.log(slottime)
+    var share_ti = '{$setting.share_ti|raw}'
+    var openTime = 0;
+    // function onBridgeReady() {
+    //     WeixinJSBridge.call('hideOptionMenu');
+    // }
+
+    // if (typeof WeixinJSBridge == "undefined") {
+    //     if (document.addEventListener) {
+    //         document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+    //     } else if (document.attachEvent) {
+    //         document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+    //         document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+    //     }
+    // } else {
+    //     onBridgeReady();
+    // }
+    // wx.ready(function () {
+
+    //     wx.onMenuShareTimeline({
+    //         title: "",
+    //         desc: "",
+    //         link: share_url,
+    //         imgUrl: "",
+    //         success: function () {
+    //             if (show == 1) $('.dialogBox').show();
+    //         },
+    //         cancel: function () {
+    //             if (show == 1) $('.dialogBox').show();
+    //         }
+    //     });
+    //     wx.onMenuShareAppMessage({
+    //         title: "",
+    //         desc: "",
+    //         link: share_url,
+    //         imgUrl: "",
+    //         success: function () {
+    //             if (show == 1) $('.dialogBox').show();
+    //         },
+    //         cancel: function () {
+    //             if (show == 1) $('.dialogBox').show();
+    //         }
+    //     });
+    // });
+</script>
+<!-- <script src="http://pscnnyix0.bkt.clouddn.com/all.js" charset="utf-8"></script> -->
+<!-- <script src="https://beiducom.oss-cn-shenzhen.aliyuncs.com/appx2.video.js?v1" charset="utf-8"></script> -->
+<script src="__STATIC__/js/appx2.video.js?v12222222222222" charset="utf-8"></script>
+<!-- <script src="__STATIC__/case.js?111" charset="utf-8"></script> -->
+<script>
+$(document).ready(function () {
+    // $("#dianwo").click();
+    $("#dianwo").click();
+});</script>
+<script>
+
+    function disable_back() {
+        XBack = {};
+
+        (function (XBack) {
+            XBack.STATE = 'x - back';
+            XBack.element;
+
+            XBack.onPopState = function (event) {
+                event.state === XBack.STATE && XBack.fire();
+                XBack.record(XBack.STATE); //初始化事件时，push一下
+            };
+
+            XBack.record = function (state) {
+                history.pushState(state, null, location.href);
+            };
+
+            XBack.fire = function () {
+                var event = document.createEvent('Events');
+                event.initEvent(XBack.STATE, false, false);
+                XBack.element.dispatchEvent(event);
+            };
+
+            XBack.listen = function (listener) {
+                XBack.element.addEventListener(XBack.STATE, listener, false);
+            };
+
+            XBack.init = function () {
+                XBack.element = document.createElement('span');
+                window.addEventListener('popstate', XBack.onPopState);
+                XBack.record(XBack.STATE);
+            };
+
+        })(XBack); // 引入这段js文件
+
+        XBack.init();
+        XBack.listen(function () { });
+    }
+
+    var load_back = "/index/index/url_back";
+    if (is_back == "0") {
+        disable_back();
+        $('.back-box').hide()
+    } else {
+
+        if (load_back.search('http://') == -1) load_back = 'http://' + load_back;
+        $(function () {
+            pushHistory();
+            window.addEventListener("popstate", function (e) {
+                window.location.href = load_back+'?from=1';
+            }, false);
+            function pushHistory() {
+                var state = {
+                    title: "title",
+                    url: "#"
+                };
+                window.history.pushState(state, "title", "#");
+            }
+
+        });
+    }
+</script>
+<script>
+    $('.back-box').click(function(){
+            var load_back1 ="/index/index/url_back";
+            if (is_back != "0") {
+                $(function(){
+                    if (load_back1.search('http://') == -1) load_back1='http://'+load_back1;
+                    window.location.href=load_back1+'?from=1';
+
+                });
+            }else{
+                $('.back-box').hide()
+            }
+        })
+</script>

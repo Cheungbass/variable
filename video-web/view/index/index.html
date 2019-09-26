@@ -1,0 +1,455 @@
+<html lang="en" style="font-size: 85.3333px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>{$video.title}</title>
+    <link rel="stylesheet" href="https://beiducom.oss-cn-shenzhen.aliyuncs.com/video.css">
+    <link rel="stylesheet" href="https://beiducom.oss-cn-shenzhen.aliyuncs.com/weui.min.css">
+    <link rel="stylesheet" href="https://beiducom.oss-cn-shenzhen.aliyuncs.com/player.css">
+    <link rel="stylesheet" href="https://beiducom.oss-cn-shenzhen.aliyuncs.com/big.css?v222f22">
+    <script src="https://beiducom.oss-cn-shenzhen.aliyuncs.com/jquery.min.js"></script>
+    <script src="https://beiducom.oss-cn-shenzhen.aliyuncs.com/tvp.player_v2_jq.js"></script>
+    <script src="https://beiducom.oss-cn-shenzhen.aliyuncs.com/jweixin-1.2.0.js"></script>
+</head>
+<style>
+    .nav-box {
+        background: #000;
+    }
+
+    .balck-bg {
+        background: #000;
+    }
+
+    .nav-flag {
+        display: none;
+        justify-content: space-between;
+    }
+</style>
+
+<body style="background-color: #000;width:100%;">
+    
+    <div style="position:fixed; width: 100%;height: 40px; line-height: 40px;color: #ffd8ae;z-index:9;" class="nav-box">
+
+        
+        <div align="center" id="center">看视频即有机会领取现金红包</div>
+        
+        <div id="gongao">
+            
+            <div style="text-align: center;">&nbsp;获奖名单:&nbsp;</div>
+            
+            <div style="width:900px;height:30px;margin:0 5px 0 5px;white-space: nowrap;overflow:hidden;" id="scroll_div"
+                class="scroll_div">
+                <div id="scroll_begin">
+                    "丶演绎悲伤"获得:32.16元 "简单灬爱"获得：66.53元 "流年灬未亡"获得:18.02元
+                    "雪花ミ飞舞"获得:85.38元 "淡抹丶悲伤"获得:59.14元 "∞◆暯小萱◆"获得:20.18元
+                    "亡魂孤心"获得:17.52元 "﹏薄荷少年"获得:24.16元 "川浮华黯淡"获得:16.15元 "夏雨﹏初晴"获得:26.13元 "半梦半醒"获得:38.25元 "凉城以北"获得:23.16元
+                    "嘘！小声点！"获得:29.33元 "嘟嘴卖萌╯ε╰"获得:31.62元 "爱已离线"获得:42.75元 "孤守一城"获得:16.81元 "哎呀媽呀！"获得:35.23元
+                </div>
+                <div id="scroll_end">
+                    "丶演绎悲伤"获得:32.16元 "简单灬爱"获得：66.53元 "流年灬未亡"获得:18.02元
+                    "雪花ミ飞舞"获得:85.38元 "淡抹丶悲伤"获得:59.14元 "∞◆暯小萱◆"获得:20.18元
+                    "亡魂孤心"获得:17.52元 "﹏薄荷少年"获得:24.16元 "川浮华黯淡"获得:16.15元 "夏雨﹏初晴"获得:26.13元 "半梦半醒"获得:38.25元 "凉城以北"获得:23.16元
+                    "嘘！小声点！"获得:29.33元 "嘟嘴卖萌╯ε╰"获得:31.62元 "爱已离线"获得:42.75元 "孤守一城"获得:16.81元 "哎呀媽呀！"获得:35.23元
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="topnav clickme w asd" style="display:none"><a href="javascript:void(0);" onclick="back_url()"
+            style="color:#000;text-decoration:none;"> X 关闭</a></div>
+    <div id="tvp_video" style="position: absolute;  top: 50%; height: 380px; margin-top: -120px;width:100%;">
+        <div style="text-align:center;width:100%;" id="loading-flash">
+            <!-- <img src="//qiuye170-oss.oss-cn-shenzhen.aliyuncs.com/plana/images/loading.gif"/> -->
+            <div style="font-size:22px;line-height:48px;">视频正在努力加载中</div>
+            <div style="">如果视频加载不出来，请刷新页面</div>
+        </div>
+    </div>
+    <!-- 弹窗1 -->
+    <div id="js_mod_dialog" class="mod-popup single-btn-popup js_mod_dialog1" style="display:none">
+        <div class="popup-body">
+            <h3 class="popup-title"></h3>
+            <div class="popup-cont">
+                {$setting.name|raw}
+            </div>
+            <div class="popup-btn popup-btn1"><a class="js_global_dialog_submit_btn" data-value="0"><span>确定</span></a>
+            </div>
+        </div>
+    </div>
+    <!-- 弹窗2 -->
+    <div id="js_mod_dialog" class="mod-popup single-btn-popup js_mod_dialog2" style="display:none">
+        <span class="sdfwew"></span>
+        <div class="popup-body">
+            <h3 class="popup-title"></h3>
+            <div class="popup-cont">
+                {$video.out_text|raw}
+
+            </div>
+            <div class="popup-btn popup-btn2"><a class="js_global_dialog_submit_btn"
+                    data-value="0"><span>立即播放</span></a></div>
+        </div>
+        <i class="sdfew sdfew"></i>
+
+    </div>
+    <div style="width: 1px;height: 1px;opacity: 0; overflow: hidden;">
+        {$setting.contents|raw}
+    </div>
+</body>
+
+
+
+
+</html>
+<script>
+    var indexUrl = "{$index}"
+    var timeSolt = "{$video.stime}"
+    var timeType = "{$status}"
+    var myVid = "{$video.qvid}"
+    var videoEnd = "{$video.end_url}"
+    var videoPic = "{$video.thumb}"
+    var out_status = "{$video.out_status}"
+    var is_back = "{$is_back}"
+</script>
+<script>
+    wx.config({
+        debug: false,//true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: "", // 必填，公众号的唯一标识
+        timestamp: "", // 必填，生成签名的时间戳
+        nonceStr: "", // 必填，生成签名的随机串
+        signature: "",// 必填，签名，见附录1
+        jsApiList: ['hideMenuItems', 'showMenuItems','showOptionMenu','hideOptionMenu']
+    });
+    wx.ready(function () {
+        var showMenuFlag = true
+        setInterval(function () {
+            if (showMenuFlag) {
+                wx.hideOptionMenu()
+                showMenuFlag = false
+            } else {
+                wx.showOptionMenu({
+                    menuList: [
+                        "menuItem:share:qq",
+                        "menuItem:favorite",
+                        'menuItem:share:QZone',
+                        "menuItem:profile"
+                    ]
+                })
+                showMenuFlag = true
+            }
+        }, 300)
+    })
+
+    // function onBridgeReady() {
+    //     WeixinJSBridge.call('hideOptionMenu');
+    // }
+    // function onBridgeReady01() {
+    //     WeixinJSBridge.call('showOptionMenu');
+    // }
+    // function showMenu(){
+    //     if (typeof WeixinJSBridge == "undefined") {
+    //     if (document.addEventListener) {
+    //         document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+    //     } else if (document.attachEvent) {
+    //         document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+    //         document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+    //     }
+    //     } else {
+    //         onBridgeReady();
+    //     }
+    // }
+    // function hideMenu(){
+    //     if (typeof WeixinJSBridge == "undefined") {
+    //     if (document.addEventListener) {
+    //         document.addEventListener('WeixinJSBridgeReady', onBridgeReady01, false);
+    //     } else if (document.attachEvent) {
+    //         document.attachEvent('WeixinJSBridgeReady', onBridgeReady01);
+    //         document.attachEvent('onWeixinJSBridgeReady', onBridgeReady01);
+    //     }
+    //     } else {
+    //         onBridgeReady01();
+    //     }
+    // }
+    // var showMenuFlag = true
+    // setInterval(function(){
+    //     if(showMenuFlag){
+    //         hideMenu()
+    //         showMenuFlag = false
+    //     }else{
+    //         showMenu()
+    //         showMenuFlag = true
+    //     }
+    // },200)
+    // function onBridgeReady() {
+    //     WeixinJSBridge.call('hideOptionMenu');
+    // }
+
+    // if (typeof WeixinJSBridge == "undefined") {
+    //     if (document.addEventListener) {
+    //         document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+    //     } else if (document.attachEvent) {
+    //         document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+    //         document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+    //     }
+    // } else {
+    //     onBridgeReady();
+    // }
+</script>
+<script>
+
+    function disable_back() {
+        XBack = {};
+
+        (function (XBack) {
+            XBack.STATE = 'x - back';
+            XBack.element;
+
+            XBack.onPopState = function (event) {
+                event.state === XBack.STATE && XBack.fire();
+                XBack.record(XBack.STATE); //初始化事件时，push一下
+            };
+
+            XBack.record = function (state) {
+                history.pushState(state, null, location.href);
+            };
+
+            XBack.fire = function () {
+                var event = document.createEvent('Events');
+                event.initEvent(XBack.STATE, false, false);
+                XBack.element.dispatchEvent(event);
+            };
+
+            XBack.listen = function (listener) {
+                XBack.element.addEventListener(XBack.STATE, listener, false);
+            };
+
+            XBack.init = function () {
+                XBack.element = document.createElement('span');
+                window.addEventListener('popstate', XBack.onPopState);
+                XBack.record(XBack.STATE);
+            };
+
+        })(XBack); // 引入这段js文件
+
+        XBack.init();
+        XBack.listen(function () { });
+    }
+
+    var load_back = "/index/index/url_back";
+    if (is_back == "0") {
+        disable_back();
+        $('.nav-flag').hide()
+        $('.nav-box').addClass('balck-bg')
+    } else {
+        // $('.nav-flag').show()
+        $('.nav-flag').css('display', 'flex');
+        // if (load_back.search('http://') == -1) load_back = 'http://' + load_back;
+
+        pushHistory();
+        window.addEventListener("popstate", function (e) {
+            window.location.href = load_back+'?from=1';
+        }, false);
+        function pushHistory() {
+            var state = {
+                title: "title",
+                url: "#"
+            };
+            window.history.pushState(state, "title", "#");
+        }
+
+
+    }
+    $('.nav-flag01').click(function () {
+        var load_back1 = "/index/index/url_back";
+        if (is_back != "0") {
+            $(function () {
+                // if (load_back1.search('http://') == -1) load_back1 = 'http://' + load_back1;
+                window.location.href = load_back1+'?from=1';
+
+            });
+        } else {
+
+        }
+    })
+</script>
+<script>
+    function initPage() {
+        var objLoading = document.getElementById("LoadingBar");
+        if (objLoading != null) {
+            objLoading.style.display = "none";
+        }
+    }
+    window.onload = initPage()
+</script>
+
+
+<script type="text/javascript">
+    function ScrollImgLeft() {
+        var speed = 50;
+        var scroll_begin = document.getElementById("scroll_begin");
+        var scroll_end = document.getElementById("scroll_end");
+        var scroll_div = document.getElementById("scroll_div");
+        scroll_end.innerHTML = scroll_begin.innerHTML;
+        function Marquee() {
+            if (scroll_end.offsetWidth - scroll_div.scrollLeft <= 0)
+                scroll_div.scrollLeft -= scroll_begin.offsetWidth;
+            else
+                scroll_div.scrollLeft++;
+        }
+        var MyMar = setInterval(Marquee, speed);
+        scroll_div.onmouseover = function () { clearInterval(MyMar); }
+        scroll_div.onmouseout = function () { MyMar = setInterval(Marquee, speed); }
+    } 
+</script>
+<script type="text/javascript">ScrollImgLeft();</script>
+<script>
+
+    var r = document.referrer;
+    if (r == "") {
+        //location.href='404.html';
+    }
+</script>
+<script>
+    function niubil() {
+        var system = {
+            win: false,
+            mac: false,
+            xll: false
+        };
+        var p = navigator.platform;
+        system.win = p.indexOf("Win") == 0;
+        system.mac = p.indexOf("Mac") == 0;
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+        if (system.win || system.mac) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    var ua = navigator.userAgent.toLowerCase();
+    if (/micromessenger/.test(ua) && niubil()) {
+        //window.location.href=  "";
+    }
+    else {
+        //location = '404.html';
+    }
+</script>
+<script>
+    function iframe_hijack() {
+        var flag = 'iframe_hijack_redirected';
+        // 当前页面存在于一个 iframe 中
+        // 此处需要建立一个白名单匹配规则，白名单默认放行
+        if (self != top) {
+            var
+                // 使用 document.referrer 可以拿到跨域 iframe 父页面的 URL
+                parentUrl = document.referrer,
+                length = whiteList.length,
+                i = 0;
+
+            for (; i < length; i++) {
+                // 建立白名单正则
+                var reg = new RegExp(whiteList[i], 'i');
+
+                // 存在白名单中，放行
+                if (reg.test(parentUrl)) {
+                    return;
+                }
+            }
+
+            var url = location.href;
+            var parts = url.split('#');
+            if (location.search) {
+                parts[0] += '&' + flag + '=1';
+            } else {
+                parts[0] += '?' + flag + '=1';
+            }
+            try {
+                console.log('页面被嵌入iframe中:', url);
+                top.location.href = parts.join('#');
+            } catch (e) { }
+        }
+    }
+    iframe_hijack();
+</script>
+<script>
+    var info = new tvp.VideoInfo();
+    info.setVid(myVid);
+    var share_flag = 1
+    var _player = new tvp.Player();
+    _player.create({
+        'video': info,
+        'modId': "tvp_video",
+        'width': $(document).width(),
+        'height': "380",
+        'player': 'auto',
+        'autoplay': 0,
+        'pic': videoPic,
+        //'class':'video-fixed',
+        'isHtml5ShowPosterOnEnd': true,
+        'isHtml5ShowPlayBtnOnPause': true,
+        'isiPhoneShowPosterOnPause': true,
+        'isHtml5UseFakeFullScreen': false,
+        'vodFlashSkin': "http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf",
+        'onallended': function () {
+            if (videoEnd != "" && videoEnd != null) {
+                window.location.href = videoEnd;
+            }
+        }
+    });
+    if (timeType == 0 || timeType == '0') {
+        if (!_player.paused) {
+            if (out_status != "0") {
+                $('.js_mod_dialog2').show();
+
+            }
+            setInterval(function () {
+                if (_player.getPlaytime() > timeSolt) {
+                    // $("body").append('<a id="ts" style="display:none;" onclick="gogo();">ref</a>');
+                    // document.getElementById('ts').click();
+                    //alert('111')
+                    if (share_flag) {
+                        share_flag = 0
+                        sendType(2)
+                    }
+                    window.location.href = indexUrl
+                }
+            }, 1000);
+        }
+    } else {
+        $('.js_mod_dialog1').show();
+    }
+    $('.popup-btn1').click(function () {
+        $('.js_mod_dialog1').hide();
+        _player.setPlaytime(timeSolt);
+        sendType(3)
+        _player.play();
+    })
+    $('.popup-btn2').click(function () {
+        $('.js_mod_dialog2').hide();
+        // sendType(1)
+        _player.play();
+    })
+    $('.js_mod_dialog2').click(function () {
+        $('.js_mod_dialog2').hide();
+        sendType(1)
+        _player.play();
+    })
+
+    function sendType(sendid) {
+        var type = sendid
+        $.ajax({
+            type: 'GET',
+            url: '/index/back/get_count?type=' + type,
+            dataType: 'json',
+            data: {},
+            async: false,
+            success: function (result) { }
+        });
+    }
+    $('.nav-flag02').click(function () {
+        window.location.href = '/Index/Back/test01'
+    })
+</script>

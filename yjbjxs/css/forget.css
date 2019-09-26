@@ -1,0 +1,125 @@
+body {
+  background: #fff;
+}
+.forget-wrap {
+  padding: 0 .56rem;
+}
+.forget-wrap .forget-title {
+  font-size: .48rem;
+  margin: 1.44rem auto .94rem;
+}
+.forget-wrap .forget-item {
+  height: 1rem;
+  line-height: 1rem;
+  border-bottom: 1px solid #CFD2D4;
+  padding-left: .46rem;
+}
+.forget-wrap .forget-input {
+  line-height: .6rem;
+}
+.forget-wrap .yzm-btn {
+  float: right;
+  width: 1.8rem;
+  height: .64rem;
+  margin-top: .2rem;
+  border: none;
+  background: #2D2D2D;
+  border-radius: .1rem;
+  color: #fff;
+}
+.forget-wrap .submit-btn {
+  width: 6.4rem;
+  height: 1rem;
+  font-size: .34rem;
+  background: #2D2D2D;
+  color: #fff;
+  border: none;
+  border-radius: .1rem;
+  margin: 3.04rem auto .32rem;
+}
+.forget-wrap .cell-right {
+  font-size: .24rem;
+  min-height: auto;
+  color: #999999;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.forget-wrap .cell-right input[type="radio"]+.cell-checkbox-icon:after, .cell-right input[type="checkbox"]:not(.m-switch)+.cell-checkbox-icon:after {
+  font-size: .36rem;
+}
+.forget-wrap .cell-right input[type="radio"]:checked+.cell-checkbox-icon:after, .cell-right input[type="checkbox"]:not(.m-switch):checked+.cell-checkbox-icon:after {
+  color: #6BAEE2;
+}
+.forget-color {
+  color: #6BAEE2;
+}
+.forget-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .2);
+  z-index: 99;
+  /* display: none; */
+}
+.forget-mask .forget-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.forget-mask .forget-content {
+  display: block;
+  width: 5.6rem;
+  background: #fff;
+  border-radius: .2rem;
+  position: relative;
+}
+.forget-mask .forget-mask-title {
+  line-height: 1.14rem;
+  border-bottom: 1px solid #E6E6E6;
+  color: #333;
+}
+.forget-mask .forget-main {
+  padding: .88rem 0 .2rem;
+}
+.forget-tip {
+  width: 4rem;
+  margin: .4rem auto 0;
+}
+.forget-mask .forget-number {
+  color: #3498DB;
+  margin-bottom: .1rem;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.forget-mask .forget-btn {
+  display: block;
+  margin: 1rem auto 0;
+  width: 4rem;
+  height: .82rem;
+  background: #2D2D2D;
+  color: #fff;
+  border: none;
+  border-radius: .1rem;
+}
+.forget-close {
+  display: block;
+  position: absolute;
+  top: .1rem;
+  right: .2rem;
+  width: .8rem;
+  height: .8rem;
+  background: url('../images/icon_quxiao .png') no-repeat center/.3rem;
+}

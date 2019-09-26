@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>约见百家姓氏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="css/ydui.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/interested.css">
+</head>
+
+<body class="bg-color">
+  <header class="m-navbar">
+    <a href="javascript:history.back(-1);" class="navbar-item retrun-icon"></a>
+    <div class="navbar-center fs-16">88人感兴趣</div>
+  </header>
+
+  <section class="g-scrollview g-content">
+    <div class="person-list">
+      <div class="person-item">
+        <img src="images/demo.jpg" class="person-avatar">
+        <div class="pserson-inner">
+          <span class="person-name fs-16">名字</span>
+          <button class="click-btn  fs-13" id="J_ShowActionSheet">去沟通</button>
+        </div>
+      </div>
+      <div class="person-item">
+        <img src="images/demo.jpg" class="person-avatar">
+        <div class="pserson-inner">
+          <span class="person-name fs-16">名字</span>
+          <button class="click-btn clicked fs-13">已沟通</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="m-actionsheet" id="J_ActionSheet">
+    <a href="#" class="actionsheet-item">与颜茵沟通</a>
+    <a class="actionsheet-item inter-action-flex">
+              <span>手机号：<span class="phone-number">12323332333</span></span>
+              <span class="copy-btn click-btn" data-clipboard-action="copy" data-clipboard-target=".phone-number">复制</span>
+            </a>
+    <a class="actionsheet-item inter-action-flex">
+              <span>微信号：<span class="wx-number">weixin</span></span>
+              <span class="copy-btn click-btn" data-clipboard-action="copy" data-clipboard-target=".wx-number">复制</span>
+            </a>
+    <a href="javascript:;" class="actionsheet-action" id="J_Cancel">取消</a>
+  </div>
+</body>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/ydui.flexible.js"></script>
+<script src="js/ydui.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script>
+  $(function() {
+    var $myAs = $('#J_ActionSheet');
+
+    $('#J_ShowActionSheet').on('click', function() {
+      $myAs.actionSheet('open');
+    });
+
+    $('#J_Cancel').on('click', function() {
+      $myAs.actionSheet('close');
+    });
+    var clipboard = new ClipboardJS('.copy-btn');
+    clipboard.on('success', function(e) {
+      console.log(e);
+    });
+  })
+</script>
+
+</html>

@@ -1,0 +1,190 @@
+.mod-popup {
+    z-index: 99;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, .5)
+}
+
+.popup-body {
+    position: absolute;
+    width: 3.2rem;
+    border-radius: 6px;
+    background: #fff;
+    left: 50%;
+    top: 2.4rem;
+    transform:translate(-50%,-50%);
+    overflow: hidden;
+}
+
+.popup-body .popup-title {
+    color: #000;
+    font-size: .2rem;
+    margin-top: .2rem;
+    text-align: center
+}
+
+.popup-body .popup-cont {
+    padding: .12rem .24rem .2rem;
+    font-size: .16rem;
+    color: rgba(0, 0, 0, .54);
+    text-align: center
+}
+
+.popup-body .popup-btn {
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, .08);
+    font-size: 0
+}
+
+.double-btn-popup .popup-btn a {
+    display: inline-block;
+    width: 50%;
+    color: #009688;
+    font-weight: 700;
+    text-align: center;
+    font-size: .18rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: .16rem 0
+}
+
+.double-btn-popup .popup-btn a+a {
+    border-left: 1px solid rgba(0, 0, 0, .08)
+}
+
+.single-btn-popup a {
+    display: block;
+    width: 100%;
+    color: #fff;
+    background: #dbc397;
+    font-weight: 700;
+    text-align: center;
+    font-size: .18rem;
+    padding: .16rem 0
+}
+.loadingBar{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+    z-index: 99;
+    font-size: 14px;
+}
+.back-box{
+    width: 100%;
+    height: 30px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    color: #000;
+}
+.red-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.76rem;
+    box-sizing: border-box;
+    background: #F4F4F4;
+}
+.red-content{
+    width: 2.8rem;
+    height: 4rem;
+    margin: 0 auto;
+    background: url(http://public.pdruyujx.cn/didi03.png) no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 0.43rem;
+    position: relative;
+}
+.red-open{
+    width: 0.9rem;
+    height: 0.9rem;
+    display: block;
+    margin: 0 auto;
+    cursor:pointer
+}
+.red-didilogo{
+    width: 0.6rem;
+    height: 0.6rem;
+    display: block;
+    margin: 0.15rem auto;
+
+}
+.red-didiFont1{
+    font-size: 0.14rem;
+    margin-bottom: 0.15rem;
+    color: #FAF4BF;
+}
+.red-didiFont2{
+    font-size: 0.26rem;
+    font-weight: bold;
+    margin-bottom:0.3rem;
+    
+    color: #FAF4BF;
+}
+.red-didiCLose{
+    position: absolute;
+    left:0.15rem ;
+    top: 0.15rem;
+    width: 0.17rem;
+    height: 0.17rem;
+}
+.red-openani {
+    -webkit-animation: open .6s infinite alternate;
+    -ms-animation: open .6s infinite alternate;
+    animation: open .6s infinite alternate
+}
+.red-ani{
+    animation:scaleBig 0.5s 1 ease-in;
+}
+@-ms-keyframes scaleBig {
+    from {
+        -ms-transform: scale(0);
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    to {
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes scaleBig {
+    from {
+        -ms-transform: scale(0);
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    to {
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleBig {
+    from {
+        -ms-transform: scale(0);
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    to {
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}

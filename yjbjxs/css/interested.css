@@ -1,0 +1,60 @@
+.person-list {
+  background: #fff;
+}
+.person-list .person-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 1.28rem;
+}
+.person-list .person-avatar {
+  display: inline-block;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  margin: 0 .24rem;
+}
+.person-list .pserson-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  line-height: 1.28rem;
+  border-bottom: 1px solid #dcdcdd;
+  padding-right: .24rem;
+}
+.person-list .person-name {
+  color: #4A4A4A;
+}
+.click-btn {
+  display: block;
+  width: 1.12rem;
+  height: .44rem;
+  border-radius: .2rem;
+      line-height: .44rem;
+  border: none;
+  background: #2D2D2D;
+  color: #fff;
+}
+.click-btn.clicked {
+  background: #CECECE;
+}
+.inter-action-flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;padding:0 12px;
+}
+.phone-number,.wx-number{
+  user-select: text;
+}
