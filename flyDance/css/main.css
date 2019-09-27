@@ -410,3 +410,30 @@ html,body{
   border-left: 1px solid #000;
   border-right: 1px solid #000;
 }
+.my-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0.1rem 0.2rem;
+  background: #fff;
+  margin: 0.2rem auto
+}
+.my-list-left{
+  display: flex;
+  align-items: center;
+}
+.my-list-left img{
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 0.7rem;
+  margin-right: 0.2rem;
+}
+.my-txt1{
+  font-size: 0.3rem;
+}
+.my-txt2{
+  font-size: 0.22rem;
+}
+.my-list-right{
+  color: red
+}
