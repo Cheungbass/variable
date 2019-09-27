@@ -1,0 +1,412 @@
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+a,
+code,
+em,
+img,
+q,
+small,
+strong,
+dd,
+dl,
+dt,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+table,
+tbody,
+tr,
+th,
+td,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
+  font-family: 'STHeiti', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: none;
+}
+a,
+a:active,
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+}
+a,
+img {
+  -webkit-touch-callout: none;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+textarea,
+input[type="password"],
+input[type="text"] {
+  resize: none;
+  outline: 0;
+  -webkit-appearance: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #fff;
+}
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+input:focus,button:focus{   
+  border:none;
+}
+input,button{  
+  background:none;  
+  outline:none;  
+}
+/**
+ * view-port list:
+320x480
+320x568
+320x570
+360x592
+360x598
+360x604
+360x640
+360x720
+375x667
+375x812
+393x699
+412x732
+414x736
+480x854
+540x960
+640x360
+720x1184
+720x1280
+800x600
+1024x768
+1080x1812
+1080x1920
+ */
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 42.667px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 360px) {
+  html {
+    font-size: 48px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 361px) and (max-width: 375px) {
+  html {
+    font-size: 50px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 393px) {
+  html {
+    font-size: 52.4px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 394px) and (max-width: 412px) {
+  html {
+    font-size: 54.93px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 413px) and (max-width: 414px) {
+  html {
+    font-size: 55.2px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 480px) {
+  html {
+    font-size: 64px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 540px) {
+  html {
+    font-size: 72px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 541px) and (max-width: 640px) {
+  html {
+    font-size: 85.33px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 641px) and (max-width: 720px) {
+  html {
+    font-size: 96px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 721px) and (max-width: 768px) {
+  html {
+    font-size: 102.4px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 102.4px;
+    font-size: -webkit-calc(13.33333333vw);
+    font-size: calc(13.33333333vw);
+  }
+}
+body {
+  font-family: "PingFangSC-Regular", "Microsoft YaHei", Helvetica;
+  color: #333333;
+  background: #fff;
+}
+html a {
+  color: #333333;
+}
+.none,
+.hidden {
+  display: none !important;
+}
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 102.4px;
+  }
+  html .wap-wrap ,html .wap-wrap-report{
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  min-height: 10.5rem;
+}
+.content{
+  margin: 0 auto;
+  width: 7.5rem;
+  font-size: 0.3rem;
+}
+.fly-dance-head{
+    width: 7.5rem;
+    height:2.96rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fly-dance-head img{
+    width: 1.34rem;
+    height: 1.76rem;
+}
+.fly-dance-input{
+    width: 5.22rem;
+    height: 0.9rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem 0 0.3rem 0.7rem;
+    background: #FFED8D;
+    border: 1px dashed #BFBFBF;
+    font-size: 0.36rem;
+    color: #777777;
+    margin: 0.8rem auto 0.2rem;
+    border-radius: 0.1rem
+}
+.fly-dance-input input{
+  background: #FFED8D;
+  font-size: 0.36rem;
+}
+.fly-dance-input img{
+  width: 0.29rem;
+  height: 0.54rem;
+  margin-right: 0.2rem;
+}
+.fly-dance-check{
+  width: 5.24rem;
+  height: 0.93rem;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid #BFBFBF;
+  color: #BFBFBF;
+  font-size: 0.32rem;
+  padding-left: 0.12rem;
+  box-sizing: border-box;
+  color: #777777;
+  border-radius: 0.1rem
+}
+.fly-dance-check::after{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0.27rem;
+  height: 0.27rem;
+  border-radius: 0.27rem;
+  background: #BFBFBF;
+  top: 0;
+  bottom: 0;
+  left: 0.8rem;
+  margin: auto;
+}
+.fly-dance-check-right{
+  width: 5.24rem;
+  height: 0.93rem;
+  display: flex;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid #BFBFBF;
+  color: #4EBC88;
+  font-size: 0.32rem;
+  padding-left: 0.12rem;
+  box-sizing: border-box;
+  background: #D6FEDA;
+  border-radius: 0.1rem;
+  display: none
+}
+.fly-dance-check-right::after{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0.47rem;
+  height: 0.47rem;
+  top: 0;
+  bottom: 0;
+  left: 0.8rem;
+  background: url(http://qn.kj1d.com/check1.png) no-repeat;
+  background-size: 100% 100%;
+  margin: auto;
+}
+.fly-dance-button{
+  width: 5.24rem;
+  height: 0.93rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.32rem;
+  color: #fff;
+  background: #4EBC88;
+  margin: 0.5rem auto;
+  border-radius: 0.1rem
+}
+.fly-dance-button[disabled]{
+  color: #777777;
+  background: #BFBFBF;
+}
+.garybg{
+  background: #EBEBEB
+}
+.content1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 10.5rem;
+  height: 100%;
+  background: #EBEBEB
+}
+.fly-dance-download{
+  width: 7.1rem;
+  margin: 0 auto;
+}
+.fly-dance-download-head{
+  font-size: 0.36rem;
+  color: #101613;
+  padding-left: 0.2rem;
+  border-left: 0.12rem solid #FE772D;
+  line-height: 1;
+}
+.fly-dance-download-main{
+  background: #fff;
+  margin-top: 0.2rem;
+}
+.fly-dance-download-list{
+  display: flex;
+  padding: 0.2rem 0.33rem;
+}
+.fly-dance-download-left{
+  margin-right: 0.2rem;
+  text-align: center;
+}
+.fly-dance-download-left img{
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.fly-dance-download-txt1{
+  font-size: 0.36rem;
+  color: #2D2C2C;
+  margin-top: 0.2rem
+}
+.fly-dance-download-txt2{
+  font-size: 0.24rem;
+  color: #868686;
+  line-height: 1.5
+}
+.fly-dance-download-button{
+  width: 2.87rem;
+  height: .68rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: #4EBC88;
+  font-size: 0.32rem;
+  border-radius: 0.1rem;
+  margin-top: 0.2rem;
+}
+.fly-dance-download-text3{
+  text-align: center;
+  margin-top: 0.15rem;
+  font-size: 0.26rem;
+  color: #3F9EFF;
+  padding-bottom: 0.2rem;
+  line-height: 1;
+}
+.fly-dance-download-text3 span{
+  padding: 0 0.1rem;
+  line-height: 1;
+  margin: 0;
+}
+.black-line{
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
