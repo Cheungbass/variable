@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+        <title>注册</title>
+        <link rel="stylesheet" href="__STATIC__/home/css/main.css?v12">
+        <!-- __STATIC__/ -->
+    </head>
+</head>
+
+<body>
+<div class="content">
+    <!-- <div class="fly-dance-head" style="background: url('http://qn.kj1d.com/bg2.png') no-repeat;background-size: 100% 100%">
+        <img src="__STATIC__/home/img/icon2.png" alt="">
+    </div> -->
+    <img src="__STATIC__/home/img/fd03.png" class="fd-img01" alt="">
+    <img src="__STATIC__/home/img/fd01.png" class="fd-img02" alt="">
+    <img src="__STATIC__/home/img/fd02.png" class="fd-img03" alt="">
+
+    <form action="" method="post">
+        <!-- 手机验证 -->
+        <div class="fly-dance-input">
+            <img src="__STATIC__/home/img/phone.png" alt="" srcset="">
+            <input type="number" class="" placeholder="请输入你的手机号" name="phone" id="phone">
+            <input type="hidden" value="{$code}" name="code">
+        </div>
+        <div class="fly-dance-check">点击按钮进行验证</div>
+        <div class="fly-dance-check-right">验证成功</div>
+        <button type="submit" class="fly-dance-button" disabled="disabled" onclick="getform()"></button>
+    </form>
+</div>
+<script src="__STATIC__/home/js/jquery-1.9.1.min.js"></script>
+<script>
+    var check = false
+    function getform() {
+        console.log(111)
+    }
+    $('#phone').on("input", function (e) {
+        console.log(e.delegateTarget.value);
+        if (!(/^1[3456789]\d{9}$/.test(e.delegateTarget.value))) {
+            check = false
+            getGary()
+        } else {
+            check = true
+        }
+    })
+    //全部变灰
+    function getGary() {
+        $('.fly-dance-check').show()
+        $('.fly-dance-check-right').hide();
+        $('.fly-dance-button').attr('disabled', "true")
+    }
+    //全部变亮
+    function getLight() {
+        $('.fly-dance-check').hide()
+        $('.fly-dance-check-right').css('display', 'flex');
+        $('.fly-dance-button').removeAttr("disabled")
+    }
+    //点击验证
+    $('.fly-dance-check').click(function () {
+        if (check) {
+            getLight()
+        }
+    })
+</script>
+</body>
+
+</html>
