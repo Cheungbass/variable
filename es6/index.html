@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es6</title>
+</head>
+
+<body>
+    <script>
+        // let [a, b, c] = [1, 2, 3]
+        let [a, [b, c], d] = [1, [2, 3], 4]
+        console.log([a, [b, c], d])
+
+        let [foo = true] = []
+        console.log(foo)
+
+        //拓展运算符
+        function test(...arg) {
+            console.log(arg[1])
+        }
+        test()
+        //rest运算符
+        function test2(a, ...b) {
+            for (let val of b) {
+                console.log(val)
+            }
+        }
+        test2(1, 2, 3)
+        //字符串模板
+        let checkss = '你'
+        let blg = `屌${checkss}老板`
+        console.log(blg)
+        document.write(blg.includes('板'))
+    </script>
+</body>
+
+</html>
