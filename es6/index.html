@@ -108,6 +108,18 @@
             }
         }
         console.log(obj.add(1, 3))
+        //对象比较 Object.is
+        var obj1 = {
+            name: 'fuck'
+        }
+        var obj2 = {
+            name: 'you',
+            dssss: 'ssss'
+        }
+        console.log(Object.is(obj1.name, obj2.name))
+        //Object.assign 合并对象
+        let obj12 = Object.assign(obj1, obj2)
+        console.log(obj12)
     </script>
 </body>
 
