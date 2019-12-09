@@ -124,6 +124,24 @@
         let xx = Symbol('sss')
         console.log('Symbol', xx)
         console.log(xx.toString())
+        //Set
+        let setArr = new Set(['zzz', 'ssss', 'sdasd'])
+        console.log('setArr', setArr)
+        setArr.add('add')
+        console.log('setArr-add', setArr)
+        setArr.delete('zzz')
+        console.log('setArr-delete', setArr)
+        console.log('setArr-has', setArr.has('add'))
+        setArr.clear()
+        console.log('setArr-clear', setArr)
+        //map
+        let map = new Map()
+        let json = {
+            name: 'ssss',
+            kusd: 'sdsds'
+        }
+        map.set(json, 'sdsds')
+        console.log('map', map)
     </script>
 </body>
 
