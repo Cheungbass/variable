@@ -746,7 +746,11 @@ main .leftImgBox img{
 }
 main .leftImgBox .img001{
     width: 14rem;
+    height: 1.7rem;
     margin-bottom: 1rem
+}
+main .leftImgBox .img002{
+    height: 1.5rem;
 }
 main .joinLine{
     background: url(../images/idea/idea20.png) no-repeat;
