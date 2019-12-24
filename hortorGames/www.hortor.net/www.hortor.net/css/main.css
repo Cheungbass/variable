@@ -213,10 +213,10 @@ nav.show.dark-back:after {
 }
 .carousel-inner .images {
     position: absolute;
-    left: 0%;
-    top: 0%;
-    height: 100%;
-    width: 100%;
+    left: 50%;
+    top: 50%;
+    min-height: 100%;
+    min-width: 100%;
 }
 
 
@@ -262,8 +262,8 @@ header .banner {
 
 .carousel-inner .images,
 header .banner {
-    /* transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 }
 
 .transition {
@@ -273,8 +273,8 @@ header .banner {
 
 .carousel-inner:hover .images,
 header:hover .banner {    
-    /* transform: translate(-50%, -50%) scale(1.3, 1.3);
-    -webkit-transform: translate(-50%, -50%) scale(1.3, 1.3); */
+    transform: translate(-50%, -50%) scale(1.3, 1.3);
+    -webkit-transform: translate(-50%, -50%) scale(1.3, 1.3);
 }
 
 
@@ -394,7 +394,7 @@ main .slide {
 }
 
 main .carousel-indicators {
-    margin: 1.5em 0 0;
+    margin: 2em 0 0;
     position: initial;
 }
 
@@ -484,7 +484,7 @@ main .video-carousel .carousel-indicators li.active:before {
 
 footer {
     background-color: #000;
-    /* min-height: 360px; */
+    min-height: 360px;
     text-align: center;
     color: #777;
     font-weight: normal;
@@ -548,12 +548,12 @@ footer .tip {
 
     .carousel-inner .images,
     header .banner {
-        /* min-width: 992px;
+        min-width: 992px;
         transform: translate(-25%, -50%);
         -webkit-transform: translate(-25%, -50%);
 
         transition: none;
-        -webkit-transition: none; */
+        -webkit-transition: none;
     }
 
     header .banner {
@@ -688,85 +688,3 @@ footer .tip {
     color: #fff;
 }
 
-/* 有点意思 */
-main .imgBox{
-    /* width: 100%;
-    height: 100%;
-    margin: 0; */
-    padding: 0
-}
-main .imgBox img{
-    width: 100%;
-    height: 100%;
-}
-main .textBox{
-    width: 100%;
-    height: 100%;
-    padding: 1.5rem 1.8rem 0 ;
-    color: #E5E5E5;
-    background: url(../images/idea/idea17.png) no-repeat;
-    background-size: 100% 100%
-}
-main .textBox p{
-    color: rgba(229, 229, 229, 0.8)
-}
-.rightBox{
-    display: flex;
-    justify-content: flex-end;
-    padding: 0
-}
-.rightBox img{
-    width: 10rem;
-    /* height: 2rem; */
-    align-self: flex-end
-}
-main .content-03{
-    padding: 1.5rem 1.8rem  ;
-}
-main .content-03 h3{
-    color: #fff;
-    text-align: center;
-}
-main .content-03 h6{
-    color: rgba(229, 229, 229, 0.7);
-    text-align: center;
-}
-main .content-03 .col{
-    padding: 0
-}
-main .content-03 p{
-    color: rgba(229, 229, 229, 0.8);
-}
-main .leftImgBox{
-    display: flex;
-}
-main .leftImgBox img{
-    width: 7rem;
-    margin-bottom: 1rem
-}
-main .leftImgBox .img001{
-    width: 14rem;
-    margin-bottom: 1rem
-}
-main .joinLine{
-    background: url(../images/idea/idea20.png) no-repeat;
-    background-size: 100% 100%;
-    height: 4rem;
-}
-main .joinLineTxt{
-    font-size: 1rem;
-    display: flex;
-    justify-content: flex-end;
-    color: rgba(232, 52, 12, 1);
-    align-items: center;
-    height: 4rem;
-}
-main .joinLineTxt img{
-    width: 1rem;
-    height: 1rem;
-    margin-left: 0.5rem;
-}
-.footer-logo img{
-    width: 15rem;
-    margin: 1rem auto
-}
