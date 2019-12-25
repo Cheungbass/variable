@@ -470,9 +470,12 @@ main .video-carousel .carousel-indicators li.active:before {
     border-width: .5rem;
     width: 0;
     height: 0;
-    top: -1rem;
+    /* top: -1rem;
     left: 50%;
-    margin-left: -.5rem;
+    margin-left: -.5rem; */
+    top: 0rem;
+    left: 0%;
+    margin-left: 0rem;
 }
 /* main .video-carousel .carousel-indicators li.active:after {
     width: .25rem;
