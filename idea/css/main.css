@@ -561,7 +561,7 @@ footer .tip {
         -webkit-transition: none; */
     }
 
-    header .banner {
+    /* header .banner {
         transform: translate(-75%, -50%);
         -webkit-transform: translate(-75%, -50%);
     }
@@ -574,7 +574,7 @@ footer .tip {
     header:hover .banner {
         transform: translate(-75%, -50%) scale(1, 1);
         -webkit-transform: translate(-75%, -50%) scale(1, 1);
-    }
+    } */
 
 
     .header .carousel-control {
