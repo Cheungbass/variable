@@ -254,8 +254,10 @@ header .banner {
     min-width: 100%;
     min-height: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    /* top: 50%;
+    left: 50%; */
+    top: 0;
+    left: 0;
     z-index: -1;
     display: block;
 }
