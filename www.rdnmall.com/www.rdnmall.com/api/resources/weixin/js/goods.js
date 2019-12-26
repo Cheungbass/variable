@@ -1,0 +1,1 @@
+No Content: http://www.rdnmall.com/api/resources/weixin/js/goods.js?v=0.23

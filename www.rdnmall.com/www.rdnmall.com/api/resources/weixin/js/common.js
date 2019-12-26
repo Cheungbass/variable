@@ -1,0 +1,1 @@
+No Content: http://www.rdnmall.com/api/resources/weixin/js/common.js
