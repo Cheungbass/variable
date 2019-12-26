@@ -181,6 +181,31 @@
             if (isiOS) {
                 $("#downloadUrl").attr('href', 'https://a.app.qq.com/o/simple.jsp?pkgname=com.ewhale.distribution');
             }
+
+            $.ajax({
+                //请求方式
+                type: 'POST',
+                //发送请求的地址
+                url: 'http://47.107.245.234/shoe/goods/getGoodsDetail',
+                //服务器返回的数据类型
+                dataType: 'json',
+                // header: {
+                //     'Content-Type': 'application/json',
+                // },
+                headers: {
+                    'Content-Type': "application/json; charset=utf-8"
+                },
+                //发送到服务器的数据，对象必须为key/value的格式，jquery会自动转换为字符串格式
+                data: { goodsId: 282, goodsType: 'common', uid: 40 },
+                success: function (data) {
+                    //请求成功函数内容
+                    console.log(data)
+                },
+                error: function (jqXHR) {
+                    //请求失败函数内容
+                    console.log(jqXHR)
+                }
+            });
         });
     </script>
     <!-- body 最后 -->
