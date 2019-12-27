@@ -15,6 +15,11 @@
     <link rel="stylesheet" type="text/css" href="./api/resources/ygres/css/styles.css?v=0.52" />
     <link rel="stylesheet" type="text/css" href="./api/resources/ygres/css/swiper.min.css" />
     <script type="text/javascript" src="./api/resources/ygres/js/reset.js"></script>
+    <style>
+        .first-swiper {
+            height: 6rem;
+        }
+    </style>
     <script>
         var server = "./api";
     </script>
@@ -39,12 +44,12 @@
     <!-- 首页幻灯片 -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div
+            <div class="swiper-slide first-swiper">
+                <!-- <div
                     style="height:6rem;background-image: url('http://rdnmall.com/FowYCYClsGERof8h5EgTvmNrYaYW');background-repeat:no-repeat;background-position: center;background-size:contain">
-                </div>
+                </div> -->
             </div>
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
                 <div
                     style="height:6rem;background-image: url('http://rdnmall.com/FiZ_KFue3lWR4AA6Y7VWIhgmmNyk');background-repeat:no-repeat;background-position: center;background-size:contain">
                 </div>
@@ -58,17 +63,17 @@
                 <div
                     style="height:6rem;background-image: url('http://rdnmall.com/FsHcyyUjPtBIOqIYaeNZm0aNvrbJ');background-repeat:no-repeat;background-position: center;background-size:contain">
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="swiper-pagination"></div>
     </div>
     <input type="hidden" name="goodsId" id="goodsId" value="6607203382945910784">
     <div class="goods-msg">
         <input type="hidden" name="goodsId" id="goodsId" value="6607203382945910784">
-        <span class="goods-name">OLOMI 益生菌固体饮料</span>
-        <span class="goods-title">7种益生菌，2种益生元，多层包埋技术，无需冷藏，可口服</span>
-        <span class="goods-title"></span>
-        <span class="goods-price"><span class="price-symbol">¥</span>280</span>
+        <span class="goods-name ">1</span>
+        <span class="goods-title good-goodsDesc">2</span>
+        <!-- <span class="goods-title"></span> -->
+        <span class="goods-price"><span class="price-symbol">¥</span><span class="money">0</span></span>
         <span class="saled">已售456</span>
     </div>
 
@@ -119,13 +124,13 @@
 
     <div class="slide-detail"><span class="detail-line"></span><span class="slide-detail-in">上拉查看图文详情</span></div>
     <div class="goods-detail-bottom">
-        <div class="goods-detail-content">
-            <img src='http://rdnmall.com/FqgjN0UptZaPJaXjqRXQELJ6U2Uc' width='100%'><img
+        <div class="goods-detail-content goodsImageList">
+            <!-- <img src='http://rdnmall.com/FqgjN0UptZaPJaXjqRXQELJ6U2Uc' width='100%'><img
                 src='http://rdnmall.com/Fp1xAHlhXaYpY-peW0W1oj4gkPaH' width='100%'><img
                 src='http://rdnmall.com/FqHtMqX3FtPsOo99CxYN9uyh0bFv' width='100%'><img
                 src='http://rdnmall.com/FuJ0HXGuc1EFBtqoIZQGFGgoYY1I' width='100%'><img
                 src='http://rdnmall.com/FhpZrtFWMLXLnrzHSBPb46bxTvY1' width='100%'><img
-                src='http://rdnmall.com/FiR8ihKKsufRhO8aSWkwDbUml087' width='100%'>
+                src='http://rdnmall.com/FiR8ihKKsufRhO8aSWkwDbUml087' width='100%'> -->
         </div>
         <div class="goods-detail-content hehe" style="display: none">
             <ul class="goods-evaluate-list">
@@ -172,6 +177,7 @@
     <script src="./api/resources/ygres/js/jquery-1.8.3.min.js?v=0.13"></script>
     <script>
         $(function () {
+
             var u = navigator.userAgent, app = navigator.appVersion;
             var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
             var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
@@ -181,31 +187,61 @@
             if (isiOS) {
                 $("#downloadUrl").attr('href', 'https://a.app.qq.com/o/simple.jsp?pkgname=com.ewhale.distribution');
             }
-
+            var goodsIdData = JSON.parse(getQueryString("goodsId"));
+            var goodsTypeData = getQueryString("goodsType");
+            var uidData = JSON.parse(getQueryString("uid"));
+            var json = {
+                goodsId: goodsIdData, goodsType: goodsTypeData, uid: uidData
+            }
+            console.log('json', json)
             $.ajax({
                 //请求方式
                 type: 'POST',
                 //发送请求的地址
-                url: 'http://47.107.245.234/shoe/goods/getGoodsDetail',
+                url: 'http://rap2api.taobao.org/app/mock/241042/shoe/goods/getGoodsDetail',
                 //服务器返回的数据类型
                 dataType: 'json',
-                // header: {
-                //     'Content-Type': 'application/json',
-                // },
-                headers: {
-                    'Content-Type': "application/json; charset=utf-8"
-                },
+                // contentType: "application/json",
                 //发送到服务器的数据，对象必须为key/value的格式，jquery会自动转换为字符串格式
-                data: { goodsId: 282, goodsType: 'common', uid: 40 },
+                data: json,
                 success: function (data) {
                     //请求成功函数内容
-                    console.log(data)
+                    console.log('ajax', data)
+                    if (data.errorCode == 0) {
+                        var img1 = data.goodsLogo
+                        var str1 = `<div style="height:6rem;background-image: url('` +
+                            img1 + `');background-repeat:no-repeat;background-position: center;background-size:contain">
+                                    </div>`
+                        $('.first-swiper').append(str1)
+                        $('.goods-name').html(data.goodsName)
+                        $('.good-goodsDesc').html(data.goodsDesc)
+                        $('.money').html(data.propertyList[0].price)
+                        var str2 = ''
+                        let goodsImageList = data.goodsImageList
+                        for (var i = 0; i < goodsImageList.length; i++) {
+                            str2 += "<img src='" + goodsImageList[i] + "' width='100%'>"
+                        }
+                        $(".goodsImageList").append(str2)
+                    } else {
+                        alert(data.errorMsg)
+                    }
+
                 },
                 error: function (jqXHR) {
                     //请求失败函数内容
                     console.log(jqXHR)
                 }
             });
+
+
+            function getQueryString(name) {
+                var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) {
+                    return unescape(r[2]);
+                }
+                return null;
+            }
         });
     </script>
     <!-- body 最后 -->
