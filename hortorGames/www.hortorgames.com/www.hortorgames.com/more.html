@@ -173,35 +173,35 @@
 	<script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=6LLBZ-QMLCX-HNA4L-T3ADN-4O3V5-BFFLB"></script>
 	<script>
 
-		var playingVideo = null;
-		var $videos = $('.video');
-		function playVideo(index) {
-			var nowVideo = $($videos[index]);
-			var palyingStr = playingVideo ? playingVideo.attr('src') : '';
-			var nowStr = nowVideo.attr('src');
-			if (palyingStr && palyingStr !== nowStr) {
-				playingVideo[0].pause();
-			}
+		// var playingVideo = null;
+		// var $videos = $('.video');
+		// function playVideo(index) {
+		// 	var nowVideo = $($videos[index]);
+		// 	var palyingStr = playingVideo ? playingVideo.attr('src') : '';
+		// 	var nowStr = nowVideo.attr('src');
+		// 	if (palyingStr && palyingStr !== nowStr) {
+		// 		playingVideo[0].pause();
+		// 	}
 
-			playingVideo = nowVideo;
-			playingVideo[0].play();
-		}
+		// 	playingVideo = nowVideo;
+		// 	playingVideo[0].play();
+		// }
 
-		$('.video-tag').on('click', function () {
-			var to = $(this).data().slideTo;
-			playVideo(to);
-		});
+		// $('.video-tag').on('click', function () {
+		// 	var to = $(this).data().slideTo;
+		// 	playVideo(to);
+		// });
 
-		$('.carousel').hammer().on('swipeleft', function () {
-			$(this).carousel('next');
-		});
-		$('.carousel').hammer().on('swiperight', function () {
-			$(this).carousel('prev');
-		});
+		// $('.carousel').hammer().on('swipeleft', function () {
+		// 	$(this).carousel('next');
+		// });
+		// $('.carousel').hammer().on('swiperight', function () {
+		// 	$(this).carousel('prev');
+		// });
 
 		window.onload = function () {
 			function init() {
-				var center = new qq.maps.LatLng(39.98850, 116.35490);
+				var center = new qq.maps.LatLng(22.5492910000, 113.9444740000);
 				// 创建地图
 				var map = new qq.maps.Map(document.getElementById("container"), {
 					mapTypeControlOptions: {
@@ -230,7 +230,7 @@
 
 				var infoWin = new qq.maps.InfoWindow({
 					map: map,
-					content: "科大天工大厦B座18层",
+					content: "科兴科学园B栋2单元1102",
 					position: center,
 					zIndex: 10,
 					visible: true
