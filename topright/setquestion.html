@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width">
+
+    <title>创建题目</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="renderer" content="webkit">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="format-detection" content="telephone=no">
+
+    <script type="text/javascript" src="./static/answer/js/jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript" src="./static/answer/js/autosize.js"></script>
+
+    <script type="text/javascript" src="./static/answer/js/zhuge.js"></script>
+
+    <!-- <link href='http://cdn.webfont.youziku.com/webfonts/nomal/119220/46604/5c1da18cf629d90124dd5332.css' rel='stylesheet' type='text/css' /> -->
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link href='./static/answer/css/setquestion.css' rel='stylesheet' type='text/css' />
+
+    <style type="text/css">
+        #ad {
+            margin: 2rem;
+        }
+
+        #ad img {
+            width: 100%;
+        }
+
+        #fullbg {
+            position: fixed;
+            z-index: 100;
+            top: 3rem;
+            left: 0;
+            right: 0;
+            height: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!--出题-->
+
+    <div id="contenter">
+
+        <div id="fullbg"></div>
+
+        <div id="head"></div>
+
+        <div id="tips">
+
+            <div class="shield"><img src="http://small.ying-ji.com/moqi/answer/images/shield.jpg"></div>
+
+            题库由你懂我吗100%原创
+
+        </div>
+
+        <div id="info">
+
+            <div id="replace" onclick="replaceQuesiton()">换一题</div>
+
+            <div class="question"></div>
+
+            <div class="options">
+
+            </div>
+
+        </div>
+
+
+
+        <div id="next" onclick="nextQuestion()">下一题</div>
+
+        <!--提交表单-->
+
+        <form method="get" action="submitQuestions" id="form">
+
+            <input type="hidden" name="title_ids" id="question_id_str" />
+
+            <input type="hidden" name="answer_ids" id="option_id_str" />
+
+            <input type="hidden" name="sid" value="11429645" />
+
+            <input type="hidden" name="token" value="bd7e4eccca6af981e51e2bcdc039370b" />
+
+
+
+
+        </form>
+
+        <div id="submit" onclick="submit()">提交</div>
+
+        <!--广告信息：屏蔽-->
+
+        <!--<div id="ad"><img src="./static/answer/images/youku.ad.png"/></div>-->
+
+    </div>
+
+
+
+    <div id="tips2" style="position:fixed; bottom:0;aligh:center;width:100%">
+
+        <center>
+            <font size="1" color="grey"><br>文网文（2016）6868-005号<br>
+
+                电信经营许可证:B2-20170001</font><br><br>
+        </center>
+
+    </div>
+
+
+    <div style="display:none">
+
+        <script type="text/javascript" src="https://s5.cnzz.com/z_stat.php?id=1276321711&web_id=1276321711"></script>
+
+    </div>
+
+    <script type="application/javascript">
+
+
+
+        var question = [];  //题目数组
+
+        var head_no = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0];  //答题数组
+
+        var options = [];  //选项值
+
+        var qid_arr = [];  //选中题目id
+
+        var oid_arr = [];  //选中题目选项id
+
+        var dislike = [];  //不喜欢题目id
+
+        var qid = 0;   //当前 question id
+
+        var oid = 0;   //当前 option id
+
+        var id_check = 0;
+
+        var uid = "13676249";
+
+        var nickname = "若雪\ud83d\ude0b ";
+
+        var avatar = "http://thirdwx.qlogo.cn/mmopen/vi_32/PICLQa3RexnXxOkqznn7L3fRdZsaIM4EoCv1GfzYovIfLYr9PMmQKssvicPDicG9HicrJK93ZSE6vI0BtjUXqJoNA/132";
+
+
+
+        $(function () {
+
+            //序号填写
+
+            setNo();
+
+            //获取题目
+
+            getQustion();
+
+            //获取头像
+
+            getAvatar();
+
+            //诸葛埋点统计//属性名称不能超过255个字符，属性值不能超过200个字符
+
+            zhuge.track('去出题', {
+
+                '用户ID': uid,
+
+                '用户名': nickname,
+
+                '操作名称': '提交数据进入支付页'
+
+            });
+
+            zhuge.identify(nickname + '-' + uid, // 用户的id
+
+                {
+
+                    // 用户的属性
+
+                    '用户ID': uid,
+
+                    '用户名': nickname,
+
+                });
+
+
+
+        });
+
+
+
+        //提交
+
+        var submit = function () {
+
+            //判断是否选择option
+
+            if (0 == is_check) {
+
+                alert('需要选项哦~');
+
+                return false;
+
+            }
+
+            $("#fullbg").show();
+
+            qid_arr.push(qid);
+
+            oid_arr.push(oid);
+
+            var qid_str = '';
+
+            var oid_str = '';
+
+            for (var qkey in qid_arr) {
+
+                if ('' == qid_str) {
+
+                    qid_str += qid_arr[qkey];
+
+                } else {
+
+                    qid_str += "," + qid_arr[qkey];
+
+                }
+
+            }
+
+            for (var okey in oid_arr) {
+
+                if ('' == oid_str) {
+
+                    oid_str += oid_arr[okey];
+
+                } else {
+
+                    oid_str += "," + oid_arr[okey];
+
+                }
+
+            }
+
+            $("#question_id_str").val(qid_str);
+
+            $("#option_id_str").val(oid_str);
+
+            $("#form").submit();
+
+            //诸葛埋点统计//属性名称不能超过255个字符，属性值不能超过200个字符
+
+            zhuge.track('出题提交', {
+
+                '用户ID': uid,
+
+                '用户名': nickname,
+
+                '操作名称': '提交数据进入支付页'
+
+            });
+
+            zhuge.identify(nickname + '-' + uid, // 用户的id
+
+                {
+
+                    // 用户的属性
+
+                    '用户ID': uid,
+
+                    '用户名': nickname,
+
+                });
+
+        }
+
+
+
+        //添加顶部序号
+
+        var setNo = function () {
+
+            var append = '';
+
+            for (var key in head_no) {
+
+                var no = parseInt(key) + 1;
+
+                var item_no = head_no[key];
+
+                if (1 == item_no) {
+
+                    append += '<div class="num in">' + no + '</div>';
+
+                } else {
+
+                    append += '<div class="num">' + no + '</div>';
+
+                }
+
+            }
+
+            append += '<div class="line"></div>';
+
+            $("#head").html(append);
+
+        }
+
+
+
+        //填写内容
+
+        var writeQeiston = function () {
+
+            var question_length = question.length;
+
+            if (question_length == 0) {
+
+                return false;
+
+            }
+
+            var question_item = question[question_length - 1];
+
+            qid = question_item.id;
+
+            $("#info .question").html(question_item.title);
+
+            var option = '';
+
+            options = question_item.info;
+
+            for (var key in options) {
+
+                option += '<div class="option" onclick="checkOption(' + options[key]['id'] + ')">'
+
+                    + '<i class="fa fa-square-o"></i> '
+
+                    + options[key]['question']
+
+                    + '</div>';
+
+            }
+
+            $("#info .options").html(option);
+
+            is_check = 0;
+
+        }
+
+
+
+        //换一题
+
+        var replaceQuesiton = function () {
+
+            //添加不喜欢题目数组
+
+            dislike.push(qid);
+
+            //不喜欢题目字符串
+
+            var ab_ids = '';
+
+            for (var dkey in dislike) {
+
+                if ('' == ab_ids) {
+
+                    ab_ids = dislike[dkey];
+
+                } else {
+
+                    ab_ids += "," + dislike[dkey];
+
+                }
+
+            }
+
+
+
+            //选中题目字符串	
+
+            var ids_length = qid_arr.length;
+
+            var ids_str = '';
+
+            if (ids_length > 0) {
+
+                for (var key in qid_arr) {
+
+                    if ('' == ids_str) {
+
+                        ids_str = qid_arr[key];
+
+                    } else {
+
+                        ids_str += "," + qid_arr[key];
+
+                    }
+
+                }
+
+            }
+
+            $.ajax({
+
+                type: "GET",
+
+                //提交的网址
+
+                url: "/index.php/index/answer/changequestions.html",
+
+                cache: true,
+
+                async: true,
+
+                //提交的数据
+
+                data: { ids: ids_str, ab_ids: ab_ids },
+
+                //返回数据的格式
+
+                datatype: "json",
+
+                //在请求之前调用的函数
+
+                beforeSend: function () { },
+
+                //成功返回之后调用的函数
+
+                success: function (data) {
+
+                    var data = JSON.parse(data);
+
+                    if (200 == data.code) {
+
+                        var list = data.list;
+
+                        for (var list_key in list) {
+
+                            question.push(list[list_key]);
+
+                        }
+
+                        console.log(question);
+
+                        //写入内容
+
+                        writeQeiston();
+
+                    }
+
+                }
+
+            });
+
+            //诸葛埋点统计//属性名称不能超过255个字符，属性值不能超过200个字符
+
+            zhuge.track('出题-换一题', {
+
+                '用户ID': uid,
+
+                '用户名': nickname,
+
+                '操作名称': '换一题'
+
+            });
+
+            zhuge.identify(nickname + '-' + uid, // 用户的id
+
+                {
+
+                    // 用户的属性
+
+                    '用户ID': uid,
+
+                    '用户名': nickname,
+
+                });
+
+        }
+
+
+
+        //下一题
+
+        var nextQuestion = function () {
+
+            //判断是否选择option
+
+            if (0 == is_check) {
+
+                alert('需要选项哦~');
+
+                return false;
+
+            }
+
+            //删除已经选中元素
+
+            question = truncate(question);
+
+            qid_arr.push(qid);
+
+            oid_arr.push(oid);
+
+            writeQeiston();
+
+            var qid_length = qid_arr.length;
+
+            //顶部序号切换
+
+            head_no[qid_length] = 1;
+
+            setNo();
+
+            $('#next').css("background-color", "#FFFFFF");
+
+            $('#info .option').css("background-color", "#f6f6f6");
+
+            //提交按钮显示
+
+            if (9 == qid_length) {
+
+                $("#next").hide();
+
+                $("#submit").show();
+
+            }
+
+            //诸葛埋点统计//属性名称不能超过255个字符，属性值不能超过200个字符
+
+            zhuge.track('出题统计' + qid_length, {
+
+                '用户ID': uid,
+
+                '用户名': nickname,
+
+                '操作名称': '下一题',
+
+                '题目序号': qid_length
+
+            });
+
+            zhuge.identify(nickname + '-' + uid, // 用户的id
+
+                {
+
+                    // 用户的属性
+
+                    '用户ID': uid,
+
+                    '用户名': nickname,
+
+                });
+
+        }
+
+
+
+        //选择答案
+
+        var checkOption = function (val) {
+
+            oid = val;
+
+            var option = '';
+
+            for (var key in options) {
+
+                var option_id = options[key]['id'];
+
+
+                if (val == option_id) {
+
+                    option += '<div class="option" style="background-color:#FBDEB2" onclick="checkOption(' + options[key]['id'] + ')">'
+
+                        + '<i class="fa fa-check-square"></i> '
+
+                        + options[key]['question']
+
+                        + '</div>';
+
+
+                } else {
+
+                    option += '<div class="option" onclick="checkOption(' + options[key]['id'] + ')">'
+
+                        + '<i class="fa fa-square-o"></i> '
+
+                        + options[key]['question']
+
+                        + '</div>';
+
+                    $('#next').css("background-color", "#FFFFFF");
+
+                    //  $("#info .option").css("background-color","#ffdb2c");
+
+
+                }
+
+            }
+
+            $("#info .options").html(option)
+
+            is_check = 1;
+
+        }
+
+
+
+        //获取题目
+
+        var getQustion = function () {
+
+            $.ajax({
+
+                //提交数据的类型 POST GET
+
+                type: "GET",
+
+                //提交的网址
+
+                url: "/index.php/index/answer/createsubject.html",
+
+                cache: true,
+
+                async: true,
+
+                //提交的数据
+
+                //data:{Name:"sanmao",Password:"sanmaoword"},
+
+                //返回数据的格式
+
+                datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+
+                //在请求之前调用的函数
+
+                beforeSend: function () { },
+
+                //成功返回之后调用的函数
+
+                success: function (data) {
+
+                    var data = JSON.parse(data);
+
+                    if (200 == data.code) {
+
+                        question = data.list;
+
+                        //写入内容
+
+                        writeQeiston();
+
+                    }
+
+                }
+
+            });
+
+        }
+
+
+
+        //删除数组最后一个元素
+
+        function truncate(arr) {
+
+            return arr.slice(0, -1);
+
+        }
+
+
+
+        //获取头像 	
+
+        var getAvatar = function () {
+
+            var id = 'MDAwMDAwMDAwMH21gpiys4zag3zOow';
+
+            $.ajax({
+
+                //提交数据的类型 POST GET
+
+                type: "GET",
+
+                //提交的网址
+
+                url: "/index.php/index/answer/uploadavatarinfo.html",
+
+                cache: true,
+
+                async: true,
+
+                //提交的数据
+
+                data: { id: id, headimageurl: avatar },
+
+                //返回数据的格式
+
+                datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+
+                //在请求之前调用的函数
+
+                beforeSend: function () { },
+
+                //成功返回之后调用的函数
+
+                success: function (data) {
+
+
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>

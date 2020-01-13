@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width">
+
+    <title>个人中心</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="renderer" content="webkit">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="format-detection" content="telephone=no">
+
+    <script type="text/javascript" src="./static/answer/js/jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript" src="./static/answer/js/autosize.js"></script>
+
+    <script type="text/javascript" src="./static/answer/js/prompt.min.js"></script>
+
+    <script type="text/javascript" src="./static/answer/js/prompt.js"></script>
+
+    <link href='./static/answer/nj/css/balance.css?v=121' rel='stylesheet' type='text/css' />
+
+    <link href='./static/answer/nj/css/prompt.css?v=121' rel='stylesheet' type='text/css' />
+
+    <link rel="stylesheet" href="./static/answer/css/xuan-kefu.css">
+
+    <style type="text/css">
+        #head_tips {
+            display: none;
+            margin: 0 auto;
+            max-width: 640px;
+            padding: 0.4rem;
+            background-color: #fe0005;
+            color: #fff;
+            font-size: 0.82rem;
+        }
+
+        #head_tips p {
+            text-align: right;
+            color: #2E73D6;
+            text-decoration: underline;
+        }
+
+        a {
+
+            list-style: none;
+
+            text-decoration: none;
+
+            color: #02BB00;
+
+        }
+
+        .eject {
+
+            width: 16rem;
+
+            height: 8.343rem;
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            background: #FFFFFF;
+
+            border-radius: 0.23rem;
+
+            overflow: hidden;
+
+            text-align: center;
+
+        }
+
+        .eject-title {
+
+            width: 100%;
+
+            font-size: 1.03rem;
+
+            color: #000000;
+
+            margin: 1rem 0 0.63rem 0;
+
+        }
+
+        .eject-content {
+
+            width: 100%;
+
+            font-size: 0.857rem;
+
+            color: #888888;
+
+        }
+
+        .liner {
+
+            width: 100%;
+
+            height: 0.06rem;
+
+            background: #E5E5E5;
+
+            position: absolute;
+
+            top: 5.428rem;
+
+        }
+
+        .shu {
+
+            width: 0.07rem;
+
+            height: 2.857rem;
+
+            position: absolute;
+
+            top: 5.428rem;
+
+            left: 8rem;
+
+            background: #E5E5E5;
+
+            z-index: 999;
+
+        }
+
+        .eject-bottom {
+            width: 100%;
+
+            position: absolute;
+
+            top: 5.43rem;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            line-height: 2.8rem;
+
+        }
+
+        .eject-yes {
+
+            width: 50%;
+
+            text-align: center;
+
+        }
+
+        .eject-goal {
+
+            width: 50%;
+
+            text-align: center;
+
+            font-size: 1.028rem;
+
+            color: #02BB00;
+
+        }
+
+        .eject-goal-1 {
+
+            width: 100%;
+
+            position: absolute;
+
+            top: 5.43rem;
+
+            line-height: 2.8rem;
+        }
+    </style>
+
+    <!-- <script>
+
+		var _hmt = _hmt || [];
+
+		(function() { var hm = document.createElement("script");
+
+			hm.src = "https://hm.baidu.com/hm.js?390ff4fb4c85b555ab90407a77956ebb";
+
+			var s = document.getElementsByTagName("script")[0];
+
+			s.parentNode.insertBefore(hm, s);
+
+		})();
+
+	</script> -->
+
+
+
+</head>
+
+<body>
+
+    <!-- 客服 -->
+
+    <div class="kefu">
+
+        <a href="http://www.renrentb.com/index.php/index/answer/kefu.html">
+
+            <div class="kefu-portrait">
+
+                <img src="./static/answer/images/kefuB.png" alt="">
+
+            </div>
+
+            <div class="kefu-text">
+
+                <span>在线<Br />客服</span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+    <!--余额-->
+
+    <div class="loading" style="display: none">
+
+        <div class="loadingImg" style="text-align: center;
+
+    vertical-align: middle;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0,0,0,.6);
+
+    position: absolute;
+
+    z-index: 111;">
+
+            <img src="./static/answer/images/loading.gif" alt="" style="margin-top: 50%;
+
+    width: 50%;">
+
+            <div style="color: #fff">正在处理,请稍候. . .</div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="loading_fail" style="display: none">
+
+        <div class="loadingImg" style="text-align: center;
+
+    vertical-align: middle;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0,0,0,.6);
+
+    position: absolute;
+
+    z-index: 111;">
+
+            <div class="eject">
+
+                <div class="eject-title">
+
+                    <span>提现失败</span>
+
+                </div>
+
+                <div class="eject-content">
+
+                    <span>微信限制最低提现金额为0.3元</span>
+
+                </div>
+
+                <div class="liner"></div>
+
+                <div class="eject-goal-1">
+
+                    <a href="http://www.renrentb.com/index.php/index/answer/questionstart.html">
+
+                        <span>去给朋友出题</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <div class="loading_ok" style="display: none">
+
+        <div class="loadingImg" style="text-align: center;
+
+    vertical-align: middle;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0,0,0,.6);
+
+    position: absolute;
+
+    z-index: 111;">
+
+            <div class="eject">
+
+                <div class="eject-title">
+
+
+
+                    <span>提现成功</span>
+
+
+
+                </div>
+
+
+
+                <div class="eject-content">
+
+
+
+                    <span id="txhint">已成功提现.</span>
+
+
+
+                </div>
+
+
+
+                <div class="liner"></div>
+
+
+
+                <div class="shu"></div>
+
+
+
+                <div class="eject-bottom">
+
+
+
+                    <div href="javascript:;" class="eject-yes">
+
+
+
+                        <span id="eject-yes1">确定</span>
+
+
+
+                    </div>
+
+
+
+                    <a href="http://www.renrentb.com/index.php/index/answer/questionstart.html" class="eject-goal">
+
+
+
+                        <span>去给朋友出题</span>
+
+
+
+                    </a>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="contenter">
+
+
+
+        <div id="head_tips">
+
+
+            <a href="/index.php/index/answer/faq.html">
+                <p>联系客服</p>
+            </a>
+
+        </div>
+
+        <div id="fullbg"></div>
+
+
+
+        <div id="head_menu">
+
+            <a href="http://www.renrentb.com/index.php/index/answer/index.html">
+                <div class="gohome">返回首页</div>
+            </a>
+
+            <a href="http://www.renrentb.com/index.php/index/answer/faq.html">
+                <div class="gofaq">常见问题</div>
+            </a>
+
+        </div>
+
+
+
+        <div id="head">
+
+            <div class="icon" style="width: 4rem; height: 4rem;"><img style="width: 4rem; height: 4rem;"
+                    src="http://small.ying-ji.com/moqi/answer/images/balance.icon.png"></div>
+
+            <div class="describe">钱包余额</div>
+
+            <div class="describe">用户ID:13676249</div>
+
+            <div class="price"><span>&yen;&nbsp;</span>0.00</div>
+
+
+
+
+
+            <div class="describe">提现最低金额0.3元</div>
+
+            <input type="hidden" name="token" value="7a5a7da4578bc9dea01fe7df72889d4e">
+
+            <div id="cash" url="/index.php/index/answer/docash.html"
+                style="box-shadow: 0.04rem 0.04rem 0.06rem rgba(0,0,0,0.2);">提现</div>
+
+        </div>
+
+
+
+        <div id="tip">
+
+
+
+            <div class="li">1.未领取的红包余额24小时后退回这里！注意24小时</div>
+
+            <div class="li">2.提现申请后将在72小时内打入您的微信零钱。</div>
+
+            <div class="li">3.单笔提现最高100，每天3次。</div>
+
+            <div class="li one">4.非实名用户无法提现。</div>
+
+            <div class="li">5.如果遇提现或者页面异常，请稍后再试或联系客服。</div>
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+    <div style="display:none">
+
+        <script type="text/javascript" src="https://s5.cnzz.com/z_stat.php?id=1276110241&web_id=1276110241"></script>
+
+    </div>
+
+    <script>
+
+        var cash_status = 0;
+
+        var show_tips_font = "0";
+
+        var show_tips_box = 0;
+
+        $(function () {
+
+            if (1 == show_tips_font) {
+
+                $("#head_tips").show();
+
+            }
+
+            if (1 == show_tips_box) {
+
+                $("#tips_full").show();
+
+                $("#tips_con").show();
+
+            }
+
+        });
+
+
+
+        $("#eject-yes1").click(function () {
+
+            $('.loading_ok').hide()
+
+        });
+
+
+
+        $("#gohome").click(function () {
+
+            var url = $(this).attr('url');
+
+            window.location.href = url;
+
+        });
+
+        $("#complain").click(function () {
+
+            var url = $(this).attr('url');
+
+            window.location.href = url;
+
+        });
+
+        $("#cash").click(function () {
+
+
+
+            var url = $(this).attr('url');
+
+            var price = "0.00";
+
+            var token = $('[name=token]').val();
+
+            var number_price = parseFloat(price);
+
+            if (number_price * 100 < 30) {
+
+                //            alert("提现金额最低0.3元~");
+
+                $('.loading_fail').show()
+
+                return false;
+
+            }
+
+            if (1 == cash_status) {
+
+                return false;
+
+            }
+
+            $('.loading').show()
+
+            $("#fullbg").show();
+
+            $.ajax({
+
+                type: "POST",
+
+                url: url,
+
+                cache: true,
+
+                async: true,
+
+                datatype: "json",
+
+                data: { 'token': token },
+
+                beforeSend: function () {
+
+                    cash_status = 1;
+
+                },
+
+                success: function (data) {
+
+                    var data = JSON.parse(data);
+
+                    if (200 == data.code) {
+
+                        $('.loading').hide()
+
+                        if (data.money >= 25) {
+
+                            //                        alert('已成功提现'+data.money+'元，24小时内到账，请注意查看');
+
+                            $("#txhint").text('已成功提现' + data.money + '元，24小时内到账，请注意查看');
+
+
+
+                            $('.loading_ok').show()
+
+
+
+                        } else {
+
+                            $("#txhint").text('已成功提现' + data.money + '元');
+
+
+
+                            $('.loading_ok').show()
+
+
+
+                            //                        alert('已成功提现'+data.money+'元');
+
+                        }
+
+                        $(".price").html("<span>&yen;&nbsp;</span>" + data.remain_money);
+
+                        cash_status = 0;
+
+/*                     setTimeout(function () {
+
+                        location.reload();
+
+                    }, 500);
+
+ */                    return;
+
+                    } else {
+
+                        alert(data.msg);
+
+                        $(".loading").hide();
+
+                        $("#fullbg").hide();
+
+                        cash_status = 0;
+
+                        return;
+
+                    }
+
+                }
+
+            });
+
+
+
+
+
+        });
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

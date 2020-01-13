@@ -1,0 +1,248 @@
+/* 清除默认样式 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    list-style: none;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
+/* 字体 */
+
+@font-face {
+    font-family: 'PingFang SC';
+    src: url('../font/PingFang Medium.ttf');
+}
+
+
+/* 背景 */
+
+body {
+    background: #FFDB2C;
+    padding: 0 0.685rem;
+}
+
+
+/* 上部分 */
+
+.top {
+    margin: 0.57rem 0 0.57rem;
+    width: 20rem;
+    height: 16.29rem;
+    background: #FFFFFF;
+    border: 0.06rem solid #A7A7A6;
+    border-radius: 1.66rem;
+}
+
+.top-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.6rem 0 0.914rem;
+}
+
+.top-text-img-1 {
+    margin-top: 1.257rem;
+    width: 11.714rem;
+}
+
+.top-text-img-1 img {
+    width: 100%;
+}
+
+.top-text-img-2 {
+    margin-left: 0.1rem;
+    width: 9.6rem;
+}
+
+.top-text-img-2 img {
+    width: 100%;
+}
+
+.top-content-right .partrait {
+    margin-top: 1rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+}
+
+.top-content-right .partrait img {
+    width: 100%;
+}
+
+.top-img {
+    width: 100%;
+    position: relative;
+}
+
+.top-img .img-lujin {
+    width: 17.99rem;
+    height: 1.98rem;
+    margin-left: 0.92rem;
+}
+
+.top-img .img-lujin img {
+    width: 100%;
+}
+
+.top-img .img-guize {
+    position: absolute;
+    top: 0.17rem;
+    left: 1rem;
+    width: 7.83rem;
+}
+
+.top-img .img-guize img {
+    width: 100%;
+}
+
+.top-text {
+    font-family: 'PingFang SC';
+    padding: 0 0.914rem;
+    font-size: 0.8rem;
+    color: #E96480;
+}
+
+.top-text-1 {
+    margin-top: 0.571rem;
+    line-height: 0.86rem;
+}
+
+.top-liner {
+    width: 100%;
+    height: 2.11rem;
+    position: relative;
+}
+
+.liner-yellow {
+    width: 5.28rem;
+    height: 0.12rem;
+    background: #FFDB2C;
+    position: absolute;
+    left: 1.09rem;
+    top: 1.14rem;
+}
+
+.circle-yellow {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: #FFDB2C;
+    position: absolute;
+    left: 5.49rem;
+    top: 0.514rem;
+}
+
+.liner-B {
+    width: 12.7rem;
+    height: 0.12rem;
+    background: #BCBCBC;
+    position: absolute;
+    left: 6.685rem;
+    top: 1.14rem;
+}
+
+.num1 {
+    position: absolute;
+    left: 1.09rem;
+    top: 1.14rem;
+    font-size: 1.03rem;
+    color: #666666;
+}
+
+.num10 {
+    position: absolute;
+    left: 18.12rem;
+    top: 1.14rem;
+    font-size: 1.03rem;
+    color: #666666;
+}
+
+.top-bottom-text {
+    font-family: 'PingFang SC';
+    position: relative;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666666;
+    letter-spacing: 0.06rem;
+}
+
+.text-font {
+    font-size: 1rem;
+    color: #666666;
+    margin: 0 0.08rem;
+}
+
+.liner-duan {
+    width: 0.8rem;
+    height: 0.1rem;
+    background: #666666;
+    position: absolute;
+    left: 6rem;
+    top: 1.25rem;
+}
+
+
+/* 中间部分 */
+
+.middle {
+    width: 20rem;
+    height: 10.285rem;
+    background: #FFFFFF;
+    border: 0.06rem solid #A7A7A6;
+    border-radius: 1.03rem;
+    position: relative;
+}
+
+.middle-img {
+    width: 5.14rem;
+    position: absolute;
+    left: 1.54rem;
+    top: 3.54rem;
+}
+
+.middle-img img {
+    width: 100%;
+}
+
+.middle-top-title {
+    font-family: 'PingFang SC';
+    padding: 0.46rem 0 0 1.2rem;
+    font-size: 0.685rem;
+    color: #666666;
+}
+
+.middle-top-content {
+    margin-bottom: 0.17rem;
+}
+
+.middle-content-title {
+    font-family: 'PingFang SC';
+    padding-left: 7.72rem;
+    font-size: 0.685rem;
+    color: #666666;
+}
+
+.middle-content-text {
+    margin-bottom: 0.17rem;
+}
+
+
+/* 按钮 */
+
+.button {
+    background-image: url(../images/questionstart/button.png);
+    background-size: cover;
+    width: 17.828rem;
+    height: 2.857rem;
+    margin: 3.028rem 0 0 1.142rem;
+    font-size: 1.31rem;
+    line-height: 2.2rem;
+    text-align: center;
+    color: #ffffff;
+}

@@ -1,0 +1,87 @@
+{
+    "code": 200,
+    "message": "查询成功！",
+    "question": {
+        "1": {
+            "index": 1,
+            "ask": "我买化妆品喜欢买国货，质量完全不输大牌",
+            "ask_id": 640,
+            "option1": 640,
+            "option2": 639
+        },
+        "2": {
+            "index": 2,
+            "ask": "我觉得过去的误会我还是想解释清楚，一直会耿耿于怀",
+            "ask_id": 626,
+            "option1": 626,
+            "option2": 625
+        },
+        "3": {
+            "index": 3,
+            "ask": "2020我最想告别（拖延症，熬夜，小赘肉）",
+            "ask_id": 707,
+            "option1": 707,
+            "option2": 708
+        },
+        "4": {
+            "index": 4,
+            "ask": "电脑突然死机我通常会等一会，看看能不能再抢救一下",
+            "ask_id": 701,
+            "option1": 701,
+            "option2": 702
+        },
+        "5": {
+            "index": 5,
+            "ask": "聊天的时候我不喜欢发表情，挺麻烦的，非必要不发",
+            "ask_id": 690,
+            "option1": 690,
+            "option2": 689
+        },
+        "6": {
+            "index": 6,
+            "ask": "减肥看到最爱得食物，我会忍住不吃。不能前功尽弃啊",
+            "ask_id": 698,
+            "option1": 698,
+            "option2": 697
+        },
+        "7": {
+            "index": 7,
+            "ask": "我觉得房间舒服就行了，乱中有序，我都能找出来的",
+            "ask_id": 648,
+            "option1": 648,
+            "option2": 647
+        },
+        "8": {
+            "index": 8,
+            "ask": "我喜欢听随机播放的歌曲，常常可以带来惊喜",
+            "ask_id": 641,
+            "option1": 641,
+            "option2": 642
+        },
+        "9": {
+            "index": 9,
+            "ask": "手机上APP有标红，重要的我才会点开来看，不重要的等有空再说",
+            "ask_id": 605,
+            "option1": 605,
+            "option2": 606
+        },
+        "10": {
+            "index": 10,
+            "ask": "打开微信，看到许久未见的老朋友，会主动打招呼聊天",
+            "ask_id": 638,
+            "option1": 638,
+            "option2": 637
+        }
+    },
+    "sid": "10306944",
+    "parentInfo": {
+        "headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI9b26TRAksEWk04gMamlhVyICekFjia17dpKdkfHQz4rS5o2mL4oDibvYNvLpiatcRMv326LJWFKLTA/132"
+    },
+    "userInfo": {
+        "headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/PICLQa3RexnXxOkqznn7L3fRdZsaIM4EoCv1GfzYovIfLYr9PMmQKssvicPDicG9HicrJK93ZSE6vI0BtjUXqJoNA/132",
+        "nickname": "若雪\\�\\� "
+    },
+    "desc": [
+        "<div><center><span style=\"font-size:1rem;font-family:SimHei;\">测一测，你到底有多了解我</span></center></div><div><center><span style=\"color:red;font-size:0.8rem;font-family:SimHei;\">答对6题领取我的红包哦~</span></center></div>"
+    ]
+}

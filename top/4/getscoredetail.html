@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width">
+
+    <title>你懂我吗</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="renderer" content="webkit">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="format-detection" content="telephone=no">
+
+    <script type="text/javascript" src="/static/answer/js/jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript" src="/static/answer/js/autosize.js"></script>
+
+    <!--<link href='/static/answer/css/nomal.css' rel='stylesheet' type='text/css' />-->
+
+    <!-- <link rel="stylesheet" href="/static/answer/css/font-awesome.css"> -->
+
+    <link href='/static/answer/nj/css/answerresult.css?v=12' rel='stylesheet' type='text/css' />
+
+
+
+</head>
+
+<body>
+
+<!--答题结果-->
+
+<div id="contenter">
+
+	<div id="head_menu">
+
+        <a href="/index.php/index/answer/index.html"><div class="gohome">返回首页</div></a>
+
+        <a href="/index.php/index/answer/faq.html"><div class="gofaq">常见问题</div></a>
+
+    </div>
+
+	<div id="head">
+
+        <img class="bg" src="http://small.ying-ji.com/moqi/answer/images/answer.bg.png">
+
+        
+        <div class="mine">
+
+            <div class="avatar"><img src="http://thirdwx.qlogo.cn/mmopen/vi_32/PICLQa3RexnXxOkqznn7L3fRdZsaIM4EoCv1GfzYovIfLYr9PMmQKssvicPDicG9HicrJK93ZSE6vI0BtjUXqJoNA/132"></div>
+
+            <div class="name">若雪😋 </div>
+
+        </div>
+
+        
+
+<!-- 2019.12.03
+
+         <div class="result css168468cbbd1d1b4">
+
+            你答对了<br><span>4道题</span>
+        </div>
+
+ -->        
+
+ 		<div class="result css168468cbbd1d1b4"  style="top:10rem;">
+
+            你答对了<br><span>4道题</span><div style="line-height:0.5rem;color:#333333;font-size:0.5rem;height:1rem;"><br>答对6题可领红包哦</div><div style="line-height:0.3rem;color:#333333;font-size:0.5rem;height:0.6rem;"><br><font color="#333333">已领取：20/20个</font></div>
+        </div>        
+
+        
+        <div class="maker">
+
+            <div class="avatar"><img src="http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI9b26TRAksEWk04gMamlhVyICekFjia17dpKdkfHQz4rS5o2mL4oDibvYNvLpiatcRMv326LJWFKLTA/132"></div>
+
+            <div class="name">电商三少@释正广目</div>
+
+        </div>
+
+    </div>
+
+	<div id="btns">
+
+<!--
+
+        <div id="play"  url="/index.php/index/answer/questionstart.html">我也要玩</div>
+
+        <div id="play"  url="http://www.adsfsdf.cn/?type=1">我也要玩</div>
+        <div id="play"  url="/index.php/index/answer/setquestion.html">我也要玩</div>
+
+        <div id="play"  url="http://www.mjvqmi.cn/?type=1">我也要玩</div>
+-->
+
+
+        <div id="play"  url="/index.php/index/answer/setquestion.html">我也要玩</div>
+
+
+        <div id="cash"  url="/index.php/index/answer/mywallet.html">我要提现</div>
+
+    </div>
+
+	
+
+
+
+    <div id="finally">
+
+        <div class="finally">
+
+<div class="tips_head" style="padding:0.1rem;padding-left:2rem;padding-right:2rem;">
+
+  <div style="float:left;width:100%;clear:both;height:0.7rem;clear:both;">
+
+         <h1 style="font-family:'FZDaHei-B02S';font-size:10px;text-shadow:2px 2px 0px #FFDB2C;color:#333333;margin-left:-1.9rem;">质检结果</h1>
+
+  </div>
+
+
+
+  <div class="avatar" style="float:left;width:10%;padding:-10px;">
+
+      <img style="width:1.5rem;  border-radius: 50%;" src="http://thirdwx.qlogo.cn/mmopen/vi_32/PICLQa3RexnXxOkqznn7L3fRdZsaIM4EoCv1GfzYovIfLYr9PMmQKssvicPDicG9HicrJK93ZSE6vI0BtjUXqJoNA/132">
+
+  </div>
+
+  <div style="float:left;width:78%;">
+
+      <div style="margin-top:-0.1rem;">
+
+         <center><h1 style="font-family:'FZDaHei-B02S';font-size:20px;text-shadow:2px 2px 0px #FFDB2C;color:#333333;">抢救下还能做朋友</h1></center>
+
+      </div>
+
+   </div>
+
+  <div class="avatar" style="float:left;width:10%;padding:-10px;">
+
+      <img style="width:1.5rem;  border-radius: 50%;" src="http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI9b26TRAksEWk04gMamlhVyICekFjia17dpKdkfHQz4rS5o2mL4oDibvYNvLpiatcRMv326LJWFKLTA/132">
+
+  </div>
+
+
+
+
+
+  <div class="avatar" style="float:left;width:10%;padding-top:0.1rem;clear:both;">
+
+      <center><img style="width:0.8rem;" src="/static/answer/images/downico.png"></center>
+
+  </div>
+
+  <div style="float:left;width:78%;">
+
+      <div style="margin-top:-0.2rem;">
+
+         <center><h1 style="font-family:'FZDaHei-B02S';font-size:1rem;text-shadow:2px 2px 0px #FFDB2C;color:#333333;">用一分钟增进下你们友谊</h1></center>
+
+      </div>
+
+   </div>
+
+  <div class="avatar" style="float:left;width:10%;padding-top:0.1rem;">
+
+      <center><img style="width:0.8rem;" src="/static/answer/images/downico.png"></center>
+
+  </div>
+
+</div>         
+
+<!--2019.12.03
+
+ 			<div class="tips_head">
+
+				<div class="tips_head_name">质检结果 <div class="end">已领取20/20个</div></div>
+
+				<div class="tips_head_desc">答对6题可瓜分红包~ <div class="status">红包已失效~</div></div>
+
+			</div>	
+
+ -->
+
+<!--2019.12.13
+
+<div class="tips_head" style="padding:0.1rem;">
+
+<div style="float:left;width:25%;padding:-10px;">
+
+  <img src="/static/answer/images/duixian.png" width="70">
+
+  </div>
+
+  <div style="float:left;width:74%;">
+
+  <div style="margin-top:5px;">
+
+    <img src="/static/answer/images/result.png" width="120px">
+
+    </div>
+
+  <div style="margin-top:5px;">
+
+   <h1 style="font-family:'FZDaHei-B02S';font-size:20px;text-shadow:2px 2px 0px #FFDB2C;color:#333333;">"来吧，请Ta喝杯奶茶"</h1>
+
+    </div>
+
+    
+
+    </div>
+
+			</div>
+
+			 -->
+
+<!--
+
+ 			<div class="tips_head">
+
+			<img src="/static/answer/images/tips_promis.png" width="320px">
+
+			</div>	
+
+ -->			
+
+			<div class="record">			
+
+					
+
+            <div class="li">
+
+				<div class="avatar"><img  style="-webkit-filter: blur(0px);  filter: blur(0px);" src="http://thirdwx.qlogo.cn/mmopen/vi_32/PICLQa3RexnXxOkqznn7L3fRdZsaIM4EoCv1GfzYovIfLYr9PMmQKssvicPDicG9HicrJK93ZSE6vI0BtjUXqJoNA/132"></div>
+
+	            <div class="userinfo">
+
+	                <div class="nickname"  style="-webkit-filter: blur(0px);  filter: blur(0px);">若雪😋 </div>
+
+	                <div class="date">来吧，请Ta喝杯奶茶</div>
+
+	            </div>
+
+	            <div class="redpacket">
+
+	                <div class="r">
+
+	                   
+
+					未获得	
+
+					
+	                </div>
+
+	                <div class="b">答对4题</div>
+
+	            </div> 
+
+            </div>
+
+					
+
+            <div class="li self">
+
+				<div class="avatar"><img  style="-webkit-filter: blur(0px);  filter: blur(0px);" src="http://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83epqMo2E8BLEy0w1KKicGNICpRecib1LqqMeicB0J4fRLibqQiciatB48HJw6AWKnyMDzLK8JbR7VE0FIhfQ/132"></div>
+
+	            <div class="userinfo">
+
+	                <div class="nickname"  style="-webkit-filter: blur(0px);  filter: blur(0px);">懵懂hai</div>
+
+	                <div class="date">咦~帮Ta点一分外卖吧</div>
+
+	            </div>
+
+	            <div class="redpacket">
+
+	                <div class="r">
+
+	                   
+
+					未获得	
+
+					
+	                </div>
+
+	                <div class="b">答对5题</div>
+
+	            </div> 
+
+            </div>
+
+					
+
+            <div class="li self">
+
+				<div class="avatar"><img  style="-webkit-filter: blur(0px);  filter: blur(0px);" src="http://thirdwx.qlogo.cn/mmopen/vi_32/BZUOGUeuLSAFic4rRUOYByc2ibkHkibcMHvYBAA0r1yVysMrkMAF6rf9eqgA31N624MKRbIWmWDembqAhxnLYeTCA/132"></div>
+
+	            <div class="userinfo">
+
+	                <div class="nickname"  style="-webkit-filter: blur(0px);  filter: blur(0px);">强</div>
+
+	                <div class="date">给Ta发6.6红包</div>
+
+	            </div>
+
+	            <div class="redpacket">
+
+	                <div class="r">
+
+	                   
+
+					未获得	
+
+					
+	                </div>
+
+	                <div class="b">答对3题</div>
+
+	            </div> 
+
+            </div>
+
+					
+
+            <div class="li self">
+
+				<div class="avatar"><img  style="-webkit-filter: blur(0px);  filter: blur(0px);" src="http://thirdwx.qlogo.cn/mmopen/vi_32/KOKDThzLWmWqQgqVsK1hicgS8EXq5EiaiaQcaiaYuyFibJPQ9e1wKNziaHNoS31q0ZUBQsZkdb6cnLcibCFRhXOibA6TicQ/132"></div>
+
+	            <div class="userinfo">
+
+	                <div class="nickname"  style="-webkit-filter: blur(0px);  filter: blur(0px);">濠</div>
+
+	                <div class="date">咦~帮Ta点一分外卖吧</div>
+
+	            </div>
+
+	            <div class="redpacket">
+
+	                <div class="r">
+
+	                   
+
+					未获得	
+
+					
+	                </div>
+
+	                <div class="b">答对5题</div>
+
+	            </div> 
+
+            </div>
+
+					
+
+            <div class="li self">
+
+				<div class="avatar"><img  style="-webkit-filter: blur(0px);  filter: blur(0px);" src="http://thirdwx.qlogo.cn/mmopen/vi_32/Ecuy2hm9af3LNibAWBENOVibOpIegvTmNuYQt5SYg9QKo7VTOvDL2dcqQl4dE2j6W1lOV1IOogOopxmFe4pkvwWQ/132"></div>
+
+	            <div class="userinfo">
+
+	                <div class="nickname"  style="-webkit-filter: blur(0px);  filter: blur(0px);">David ，keep moving</div>
+
+	                <div class="date">来吧，让Ta请你喝杯奶茶</div>
+
+	            </div>
+
+	            <div class="redpacket">
+
+	                <div class="r">
+
+	                   
+
+					未获得	
+
+					
+	                </div>
+
+	                <div class="b">答对7题</div>
+
+	            </div> 
+
+            </div>
+
+					
+
+            <div class="li self">
+
+				<div class="avatar"><img  style="-webkit-filter: blur(0px);  filter: blur(0px);" src="http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL4pDKPJOaMNrSIrlwbI9ACnXody0Hqe2awOeXicS4xm6rKOMSpA8ceMxicMAfw2BFiaG5ZYrC5rblXg/132"></div>
+
+	            <div class="userinfo">
+
+	                <div class="nickname"  style="-webkit-filter: blur(0px);  filter: blur(0px);">z</div>
+
+	                <div class="date">用微信发&ldquo;想你了&rdquo;给Ta</div>
+
+	            </div>
+
+	            <div class="redpacket">
+
+	                <div class="r">
+
+	                   
+
+					未获得	
+
+					
+	                </div>
+
+	                <div class="b">答对6题</div>
+
+	            </div> 
+
+            </div>
+
+					
+
+            <div class="li self">
+
+				<div class="avatar"><img  style="-webkit-filter: blur(0px);  filter: blur(0px);" src="http://thirdwx.qlogo.cn/mmopen/vi_32/YGmt2tKC5JfejIf4MynG8yCn9EwTQ0yuQJ4EudJibSibjiagdeqNlatUqSe8zINM0KDjluMwvgVt3vj26Ud586Bpw/132"></div>
+
+	            <div class="userinfo">
+
+	                <div class="nickname"  style="-webkit-filter: blur(0px);  filter: blur(0px);">Ze</div>
+
+	                <div class="date">用微信发&ldquo;想你了&rdquo;给Ta</div>
+
+	            </div>
+
+	            <div class="redpacket">
+
+	                <div class="r">
+
+	                   
+
+					未获得	
+
+					
+	                </div>
+
+	                <div class="b">答对6题</div>
+
+	            </div> 
+
+            </div>
+
+					
+
+            <div class="li self">
+
+				<div class="avatar"><img  style="-webkit-filter: blur(0px);  filter: blur(0px);" src="http://thirdwx.qlogo.cn/mmopen/vi_32/MLFkN5riaDqrKMm8uGPqw0Mh7rMRRP1cdwRfI9bGNIA0vtShSyiaUMteS5icHbvxJjmnYqgVJmHfcc3zlv7MyiakVg/132"></div>
+
+	            <div class="userinfo">
+
+	                <div class="nickname"  style="-webkit-filter: blur(0px);  filter: blur(0px);">鉴于流水</div>
+
+	                <div class="date">用微信发&ldquo;想你了&rdquo;给Ta</div>
+
+	            </div>
+
+	            <div class="redpacket">
+
+	                <div class="r">
+
+	                   
+
+					未获得	
+
+					
+	                </div>
+
+	                <div class="b">答对6题</div>
+
+	            </div> 
+
+            </div>
+
+					
+
+            <div class="li self">
+
+				<div class="avatar"><img  style="-webkit-filter: blur(0px);  filter: blur(0px);" src="http://thirdwx.qlogo.cn/mmopen/vi_32/2icYOwVTD14icIhI7rXpoRzkTZNJeq7mQoFxRPnKibiabcK2kCSVDp3QNDYdQcqBfgqFhiak7cuiacwib4Pvyau7wzyVg/132"></div>
+
+	            <div class="userinfo">
+
+	                <div class="nickname"  style="-webkit-filter: blur(0px);  filter: blur(0px);">Gloria</div>
+
+	                <div class="date">来吧，让Ta请你喝杯奶茶</div>
+
+	            </div>
+
+	            <div class="redpacket">
+
+	                <div class="r">
+
+	                   
+
+					未获得	
+
+					
+	                </div>
+
+	                <div class="b">答对7题</div>
+
+	            </div> 
+
+            </div>
+
+					
+
+            <div class="li self">
+
+				<div class="avatar"><img  style="-webkit-filter: blur(0px);  filter: blur(0px);" src="http://thirdwx.qlogo.cn/mmopen/vi_32/XpqE9Dsd10DWcgX0wpZ8WnwGNiakMBticYPEKJCPM1w4mEd1gibs1I1YuMiakib216orgttFTtaggBD6I4iacBtiaYpVA/132"></div>
+
+	            <div class="userinfo">
+
+	                <div class="nickname"  style="-webkit-filter: blur(0px);  filter: blur(0px);">如来如去，随意自在</div>
+
+	                <div class="date">给Ta发6.6红包</div>
+
+	            </div>
+
+	            <div class="redpacket">
+
+	                <div class="r">
+
+	                   
+
+					未获得	
+
+					
+	                </div>
+
+	                <div class="b">答对3题</div>
+
+	            </div> 
+
+            </div>
+
+			  
+
+			</div>
+
+			
+			<div id="more" onclick="getMore()">查看更多</div>  
+
+					           
+
+        </div>
+
+    </div>
+
+	
+
+</div>
+
+<div style="display:none">
+
+    <script type="text/javascript" src="https://s5.cnzz.com/z_stat.php?id=1276321711&web_id=1276321711"></script>
+
+</div>
+
+<script>
+
+	var page = 1;
+
+	var total_page = "12";
+
+	
+
+	var sid = "MDAwMDAwMDAwMH21duCxfYyWg3y0ow";
+
+	var score_id = "MDAwMDAwMDAwMH6ldpeyo5aRgp-gow";
+
+	
+
+	
+
+	
+
+   
+
+	
+
+	$("#play").click(function () {
+
+		var url = $(this).attr('url');
+
+		window.location.href = url;
+
+		
+
+	});
+
+	$("#cash").click(function () {
+
+		var url = $(this).attr('url');
+
+		window.location.href = url;
+
+		
+
+	});
+
+	
+
+	//获取数据
+
+	var getData = function(page){
+
+        $.ajax({
+
+            type:"GET",
+
+            //提交的网址
+
+            url:"/index.php/index/answer/getscoredetail.html",
+
+            cache:true,
+
+            async:true,
+
+            //提交的数据
+
+            data:{page:page,sid:sid,score_id:score_id},
+
+            //返回数据的格式
+
+            datatype: "json",
+
+            //在请求之前调用的函数
+
+            beforeSend:function(){},
+
+            //成功返回之后调用的函数
+
+            success:function(data){
+
+                var data = data;
+
+                if(200 == data.code){                   
+
+                    
+
+                    writeRecord(data.list);
+
+                }
+
+            }
+
+        });
+
+	}
+
+
+
+	//填写数据
+
+	var writeRecord = function(list){
+
+
+
+	    if(0 == list.length){
+
+			return false;
+
+		}
+
+
+
+	    var append = '';
+
+		for(var key in list){
+
+		    var status = '';
+
+			var bonus_money = list[key].bonus_money;
+
+				bonus_money = bonus_money;
+
+		    if(0 < bonus_money){
+
+                status = '<span>'+bonus_money+'</span>元';
+
+			}else{
+
+                status = '未获得';
+
+            }
+
+            var is_self = list[key].is_self;
+
+			if(0 == is_self){
+
+				append +='<div class="li self">'
+
+				+'<div class="avatar"><img style="-webkit-filter: blur(0px);  filter: blur(0px);" src="'+list[key].headimgurl+'"></div>'
+
+	            +'<div class="userinfo">'
+
+	            +'<div class="nickname" style="-webkit-filter: blur(0px);  filter: blur(0px);">'+list[key].nickname+'</div>'
+
+	            +'<div class="date">'+list[key].tips+'</div>'
+
+	            +'</div>'
+
+	            +'<div class="redpacket">'
+
+	            +'<div class="r">'+status+'</div>'
+
+	            +'<div class="b">答对'+list[key].right_num+'题</div>'
+
+	            +'</div>'
+
+                +'</div>';
+
+			}else{
+
+				append +='<div class="li">'
+
+				+'<div class="avatar"><img style="-webkit-filter: blur(0px);  filter: blur(0px);" src="'+list[key].headimgurl+'"></div>'
+
+	            +'<div class="userinfo">'
+
+	            +'<div class="nickname" style="-webkit-filter: blur(0px);  filter: blur(0px);">'+list[key].nickname+'</div>'
+
+	            +'<div class="date">'+list[key].tips+'</div>'
+
+	            +'</div>'
+
+	            +'<div class="redpacket">'
+
+	            +'<div class="r">'+status+'</div>'
+
+	            +'<div class="b">答对'+list[key].right_num+'题</div>'
+
+	            +'</div>'
+
+                +'</div>';
+
+			}
+
+			
+
+		}
+
+		$("#finally .record").append(append);
+
+	}
+
+
+
+	//查看更多
+
+    var getMore = function(){
+
+        page = Number(page) + 1;
+
+		console.log(page);
+
+		console.log(total_page);
+
+        if(page == total_page){
+
+			console.log("hide");
+
+            $("#more").hide();
+
+        }
+
+        getData(page);
+
+    }
+
+
+
+</script>
+
+</body>
+
+</html>
+

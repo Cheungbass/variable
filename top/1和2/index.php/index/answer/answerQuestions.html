@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>你懂我吗</title>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="../../../static/answer/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../../../static/answer/js/autosize.js"></script>
+    <!--     <link href='../../../static/answer/css/nomal.css' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="../../../static/answer/css/font-awesome.css">
+ -->
+    <link href='../../../static/answer/css/answer.css?time=1' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="../../../static/answer/css/mask-money.css">
+    <style type="text/css">
+        #tip_fullbg {
+            position: fixed;
+            z-index: 999;
+            top: 0rem;
+            left: 0;
+            right: 0;
+            height: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        #female {
+            width: 17.9rem;
+            height: 19.16rem;
+            position: fixed;
+            z-index: 1000;
+            top: 26%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        #male {
+            width: 17.9rem;
+            height: 19.16rem;
+            position: fixed;
+            z-index: 1000;
+            top: 26%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        #female img {
+            width: 17.9rem;
+            height: 19.16rem;
+            border-radius: 0.8rem;
+        }
+
+        #male img {
+            width: 17.9rem;
+            height: 19.16rem;
+            border-radius: 0.8rem;
+        }
+
+        #money-box {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            background-color: #646464;
+        }
+    </style>
+</head>
+
+<body>
+    <!--答题中-->
+
+    <div id="money-box">
+
+        <div id="money" style="display: block;">
+
+            <div class="portrait">
+
+
+
+            </div>
+
+            <div class="money-btn"></div>
+
+            <img class="background" src="../../../static/answer/images/money.png" alt="">
+
+        </div>
+
+    </div>
+
+
+    <div id="contenter">
+
+
+        <div id="answer"></div>
+        <div id="btn"></div>
+        <form id="form" method="get" action="/index.php/index/answer/submitanswer.html">
+            <input type="hidden" name="sid" value="MDAwMDAwMDAwMH21duCxfYyWg3y0ow" />
+            <input type="hidden" name="ask_ids" value="" />
+            <input type="hidden" name="token" value="5abe5b386fa1ef49475bfc16dbea86b6" />
+            <input type="hidden" name="answer_ids" value="" />
+        </form>
+    </div>
+
+    <script>
+
+        var sid = 'MDAwMDAwMDAwMH21duCxfYyWg3y0ow';
+        var true_icon = '../../../static/answer/images/right.png'; //真
+        var false_icon = '../../../static/answer/images/wrong.png';//假
+        var parent_icon = '';                               //出题人头像
+        var user_icon = '';                               //答题人头像
+        var head_describe = [];                               //描述数组
+        var list = [];                               //答题列表
+        var quesiton_no = 1;                                //当前需要答题序号
+        var ask_ids = [];                               //已回答问题id数组
+        var answer_ids = [];                               //答案id数组
+
+
+
+
+        $(function () {
+            $("#contenter").css('height', $(window).height() + "px");
+
+            //获取问题
+            getQuestion();
+        });
+
+        //获取题目列表
+        var getQuestion = function () {
+            // var sid = sid;
+            $.ajax({
+                type: "GET",
+                url: "answer.json",
+                cache: true,
+                async: true,
+                data: { sid: sid },
+                datatype: "json",
+                beforeSend: function () { },
+                success: function (data) {
+                    // var data = JSON.parse(data);
+                    console.log(data)
+                    // var data = JSON.parse(data);
+                    // console.log(data)
+                    if (200 == data.code) {
+
+                        parent_icon = data.parentInfo.headimgurl;
+                        user_icon = data.userInfo.headimgurl;
+                        head_describe = data.desc;
+                        list = data.question;
+                        console.log(list)
+                        $(".portrait").html('<img style="width:4.88rem;border-radius:50%;" src="' + data.parentInfo.headimgurl + '">');
+                        //开始提问
+                        addQuestion();
+                    }
+                }
+            });
+        }
+
+        //添加提问内容
+        var addQuestion = function () {
+            var append = '';  //问答数据
+            var btn = '';  //答题按钮
+            if (1 == quesiton_no) {
+
+                for (var key_desc in head_describe) {
+                    append += '<div style="background-color:#ffffff;margin:0.5rem;width:95%;height:4rem;border-radius:10px;">'
+                        + '<div class="avatar" style="float:left;width:17%;margin-top:0.4rem;"><center><img style="width:3rem;border-radius:50%;" src="' + parent_icon + '"></center></div>'
+                        + '<div style="float:left;width:66%;margin-top:0.7rem;">' + head_describe[key_desc] + '</div>'
+                        + '<div class="avatar" style="float:left;width:17%;margin-top:0.4rem;"><center><img style="width:3rem;border-radius:50%;" src="' + user_icon + '"></center></div>'
+                        + '</div>';
+                }
+
+/*             for(var key_desc in head_describe){
+                append += '<div class="item">'
+                    +'<div class="avatar"><img src="'+parent_icon+'"></div>'
+                    +'<div class="bubble">'+head_describe[key_desc]+'</div>'
+                    +'</div>';
+            }
+ */        }
+            append += '<div class="no">第' + list[quesiton_no].index + '题/共10题</div>'
+                + '<div class="item">'
+                + '<div class="avatar"><img src="' + parent_icon + '"></div>'
+                + '<div class="bubble">' + list[quesiton_no].ask + '</div>'
+                + '</div>';
+            $("#answer").append(append);
+            getBottom();
+            btn += '<div id="false" onclick="addAnswer(0,' + list[quesiton_no].option2 + ',' + list[quesiton_no].ask_id + ')">'
+                + '<div class="icon"><img src="' + false_icon + '"></div>'
+                + '<div class="name">假的</div>'
+                + '</div>'
+                + '<div id="true" onclick="addAnswer(1,' + list[quesiton_no].option1 + ',' + list[quesiton_no].ask_id + ')">'
+                + '<div class="icon"><img src="' + true_icon + '"></div>'
+                + '<div class="name">真的</div>'
+                + '</div>';
+            $("#btn").html(btn);
+
+        }
+
+        //添加答题记录
+        var addAnswer = function (blog, answer_id, ask_id) {
+
+            if (10 < quesiton_no) {
+                return false;
+            }
+
+            ask_ids.push(ask_id);
+            answer_ids.push(answer_id);
+
+            var append = '';
+            if (0 == blog) {
+                append += '<div class="answer_item">'
+                    + '<div class="bubble"><img src="' + false_icon + '"></div>'
+                    + '<div class="avatar"><img src="' + user_icon + '"></div>'
+                    + '</div>';
+            } else {
+                append += '<div class="answer_item">'
+                    + '<div class="bubble"><img src="' + true_icon + '"></div>'
+                    + '<div class="avatar"><img src="' + user_icon + '"></div>'
+                    + '</div>';
+            }
+
+            $("#answer").append(append);
+            getBottom();
+            quesiton_no++;
+            if (10 >= quesiton_no) {
+                addQuestion();
+            } else {
+                //提交form表单
+                submitAnswer();
+            }
+        }
+
+        //提交数据
+        var submitAnswer = function () {
+            if (11 < quesiton_no) {
+                return false;
+            }
+            var ask_id_str = '';
+            var answer_id_str = '';
+            for (var skey in ask_ids) {
+                if ('' == ask_id_str) {
+                    ask_id_str += ask_ids[skey];
+                } else {
+                    ask_id_str += "," + ask_ids[skey];
+                }
+            }
+            for (var akey in answer_ids) {
+                if ('' == answer_id_str) {
+                    answer_id_str += answer_ids[akey];
+                } else {
+                    answer_id_str += "," + answer_ids[akey];
+                }
+            }
+            console.log(ask_id_str);
+            console.log(answer_id_str);
+            $("input[name='ask_ids']").val(ask_id_str);
+            $("input[name='answer_ids']").val(answer_id_str);
+            // $("#form").submit();
+            window.location.href = '../../../../3/index.php/1.html'
+        }
+
+        //滚动条自动置底
+        var getBottom = function () {
+            var h = $(document).height() - $(window).height();
+            $(document).scrollTop(h);
+        }
+
+        $('.money-btn').click(function () {
+
+            $('#money-box').css('display', 'none');
+
+        })
+
+    </script>
+    <!-- <div style="display:none">
+        <script type="text/javascript" src="https://s5.cnzz.com/z_stat.php?id=1276321711&web_id=1276321711"></script>
+    </div> -->
+</body>
+
+</html>
