@@ -1,0 +1,9 @@
+#list .ll {
+    background-image: url(../../images/index.btn.bg.png);
+    background-size: cover;
+}
+
+#list .li {
+    background-image: url(../images/index_btn_an.png);
+    background-size: cover;
+}

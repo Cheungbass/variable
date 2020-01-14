@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width">
+
+    <title>你懂我吗</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="renderer" content="webkit">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="format-detection" content="telephone=no">
+
+    <script type="text/javascript" src="./static/answer/js/jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript" src="./static/answer/js/autosize.js"></script>
+
+    <link rel="stylesheet" href="./static/answer/css/xuan-kefu.css">
+
+
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'HiraginoGBW31678e854d11d1b4';
+            background-color: #ffdb2c;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        #contenter {
+            max-width: 640px;
+            margin: 0 auto 5rem;
+        }
+
+        #subject {
+            text-align: center;
+            line-height: 2rem;
+            font-size: 1.1rem;
+            color: #fff;
+            margin-top: 1rem;
+        }
+
+        #question {
+            overflow: auto;
+        }
+
+        #question .li {
+            background-color: #fff;
+            padding: 0rem 1rem;
+            border-radius: 0.4rem;
+            box-shadow: 0.04rem 0.04rem 0.06rem rgba(0, 0, 0, 0.2);
+            margin: 0.5rem;
+        }
+
+        #question .li .title {
+            line-height: 2.8rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        #question .li .title .icon {
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            z-index: 0;
+            top: 0.4rem;
+            right: 0rem;
+            text-align: right;
+            line-height: 2rem;
+            font-size: 1.6rem;
+            font-weight: 200;
+        }
+
+        #question .li .info {
+            display: none;
+            padding: 0rem 0.6rem 1rem;
+            font-size: 0.84rem;
+            line-height: 1.2rem;
+            color: #666;
+        }
+
+        #head_tips {
+            display: none;
+            margin: 0 auto;
+            max-width: 640px;
+            padding: 0.4rem;
+            background-color: #fe0005;
+            color: #fff;
+            font-size: 0.82rem;
+        }
+
+        #head_tips p {
+            text-align: right;
+            color: #2E73D6;
+            text-decoration: underline;
+        }
+
+        #tips_full {
+            display: none;
+            position: fixed;
+            z-index: 99;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        #tips_con {
+            display: none;
+            width: 14rem;
+            min-height: 8rem;
+            background-color: #fff;
+            position: fixed;
+            z-index: 100;
+            top: 33%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            border-radius: 0.2rem;
+        }
+
+        #tips_con .tips_title {
+            line-height: 2.2rem;
+            background-color: #fe0005;
+            color: #fff;
+            text-align: center;
+            border-radius: 0.2rem 0.2rem 0rem 0rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        #tips_con .tips_info {
+            padding: 0.8rem;
+            line-height: 1.4rem;
+            color: #fe0005;
+            font-size: 0.82rem;
+        }
+
+        #tips_con .tips_close {
+            width: 6rem;
+            height: 1.8rem;
+            line-height: 1.8rem;
+            margin: 0 auto;
+            background-color: #cdcdcd;
+            color: #fff;
+            border-radius: 1rem;
+            text-align: center;
+            font-size: 0.82rem;
+        }
+
+        #tips_con .faq {
+            color: #2E73D6;
+            text-decoration: underline;
+            text-align: center;
+            line-height: 2.6rem;
+            font-size: 0.82rem;
+        }
+
+        #head_menu {
+            padding: 0rem 2rem;
+            height: 3.1rem;
+            position: relative;
+        }
+
+        #head_menu .gohome {
+            width: 4.3rem;
+            line-height: 1.6rem;
+            background-color: #333;
+            color: #fff;
+            border-radius: 0.8rem;
+            text-align: center;
+            font-size: 0.7rem;
+            position: absolute;
+            z-index: 0;
+            left: 1rem;
+            top: 1rem;
+        }
+
+        #head_menu #complain {
+            width: 3rem;
+            line-height: 1.6rem;
+            color: #333;
+            text-decoration: underline;
+            text-align: right;
+            font-size: 0.82rem;
+            font-weight: 600;
+            position: absolute;
+            z-index: 0;
+            right: 1rem;
+            top: 1rem;
+        }
+    </style>
+
+
+
+    <!-- <script>
+
+        var _hmt = _hmt || [];
+
+        (function() {
+
+            var hm = document.createElement("script");
+
+            hm.src = "https://hm.baidu.com/hm.js?3ae6a23212d319da084178f3a0b7edaa";
+
+            var s = document.getElementsByTagName("script")[0];
+
+            s.parentNode.insertBefore(hm, s);
+
+        })();
+
+    </script> -->
+
+
+
+
+
+</head>
+
+<body>
+
+    <!-- 客服 -->
+
+    <div class="kefu">
+
+        <a href="./kefu.html">
+
+            <div class="kefu-portrait">
+
+                <img src="./static/answer/images/kefuB.png" alt="">
+
+            </div>
+
+            <div class="kefu-text">
+
+                <span>在线<Br />客服</span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!--常见问题-->
+
+    <div id="contenter">
+
+        <!--顶部提醒与中间提醒-->
+
+        <div id="head_menu">
+
+            <a href="./index.html">
+                <div class="gohome">返回首页</div>
+            </a>
+
+            <a href="./complain.html">
+                <div id="complain">投诉</div>
+            </a>
+
+        </div>
+
+        <!--<div id="subject">常见问题</div>-->
+
+        <div id="question">
+
+            <div class="li" id="q1">
+
+                <div class="title" q="1">1、怎么玩？<div class="icon">&#155;</div>
+                </div>
+
+                <div class="info">用户可在本平台内出题，并在出题完成后设置答对后的奖励红包。系统将在出题后生成海报，用户可将海报分享至朋友圈或分享给希望答题的用户。</div>
+
+            </div>
+
+            <div class="li" id="q2">
+
+                <div class="title" q="2">2、支付后朋友圈没有海报<div class="icon">&#155;</div>
+                </div>
+
+                <div class="info">本平台无权操作用户朋友圈，如需将海报转发至朋友圈，请手动保存海报至手机相册，然后再发到朋友圈，<a
+                        href="/index.php/index/answer/clearurl.html?from=faq&source=12"
+                        style="color: #090;">点此重新获取海报</a>。</div>
+
+            </div>
+
+            <div class="li" id="q3">
+
+                <div class="title" q="3">3、发布朋友圈后好友看不见<div class="icon">&#155;</div>
+                </div>
+
+                <div class="info">少量用户会出现朋友圈好友看不见的情况，如出现此情况，<a
+                        href="/index.php/index/answer/clearurl.html?from=faq&source=12"
+                        style="color: #090;">请点击这里</a>，进入重新生成海报。</div>
+
+            </div>
+
+            <div class="li" id="q4">
+
+                <div class="title" q="4">4、未被领取的金额什么时候退款<div class="icon">&#155;</div>
+                </div>
+
+                <div class="info">出题24小时后题目将终止答题，届时系统会将未被领取金额退还至<b>本系统</b>余额中,用户可进入“钱包”页进行提现。</div>
+
+            </div>
+
+            <div class="li" id="q5">
+
+                <div class="title" q="5">5、扫码后海报无法打开<div class="icon">&#155;</div>
+                </div>
+
+                <div class="info">如出现海报无法打开，<a href="/index.php/index/answer/clearurl.html?from=faq&source=12"
+                        style="color: #090;">请点击这里</a>重新生成海报。</div>
+
+            </div>
+
+            <div class="li" id="q6">
+
+                <div class="title" q="6">6、如何查看出题记录和答题记录<div class="icon">&#155;</div>
+                </div>
+
+                <div class="info">您可点击本页面左上角的“返回首页”按钮进入首页，在首页会有出题记录和答题记录的入口。</div>
+
+            </div>
+
+            <div class="li" id="q7">
+
+                <div class="title" q="7">7、如何查看题目答案<div class="icon">&#155;</div>
+                </div>
+
+                <div class="info">因涉及奖励红包，故本系统不支持查看好友出题的正确答案。</div>
+
+            </div>
+
+            <div class="li" id="q8">
+
+                <div class="title" q="8">8、是否可以重新回答<div class="icon">&#155;</div>
+                </div>
+
+                <div class="info">目前不支持重新答题。</div>
+
+            </div>
+
+            <div class="li" id="q9">
+
+                <div class="title" q="9">9、为什么不是好友也可以答题<div class="icon">&#155;</div>
+                </div>
+
+                <div class="info">好友发布至朋友圈后即为开公信息，有可能是朋友圈好友进行了二次转发。</div>
+
+            </div>
+
+            <div class="li" id="q10">
+
+                <div class="title" q="10">10、为什么提现失败<div class="icon">&#155;</div>
+                </div>
+
+                <div class="info">提现失败可能有两类原因：一、提现微信号未进行实名，微信限制未实名微信号进行提现。二、提现金额小于0.3元，微信限制用户单次提现金额最少0.3元。</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        var top_tips = "";
+
+        var box_tips = "";
+
+        $("#tips_con .tips_close").click(function () {
+
+            $("#tips_full").hide();
+
+            $("#tips_con").hide();
+
+        });
+
+        $("#tips_full").click(function () {
+
+            $("#tips_full").hide();
+
+            $("#tips_con").hide();
+
+        });
+
+        $(function () {
+
+            if ('' != top_tips) {
+
+                $("#head_tips").show();
+
+            }
+
+            if ('' != box_tips) {
+
+                $("#tips_full").show();
+
+                $("#tips_con").show();
+
+            }
+
+        });
+
+
+
+        $("#complain").click(function () {
+
+            var url = $(this).attr('url');
+
+            window.location.href = url;
+
+        });
+
+
+
+
+
+        var qid = 0;
+
+
+
+
+
+
+
+        $("#question .title").click(function () {
+
+            $("#question .info").hide();
+
+            var id = "q" + $(this).attr("q");
+
+            if (id != qid) {
+
+                qid = id;
+
+                $("#q" + $(this).attr("q") + " .info").show();
+
+            } else {
+
+                qid = 0;
+
+            }
+
+        });
+
+    </script>
+
+    <div style="display:none">
+
+        <script type="text/javascript" src="https://s5.cnzz.com/z_stat.php?id=1276321711&web_id=1276321711"></script>
+
+    </div>
+
+</body>
+
+</html>

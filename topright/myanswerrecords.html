@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>答题记录</title>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="./static/answer/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./static/answer/js/autosize.js"></script>
+    <link href='./static/answer/nj/css/record.css?v=1' rel='stylesheet' type='text/css' />
+
+</head>
+
+<body>
+
+
+    <!--好友回答记录/我的回答记录-->
+    <div id="contenter">
+        <div id="head_menu">
+            <a href="./index.html">
+                <div class="gohome">返回首页</div>
+            </a>
+            <a href="./faq.html">
+                <div class="gofaq">常见问题</div>
+            </a>
+        </div>
+
+        <div id="record">
+            <div class="record">
+
+                <!-- <div class="li" onclick="goInfo('MDAwMDAwMDAwMH61dt-xjXSRg4mgow','MDAwMDAwMDAwMH21dpqxs5ragoysow')"> -->
+                <div class="li" onclick="">
+                    <div class="avatar"><img
+                            src="http://thirdwx.qlogo.cn/mmopen/vi_32/PMxC3hj0bIy1pj9H6ic2hnRibjs3CH4QTbLDZ7q4IMF9gpMR1fHJ8oWmUqXp7bn3vyXyiaYBxic6t8gEWuHfClwm3A/132">
+                    </div>
+                    <div class="userinfo">
+                        <div class="nickname">濠</div>
+                        <div class="date">咦~帮Ta点一分外卖吧</div>
+                    </div>
+                    <div class="redpacket">
+                        <div class="r">未获得</div>
+                        <div class="b">答对5题</div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 分页按钮 -->
+            <!-- 分页按钮 -->
+            <div class="end">没有更多了~</div>
+        </div>
+    </div>
+    <div style="display:none">
+        <script type="text/javascript" src="https://s5.cnzz.com/z_stat.php?id=1276321711&web_id=1276321711"></script>
+    </div>
+    <script>
+        var total_page = "1";
+        var page = 1;
+
+
+
+
+        //获取数据
+        var getData = function (page) {
+            $.ajax({
+                type: "GET",
+                //提交的网址
+                url: "/index.php/index/answer/myanswerrecords.html",
+                cache: true,
+                async: true,
+                //提交的数据
+                data: { page: page },
+                //返回数据的格式
+                datatype: "json",
+                //在请求之前调用的函数
+                beforeSend: function () { },
+                //成功返回之后调用的函数
+                success: function (data) {
+                    var data = data;
+                    if (200 == data.code) {
+                        if (total_page == page) {
+                            $("#more").hide();
+                            $(".no-data").show();
+                        }
+                        writeRecord(data.list);
+                    } else {
+                        $("#more").hide();
+                    }
+                }
+            });
+        }
+
+        //填写数据
+        var writeRecord = function (list) {
+
+            if (0 == list.length) {
+                return false;
+            }
+
+            var append = '';
+            for (var key in list) {
+                var status = '';
+                if ('未获得' == list[key].bonus_money) {
+                    status = '未获得';
+                } else {
+                    status = list[key].bonus_money + '元';
+                }
+                var sid_str = "'" + list[key].sid_en + "'";
+                var score_id_str = "'" + list[key].id_en + "'";
+                append += '<div class="li" onclick="goInfo(' + score_id_str + ',' + sid_str + ')">'
+                    + '<div class="avatar"><img src="' + list[key].headimgurl + '"></div>'
+                    + '<div class="userinfo">'
+                    + '<div class="nickname">' + list[key].nickname + '</div>'
+                    + '<div class="date">' + list[key].tips + '</div>'
+                    + '</div>'
+                    + '<div class="redpacket">'
+                    + '<div class="r">' + status + '</div>'
+                    + '<div class="b">答对' + list[key].right_num + '题</div>'
+                    + '</div>'
+                    + '</div>';
+
+            }
+            $("#record .record").append(append);
+        }
+
+        //查看更多
+        var getMore = function () {
+            page = Number(page) + 1;
+            console.log("加载页数：" + page);
+            if (page == total_page) {
+                $("#more").hide();
+            }
+            getData(page);
+        }
+
+        //查看详情
+        var goInfo = function (score_id, sid) {
+            var url = "/index.php/index/answer/getscoredetail.html?score_id=" + score_id + "&sid=" + sid;
+            window.location.href = url;
+        }
+
+    </script>
+</body>
+
+</html>

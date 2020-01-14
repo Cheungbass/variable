@@ -268,8 +268,9 @@
 
             $("#option_id_str").val(oid_str);
 
-            $("#form").submit();
+            // $("#form").submit();
 
+            window.location.href = './answerQuestions.html'
             //诸葛埋点统计//属性名称不能超过255个字符，属性值不能超过200个字符
 
             zhuge.track('出题提交', {
@@ -430,7 +431,7 @@
 
                 //提交的网址
 
-                url: "/index.php/index/answer/changequestions.html",
+                url: "changequestions.json",
 
                 cache: true,
 
@@ -452,7 +453,7 @@
 
                 success: function (data) {
 
-                    var data = JSON.parse(data);
+                    // var data = JSON.parse(data);
 
                     if (200 == data.code) {
 
@@ -643,7 +644,7 @@
 
                 //提交的网址
 
-                url: "/index.php/index/answer/createsubject.html",
+                url: "createsubject.json",
 
                 cache: true,
 
@@ -665,7 +666,7 @@
 
                 success: function (data) {
 
-                    var data = JSON.parse(data);
+                    // var data = JSON.parse(data);
 
                     if (200 == data.code) {
 
@@ -709,7 +710,7 @@
 
                 //提交的网址
 
-                url: "/index.php/index/answer/uploadavatarinfo.html",
+                url: "uploadavatarinfo.json",
 
                 cache: true,
 
